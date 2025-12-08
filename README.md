@@ -2,9 +2,6 @@
 
 Exemple d'email interactif (flip 3D) avec fallback statique pour les clients qui ne supportent pas le CSS avance. Le CSS est injecte puis inline via un script de build.
 
-## Rapport de compatibilite
-![Rapport de compatibilite](images/report-compatibilite.png)
-
 ## Prerequis
 - Node.js 16+ (recommande) et npm
 - (Optionnel) Identifiants SMTP de test pour `index.js` (ex: Mailtrap)

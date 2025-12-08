@@ -1,0 +1,15 @@
+{
+  "name": "email-kinetic-demo",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "live-server src",
+    "build": "node build-email.js"
+  },
+  "devDependencies": {
+    "inline-css": "^4.0.0",
+    "live-server": "^1.2.2"
+  },
+  "dependencies": {
+    "nodemailer": "^7.0.11"
+  }
+}

@@ -1,0 +1,81 @@
+.fallback {
+  display: block;
+}
+
+.flip-card {
+  display: none;
+}
+
+.email-shell {
+  background: #f3f6fa;
+}
+
+@media screen and (min-width: 0px) {
+  .email-shell {
+    background: linear-gradient(135deg, #f3f6fa, #e7ecf3);
+  }
+
+  label {
+    cursor: pointer;
+  }
+
+  @supports (position: absolute) and (transform-style: preserve-3d) and (backface-visibility: hidden) {
+    .fallback {
+      display: none !important;
+    }
+
+    .flip-card {
+      display: block !important;
+      perspective: 1200px;
+    }
+
+    .flip-inner {
+      position: relative;
+      width: 100%;
+      height: 420px;
+      /* altezza fissa per evitare collasso */
+      transform-style: preserve-3d;
+      transition: transform 0.8s ease;
+    }
+
+    .flip-front,
+    .flip-back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.16);
+    }
+
+    .flip-front img,
+    .flip-back img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .flip-back {
+      transform: rotateY(180deg);
+      background: linear-gradient(135deg, #0c5de7, #1535b1);
+      color: #ffffff;
+    }
+
+    .flip-back h2 {
+      color: #ffffff;
+    }
+
+    .flip-back a {
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
+    }
+
+    label:hover .flip-inner,
+    label:focus-within .flip-inner,
+    label input:checked ~ .flip-card .flip-inner {
+      transform: rotateY(180deg);
+    }
+  }
+}

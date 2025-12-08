@@ -1,0 +1,173 @@
+<!DOCTYPE html><html lang="it"><head>
+  <meta charset="UTF-8">
+  <title>Esempio Kinetic Email</title>
+  <style>
+      .fallback {
+        display: block;
+      }
+
+      .flip-card {
+        display: none;
+      }
+
+      .email-shell {
+        background: #f3f6fa;
+      }
+
+      /* Stili avanzati: usati solo dai client che supportano position+3D */
+      @media screen and (min-width: 0px) {
+        .email-shell {
+          background: linear-gradient(135deg, #f3f6fa, #e7ecf3);
+        }
+
+        label {
+          cursor: pointer;
+        }
+
+        @supports (position: absolute) and (transform-style: preserve-3d) and (backface-visibility: hidden) {
+          /* Quando l'effetto e disponibile, nascondiamo il fallback */
+          .fallback {
+            display: none !important;
+          }
+
+          .flip-card {
+            display: block !important;
+            perspective: 1200px;
+          }
+
+          .flip-inner {
+            position: relative;
+            width: 100%;
+            height: 420px;
+            /* altezza fissa per evitare collasso */
+            transition: transform 0.8s ease;
+            transform-style: preserve-3d;
+          }
+
+          .flip-card:hover .flip-inner,
+          input:checked+.flip-card .flip-inner {
+            transform: rotateY(180deg);
+          }
+
+          .flip-front,
+          .flip-back {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+          }
+
+          .flip-back {
+            transform: rotateY(180deg);
+          }
+        }
+      }
+    </style>
+</head>
+
+<body style="margin:0; padding:0;">
+
+  <div class="email-shell" style="background: #f3f6fa; margin: 0; padding: 0;">
+
+  <!-- Fallback statico (per client che ignorano gli stili avanzati) -->
+  <div class="fallback" style="display: block; font-family: Arial, sans-serif; padding: 20px; text-align: center;">
+    <svg viewBox="0 0 600 260" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:#007bff;stop-opacity:1"></stop>
+          <stop offset="100%" style="stop-color:#00bfff;stop-opacity:1"></stop>
+        </linearGradient>
+      </defs>
+      <rect x="0" y="0" width="600" height="260" fill="url(#grad)"></rect>
+      <circle cx="120" cy="130" r="60" fill="#ffffff22"></circle>
+      <circle cx="500" cy="80" r="40" fill="#ffffff33"></circle>
+      <text x="50%" y="50%" text-anchor="middle" fill="#ffffff" font-size="32" font-family="Arial, sans-serif">
+        Nuove funzionalità
+      </text>
+      <text x="50%" y="70%" text-anchor="middle" fill="#ffffffdd" font-size="18" font-family="Arial, sans-serif">
+        Passi il mouse o tocchi per scoprire di più
+      </text>
+    </svg>
+    <h2 style="font-size:22px; margin:20px 0 10px;">Il nostro nuovo prodotto</h2>
+    <p style="font-size:16px; margin:0;">
+      Clicchi per scoprire tutte le novità!
+    </p>
+  </div>
+
+  <!-- Versione kinetic -->
+  <!-- L'etichetta consente il tap su mobile (checkbox) + hover su desktop -->
+  <label style="display:block; cursor:pointer; margin:0;">
+    <input type="checkbox" style="display:none;">
+
+    <div class="flip-card" style="display: none; margin: 0 auto; max-width: 600px; position: relative;">
+
+      <div class="flip-inner">
+
+        <!-- Lato frontale -->
+        <div class="flip-front" style="border-radius:8px; overflow:hidden; background:#007bff;">
+          <!-- SVG interno al posto dell'immagine -->
+          <div style="width:100%; height:260px; display:block;">
+            <svg viewBox="0 0 600 260" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" style="stop-color:#007bff;stop-opacity:1"></stop>
+                  <stop offset="100%" style="stop-color:#00bfff;stop-opacity:1"></stop>
+                </linearGradient>
+              </defs>
+              <rect x="0" y="0" width="600" height="260" fill="url(#grad)"></rect>
+              <circle cx="120" cy="130" r="60" fill="#ffffff22"></circle>
+              <circle cx="500" cy="80" r="40" fill="#ffffff33"></circle>
+              <text x="50%" y="50%" text-anchor="middle" fill="#ffffff" font-size="32" font-family="Arial, sans-serif">
+                Nuove funzionalità
+              </text>
+              <text x="50%" y="70%" text-anchor="middle" fill="#ffffffdd" font-size="18" font-family="Arial, sans-serif">
+                Passi il mouse o tocchi per scoprire di più
+              </text>
+            </svg>
+          </div>
+
+          <div style="padding:20px; font-family:Arial, sans-serif; background:#ffffff;">
+            <h2 style="margin:0; font-size:24px;">Scopra le novità</h2>
+            <p style="font-size:16px; margin:10px 0 0;">
+              Passi il mouse (desktop) o tocchi (mobile) la card
+              per vedere il retro animato.
+            </p>
+          </div>
+        </div>
+
+        <!-- Lato retro -->
+        <div class="flip-back" style="border-radius:8px; overflow:hidden; background:#f8f9fa;">
+          <div style="padding:30px 20px; font-family:Arial, sans-serif; text-align:center;">
+            <h2 style="font-size:24px; margin:0 0 10px;">Eccole qui!</h2>
+            <p style="font-size:16px; margin:0 0 15px;">
+              Email interattive con animazioni leggere, micro-interazioni
+              e contenuti dinamici per campagne davvero coinvolgenti.
+            </p>
+            <p style="font-size:15px; margin:0 0 20px;">
+              Compatibile con i principali client moderni (Apple Mail, iOS Mail),
+              con un fallback statico per gli altri.
+            </p>
+            <a href="#" style="display:inline-block;
+                      margin-top:5px;
+                      background:#007bff;
+                      color:#ffffff;
+                      padding:12px 24px;
+                      border-radius:6px;
+                      text-decoration:none;
+                      font-weight:bold;">
+              Scopra di più
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </label>
+
+
+
+
+</div></body></html>

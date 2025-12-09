@@ -4,70 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <title>Esempio Kinetic Email</title>
-  <style>
-      .fallback {
-        display: block;
-      }
-
-      .flip-card {
-        display: none;
-      }
-
-      .email-shell {
-        background: #f3f6fa;
-      }
-
-      /* Stili avanzati: usati solo dai client che supportano position+3D */
-      @media screen and (min-width: 0px) {
-        .email-shell {
-          background: linear-gradient(135deg, #f3f6fa, #e7ecf3);
-        }
-
-        label {
-          cursor: pointer;
-        }
-
-        @supports (position: absolute) and (transform-style: preserve-3d) and (backface-visibility: hidden) {
-          /* Quando l'effetto e disponibile, nascondiamo il fallback */
-          .fallback {
-            display: none !important;
-          }
-
-          .flip-card {
-            display: block !important;
-            perspective: 1200px;
-          }
-
-          .flip-inner {
-            position: relative;
-            width: 100%;
-            height: 420px;
-            /* altezza fissa per evitare collasso */
-            transition: transform 0.8s ease;
-            transform-style: preserve-3d;
-          }
-
-          .flip-card:hover .flip-inner,
-          input:checked+.flip-card .flip-inner {
-            transform: rotateY(180deg);
-          }
-
-          .flip-front,
-          .flip-back {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-          }
-
-          .flip-back {
-            transform: rotateY(180deg);
-          }
-        }
-      }
-    </style>
+ <style>
+    /*@@STYLES@@*/
+  </style>
 </head>
 
 <body style="margin:0; padding:0;">

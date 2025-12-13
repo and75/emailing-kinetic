@@ -1,3 +1,29 @@
+.email-shell,
+.email-shell * {
+  font-family: Arial, sans-serif;
+}
+
+.toggle-static,
+.toggle-animata {
+  font-family: Arial, sans-serif;
+}
+
+.toggle-lang {
+  font-family: Arial, sans-serif;
+}
+
+.lang-fr {
+  display: none !important;
+}
+
+#fr:target ~ .email-shell .lang-fr {
+  display: inline !important;
+}
+
+#fr:target ~ .email-shell .lang-it {
+  display: none !important;
+}
+
 .fallback {
   display: block;
 }
@@ -8,6 +34,149 @@
 
 .email-shell {
   background: #f3f6fa;
+}
+
+/* Allinea larghezze e box model su 600px */
+.preheader,
+.header,
+.fallback,
+.hero,
+.features3,
+.offer,
+.stepper,
+.carousel,
+.accordion,
+.hotspot,
+.testimonial,
+.timeline,
+.footer {
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+.features3 > div {
+  box-sizing: border-box;
+}
+
+/* Comportamenti interattivi (non dipendono dal 3D) */
+.carousel-track {
+  transition: transform 0.7s ease;
+}
+
+#slide1:checked ~ .carousel-track {
+  transform: translateX(0%);
+}
+
+#slide2:checked ~ .carousel-track {
+  transform: translateX(-33.333%);
+}
+
+#slide3:checked ~ .carousel-track {
+  transform: translateX(-66.666%);
+}
+
+#slide1:checked ~ .carousel-dots label[for="slide1"],
+#slide2:checked ~ .carousel-dots label[for="slide2"],
+#slide3:checked ~ .carousel-dots label[for="slide3"] {
+  background: #007bff;
+}
+
+#faq2:checked + label + .acc-body,
+#faq3:checked + label + .acc-body {
+  max-height: 120px;
+  padding: 12px 16px;
+}
+
+.stepper-panels .step-panel {
+  display: none;
+}
+
+#step1:checked ~ .stepper-panels .panel1,
+#step2:checked ~ .stepper-panels .panel2,
+#step3:checked ~ .stepper-panels .panel3 {
+  display: block;
+}
+
+#step1:checked ~ .stepper-tabs label[for="step1"],
+#step2:checked ~ .stepper-tabs label[for="step2"],
+#step3:checked ~ .stepper-tabs label[for="step3"] {
+  background: #0c5de7;
+  color: #ffffff;
+  border-color: #0c5de7;
+}
+
+.hotspot-bubble {
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+}
+
+#hs1:checked ~ .hotspot-visual .bubble1,
+#hs2:checked ~ .hotspot-visual .bubble2,
+#hs3:checked ~ .hotspot-visual .bubble3 {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+#hs1:checked ~ .hotspot-visual .dot1,
+#hs2:checked ~ .hotspot-visual .dot2,
+#hs3:checked ~ .hotspot-visual .dot3 {
+  background: #0c5de7 !important;
+  border-color: #0c5de7 !important;
+  box-shadow: 0 0 0 4px rgba(12, 93, 231, 0.15);
+}
+
+/* Modalita statica forzata via anchor #static (solo per preview browser) */
+#static:target ~ .email-shell .fallback {
+  display: block !important;
+}
+
+#static:target ~ .email-shell label,
+#static:target ~ .email-shell .flip-card {
+  display: none !important;
+}
+
+#static:target ~ .email-shell .stepper-tabs {
+  display: none !important;
+}
+
+#static:target ~ .email-shell .stepper .step-panel {
+  display: block !important;
+}
+
+#static:target ~ .email-shell .carousel-dots {
+  display: none !important;
+}
+
+#static:target ~ .email-shell .carousel-track {
+  transform: translateX(0%) !important;
+}
+
+#static:target ~ .email-shell .hotspot-visual {
+  opacity: 0.5;
+}
+
+#static:target ~ .email-shell .hotspot-bubble {
+  opacity: 0;
+  transform: none;
+}
+
+/* Ombra coerente su tutti i blocchi principali */
+.hero,
+.features3 > div,
+.offer,
+.stepper,
+.carousel,
+.accordion,
+.hotspot,
+.testimonial,
+.timeline {
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.14) !important;
+  border-radius: 10px !important;
 }
 
 @media screen and (min-width: 0px) {
@@ -79,65 +248,3 @@
     }
   }
 }
-      .fallback {
-        display: block;
-      }
-
-      .flip-card {
-        display: none;
-      }
-
-      .email-shell {
-        background: #f3f6fa;
-      }
-
-      /* Stili avanzati: usati solo dai client che supportano position+3D */
-      @media screen and (min-width: 0px) {
-        .email-shell {
-          background: linear-gradient(135deg, #f3f6fa, #e7ecf3);
-        }
-
-        label {
-          cursor: pointer;
-        }
-
-        @supports (position: absolute) and (transform-style: preserve-3d) and (backface-visibility: hidden) {
-          /* Quando l'effetto e disponibile, nascondiamo il fallback */
-          .fallback {
-            display: none !important;
-          }
-
-          .flip-card {
-            display: block !important;
-            perspective: 1200px;
-          }
-
-          .flip-inner {
-            position: relative;
-            width: 100%;
-            height: 420px;
-            /* altezza fissa per evitare collasso */
-            transition: transform 0.8s ease;
-            transform-style: preserve-3d;
-          }
-
-          .flip-card:hover .flip-inner,
-          input:checked+.flip-card .flip-inner {
-            transform: rotateY(180deg);
-          }
-
-          .flip-front,
-          .flip-back {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-          }
-
-          .flip-back {
-            transform: rotateY(180deg);
-          }
-        }
-      }

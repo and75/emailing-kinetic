@@ -1,173 +1,519 @@
 <!DOCTYPE html><html lang="it"><head>
   <meta charset="UTF-8">
   <title>Esempio Kinetic Email</title>
+  
   <style>
-      .fallback {
-        display: block;
-      }
+    .email-shell,
+.email-shell * {
+  font-family: Arial, sans-serif;
+}
 
-      .flip-card {
-        display: none;
-      }
+.toggle-static,
+.toggle-animata {
+  font-family: Arial, sans-serif;
+}
 
-      .email-shell {
-        background: #f3f6fa;
-      }
+.toggle-lang {
+  font-family: Arial, sans-serif;
+}
 
-      /* Stili avanzati: usati solo dai client che supportano position+3D */
-      @media screen and (min-width: 0px) {
-        .email-shell {
-          background: linear-gradient(135deg, #f3f6fa, #e7ecf3);
-        }
+.lang-fr {
+  display: none !important;
+}
 
-        label {
-          cursor: pointer;
-        }
+#fr:target ~ .email-shell .lang-fr {
+  display: inline !important;
+}
 
-        @supports (position: absolute) and (transform-style: preserve-3d) and (backface-visibility: hidden) {
-          /* Quando l'effetto e disponibile, nascondiamo il fallback */
-          .fallback {
-            display: none !important;
-          }
+#fr:target ~ .email-shell .lang-it {
+  display: none !important;
+}
 
-          .flip-card {
-            display: block !important;
-            perspective: 1200px;
-          }
+.fallback {
+  display: block;
+}
 
-          .flip-inner {
-            position: relative;
-            width: 100%;
-            height: 420px;
-            /* altezza fissa per evitare collasso */
-            transition: transform 0.8s ease;
-            transform-style: preserve-3d;
-          }
+.flip-card {
+  display: none;
+}
 
-          .flip-card:hover .flip-inner,
-          input:checked+.flip-card .flip-inner {
-            transform: rotateY(180deg);
-          }
+.email-shell {
+  background: #f3f6fa;
+}
 
-          .flip-front,
-          .flip-back {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-          }
+/* Allinea larghezze e box model su 600px */
+.preheader,
+.header,
+.fallback,
+.hero,
+.features3,
+.offer,
+.stepper,
+.carousel,
+.accordion,
+.hotspot,
+.testimonial,
+.timeline,
+.footer {
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
 
-          .flip-back {
-            transform: rotateY(180deg);
-          }
-        }
-      }
-    </style>
+.features3 > div {
+  box-sizing: border-box;
+}
+
+/* Comportamenti interattivi (non dipendono dal 3D) */
+.carousel-track {
+  transition: transform 0.7s ease;
+}
+
+#slide1:checked ~ .carousel-track {
+  transform: translateX(0%);
+}
+
+#slide2:checked ~ .carousel-track {
+  transform: translateX(-33.333%);
+}
+
+#slide3:checked ~ .carousel-track {
+  transform: translateX(-66.666%);
+}
+
+#slide1:checked ~ .carousel-dots label[for="slide1"],
+#slide2:checked ~ .carousel-dots label[for="slide2"],
+#slide3:checked ~ .carousel-dots label[for="slide3"] {
+  background: #007bff;
+}
+
+#faq2:checked + label + .acc-body,
+#faq3:checked + label + .acc-body {
+  max-height: 120px;
+  padding: 12px 16px;
+}
+
+.stepper-panels .step-panel {
+  display: none;
+}
+
+#step1:checked ~ .stepper-panels .panel1,
+#step2:checked ~ .stepper-panels .panel2,
+#step3:checked ~ .stepper-panels .panel3 {
+  display: block;
+}
+
+#step1:checked ~ .stepper-tabs label[for="step1"],
+#step2:checked ~ .stepper-tabs label[for="step2"],
+#step3:checked ~ .stepper-tabs label[for="step3"] {
+  background: #0c5de7;
+  color: #ffffff;
+  border-color: #0c5de7;
+}
+
+.hotspot-bubble {
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+}
+
+#hs1:checked ~ .hotspot-visual .bubble1,
+#hs2:checked ~ .hotspot-visual .bubble2,
+#hs3:checked ~ .hotspot-visual .bubble3 {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+#hs1:checked ~ .hotspot-visual .dot1,
+#hs2:checked ~ .hotspot-visual .dot2,
+#hs3:checked ~ .hotspot-visual .dot3 {
+  background: #0c5de7 !important;
+  border-color: #0c5de7 !important;
+  box-shadow: 0 0 0 4px rgba(12, 93, 231, 0.15);
+}
+
+/* Modalita statica forzata via anchor #static (solo per preview browser) */
+#static:target ~ .email-shell .fallback {
+  display: block !important;
+}
+
+#static:target ~ .email-shell label,
+#static:target ~ .email-shell .flip-card {
+  display: none !important;
+}
+
+#static:target ~ .email-shell .stepper-tabs {
+  display: none !important;
+}
+
+#static:target ~ .email-shell .stepper .step-panel {
+  display: block !important;
+}
+
+#static:target ~ .email-shell .carousel-dots {
+  display: none !important;
+}
+
+#static:target ~ .email-shell .carousel-track {
+  transform: translateX(0%) !important;
+}
+
+#static:target ~ .email-shell .hotspot-visual {
+  opacity: 0.5;
+}
+
+#static:target ~ .email-shell .hotspot-bubble {
+  opacity: 0;
+  transform: none;
+}
+
+/* Ombra coerente su tutti i blocchi principali */
+.hero,
+.features3 > div,
+.offer,
+.stepper,
+.carousel,
+.accordion,
+.hotspot,
+.testimonial,
+.timeline {
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.14) !important;
+  border-radius: 10px !important;
+}
+
+@media screen and (min-width: 0px) {
+  .email-shell {
+    background: linear-gradient(135deg, #f3f6fa, #e7ecf3);
+  }
+
+  label {
+    cursor: pointer;
+  }
+
+  @supports (position: absolute) and (transform-style: preserve-3d) and (backface-visibility: hidden) {
+    .fallback {
+      display: none !important;
+    }
+
+    .flip-card {
+      display: block !important;
+      perspective: 1200px;
+    }
+
+    .flip-inner {
+      position: relative;
+      width: 100%;
+      height: 420px;
+      /* altezza fissa per evitare collasso */
+      transform-style: preserve-3d;
+      transition: transform 0.8s ease;
+    }
+
+    .flip-front,
+    .flip-back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.16);
+    }
+
+    .flip-front img,
+    .flip-back img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .flip-back {
+      transform: rotateY(180deg);
+      background: linear-gradient(135deg, #0c5de7, #1535b1);
+      color: #ffffff;
+    }
+
+    .flip-back h2 {
+      color: #ffffff;
+    }
+
+    .flip-back a {
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
+    }
+
+    label:hover .flip-inner,
+    label:focus-within .flip-inner,
+    label input:checked ~ .flip-card .flip-inner {
+      transform: rotateY(180deg);
+    }
+  }
+}
+
+  </style>
 </head>
 
 <body style="margin:0; padding:0;">
+  <a id="top"></a>
+  <a id="static"></a>
+  <a id="it"></a>
+  <a id="fr"></a>
+  
+  
 
-  <div class="email-shell" style="background: #f3f6fa; margin: 0; padding: 0;">
+  <div class="email-shell" style="background: #f3f6fa; font-family: Arial, sans-serif; margin: 0; padding: 0;">
 
-  <!-- Fallback statico (per client che ignorano gli stili avanzati) -->
-  <div class="fallback" style="display: block; font-family: Arial, sans-serif; padding: 20px; text-align: center;">
-    <svg viewBox="0 0 600 260" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" style="stop-color:#007bff;stop-opacity:1"></stop>
-          <stop offset="100%" style="stop-color:#00bfff;stop-opacity:1"></stop>
-        </linearGradient>
-      </defs>
-      <rect x="0" y="0" width="600" height="260" fill="url(#grad)"></rect>
-      <circle cx="120" cy="130" r="60" fill="#ffffff22"></circle>
-      <circle cx="500" cy="80" r="40" fill="#ffffff33"></circle>
-      <text x="50%" y="50%" text-anchor="middle" fill="#ffffff" font-size="32" font-family="Arial, sans-serif">
-        Nuove funzionalità
-      </text>
-      <text x="50%" y="70%" text-anchor="middle" fill="#ffffffdd" font-size="18" font-family="Arial, sans-serif">
-        Passi il mouse o tocchi per scoprire di più
-      </text>
-    </svg>
-    <h2 style="font-size:22px; margin:20px 0 10px;">Il nostro nuovo prodotto</h2>
-    <p style="font-size:16px; margin:0;">
-      Clicchi per scoprire tutte le novità!
-    </p>
-  </div>
+    <div class="preheader" style="box-sizing: border-box; color: #7f8b9d; font-family: Arial,sans-serif; font-size: 11px; margin: 0 auto; margin-left: auto; margin-right: auto; max-width: 600px; padding: 10px 16px 4px; width: 100%;">
+      Nuovo lancio: email interattive con flip 3D, carousel e micro hotspot.
+    </div>
 
-  <!-- Versione kinetic -->
-  <!-- L'etichetta consente il tap su mobile (checkbox) + hover su desktop -->
-  <label style="display:block; cursor:pointer; margin:0;">
-    <input type="checkbox" style="display:none;">
-
-    <div class="flip-card" style="display: none; margin: 0 auto; max-width: 600px; position: relative;">
-
-      <div class="flip-inner">
-
-        <!-- Lato frontale -->
-        <div class="flip-front" style="border-radius:8px; overflow:hidden; background:#007bff;">
-          <!-- SVG interno al posto dell'immagine -->
-          <div style="width:100%; height:260px; display:block;">
-            <svg viewBox="0 0 600 260" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" style="stop-color:#007bff;stop-opacity:1"></stop>
-                  <stop offset="100%" style="stop-color:#00bfff;stop-opacity:1"></stop>
-                </linearGradient>
-              </defs>
-              <rect x="0" y="0" width="600" height="260" fill="url(#grad)"></rect>
-              <circle cx="120" cy="130" r="60" fill="#ffffff22"></circle>
-              <circle cx="500" cy="80" r="40" fill="#ffffff33"></circle>
-              <text x="50%" y="50%" text-anchor="middle" fill="#ffffff" font-size="32" font-family="Arial, sans-serif">
-                Nuove funzionalità
-              </text>
-              <text x="50%" y="70%" text-anchor="middle" fill="#ffffffdd" font-size="18" font-family="Arial, sans-serif">
-                Passi il mouse o tocchi per scoprire di più
-              </text>
-            </svg>
-          </div>
-
-          <div style="padding:20px; font-family:Arial, sans-serif; background:#ffffff;">
-            <h2 style="margin:0; font-size:24px;">Scopra le novità</h2>
-            <p style="font-size:16px; margin:10px 0 0;">
-              Passi il mouse (desktop) o tocchi (mobile) la card
-              per vedere il retro animato.
-            </p>
-          </div>
+    <div class="header" style="align-items: center; box-sizing: border-box; display: flex; font-family: Arial,sans-serif; justify-content: space-between; margin: 0 auto 12px; margin-left: auto; margin-right: auto; max-width: 600px; padding: 0 16px; width: 100%;">
+      <div style="align-items: center; display: flex; font-family: Arial, sans-serif; gap: 10px;">
+        <div class="logo-circle" style="align-items: center; background: #0c5de7; border-radius: 50%; color: #fff; display: flex; font-family: Arial, sans-serif; font-size: 14px; font-weight: bold; height: 36px; justify-content: center; width: 36px;">BK</div>
+        <div style="font-family: Arial, sans-serif;">
+          <div style="color: #0a2540; font-family: Arial, sans-serif; font-size: 15px; font-weight: bold;">Belleville Kinetic</div>
+          <div style="color: #5b6b7d; font-family: Arial, sans-serif; font-size: 12px;">Email che si muovono</div>
         </div>
+      </div>
+      <div style="color: #5b6b7d; font-family: Arial, sans-serif; font-size: 12px;">Anteprima campagna</div>
+    </div>
 
-        <!-- Lato retro -->
-        <div class="flip-back" style="border-radius:8px; overflow:hidden; background:#f8f9fa;">
-          <div style="padding:30px 20px; font-family:Arial, sans-serif; text-align:center;">
-            <h2 style="font-size:24px; margin:0 0 10px;">Eccole qui!</h2>
-            <p style="font-size:16px; margin:0 0 15px;">
-              Email interattive con animazioni leggere, micro-interazioni
-              e contenuti dinamici per campagne davvero coinvolgenti.
-            </p>
-            <p style="font-size:15px; margin:0 0 20px;">
-              Compatibile con i principali client moderni (Apple Mail, iOS Mail),
-              con un fallback statico per gli altri.
-            </p>
-            <a href="#" style="display:inline-block;
-                      margin-top:5px;
-                      background:#007bff;
-                      color:#ffffff;
-                      padding:12px 24px;
-                      border-radius:6px;
-                      text-decoration:none;
-                      font-weight:bold;">
-              Scopra di più
-            </a>
+    <div class="fallback" style="box-sizing: border-box; display: block; font-family: Arial, sans-serif; margin-left: auto; margin-right: auto; max-width: 600px; padding: 20px; text-align: center; width: 100%;">
+      <svg viewBox="0 0 600 260" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="font-family: Arial, sans-serif;">
+        <defs style="font-family: Arial, sans-serif;">
+          <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%" style="font-family: Arial, sans-serif;">
+            <stop offset="0%" style="font-family: Arial, sans-serif; stop-color: #007bff; stop-opacity: 1;"></stop>
+            <stop offset="100%" style="font-family: Arial, sans-serif; stop-color: #00bfff; stop-opacity: 1;"></stop>
+          </linearGradient>
+        </defs>
+        <rect x="0" y="0" width="600" height="260" fill="url(#grad)" style="font-family: Arial, sans-serif;"></rect>
+        <circle cx="120" cy="130" r="60" fill="#ffffff22" style="font-family: Arial, sans-serif;"></circle>
+        <circle cx="500" cy="80" r="40" fill="#ffffff33" style="font-family: Arial, sans-serif;"></circle>
+        <text x="50%" y="50%" text-anchor="middle" fill="#ffffff" font-size="32" font-family="Arial, sans-serif" style="font-family: Arial, sans-serif;">
+          Nuove funzionalita
+        </text>
+        <text x="50%" y="70%" text-anchor="middle" fill="#ffffffdd" font-size="18" font-family="Arial, sans-serif" style="font-family: Arial, sans-serif;">
+          Passi il mouse o tocchi per scoprire di piu
+        </text>
+      </svg>
+      <h2 style="font-family: Arial, sans-serif; font-size: 22px; margin: 20px 0 10px;">Il nostro nuovo prodotto</h2>
+      <p style="font-family: Arial, sans-serif; font-size: 16px; margin: 0;">
+        Clicchi per scoprire tutte le novita!
+      </p>
+    </div>
+
+    <label style="cursor: pointer; display: block; font-family: Arial, sans-serif; margin: 0;">
+      <input type="checkbox" style="display: none; font-family: Arial, sans-serif;">
+
+      <div class="flip-card" style="display: none; font-family: Arial, sans-serif; margin: 0 auto; max-width: 600px; position: relative;">
+
+        <div class="flip-inner" style="font-family: Arial, sans-serif;">
+
+          <div class="flip-front" style="background: #007bff; border-radius: 8px; font-family: Arial, sans-serif; overflow: hidden;">
+            <div style="display: block; font-family: Arial, sans-serif; height: 260px; width: 100%;">
+              <svg viewBox="0 0 600 260" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style="font-family: Arial, sans-serif;">
+                <defs style="font-family: Arial, sans-serif;">
+                  <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%" style="font-family: Arial, sans-serif;">
+                    <stop offset="0%" style="font-family: Arial, sans-serif; stop-color: #007bff; stop-opacity: 1;"></stop>
+                    <stop offset="100%" style="font-family: Arial, sans-serif; stop-color: #00bfff; stop-opacity: 1;"></stop>
+                  </linearGradient>
+                </defs>
+                <rect x="0" y="0" width="600" height="260" fill="url(#grad)" style="font-family: Arial, sans-serif;"></rect>
+                <circle cx="120" cy="130" r="60" fill="#ffffff22" style="font-family: Arial, sans-serif;"></circle>
+                <circle cx="500" cy="80" r="40" fill="#ffffff33" style="font-family: Arial, sans-serif;"></circle>
+                <text x="50%" y="50%" text-anchor="middle" fill="#ffffff" font-size="32" font-family="Arial, sans-serif" style="font-family: Arial, sans-serif;">
+                  Nuove funzionalita
+                </text>
+                <text x="50%" y="70%" text-anchor="middle" fill="#ffffffdd" font-size="18" font-family="Arial, sans-serif" style="font-family: Arial, sans-serif;">
+                  Passi il mouse o tocchi per scoprire di piu
+                </text>
+              </svg>
+            </div>
+
+            <div style="background: #ffffff; font-family: Arial, sans-serif; padding: 20px;">
+              <h2 style="font-family: Arial, sans-serif; font-size: 24px; margin: 0;">Scopra le novita</h2>
+              <p style="font-family: Arial, sans-serif; font-size: 16px; margin: 10px 0 0;">
+                Passi il mouse (desktop) o tocchi (mobile) la card
+                per vedere il retro animato.
+              </p>
+            </div>
           </div>
-        </div>
 
+          <div class="flip-back" style="background: #f8f9fa; border-radius: 8px; font-family: Arial, sans-serif; overflow: hidden;">
+            <div style="font-family: Arial, sans-serif; padding: 30px 20px; text-align: center;">
+              <h2 style="font-family: Arial, sans-serif; font-size: 24px; margin: 0 0 10px;">Eccole qui!</h2>
+              <p style="font-family: Arial, sans-serif; font-size: 16px; margin: 0 0 15px;">
+                Email interattive con animazioni leggere, micro-interazioni
+                e contenuti dinamici per campagne davvero coinvolgenti.
+              </p>
+              <p style="font-family: Arial, sans-serif; font-size: 15px; margin: 0 0 20px;">
+                Compatibile con i principali client moderni (Apple Mail, iOS Mail),
+                con un fallback statico per gli altri.
+              </p>
+              <a href="#" style="background: #007bff; border-radius: 6px; color: #ffffff; display: inline-block; font-family: Arial, sans-serif; font-weight: bold; margin-top: 5px; padding: 12px 24px; text-decoration: none;">
+                Scopra di piu
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </label>
+
+    <div class="hero" style="background: #ffffff; border-radius: 10px !important; box-shadow: 0 10px 26px rgba(0, 0, 0, 0.14) !important; box-sizing: border-box; font-family: Arial,sans-serif; margin: 24px auto 10px; margin-left: auto; margin-right: auto; max-width: 600px; padding: 22px 18px; width: 100%;">
+      <h1 style="color: #0a2540; font-family: Arial, sans-serif; font-size: 24px; margin: 0 0 10px;">Lancio ufficiale: campagna interattiva</h1>
+      <p style="color: #4f5e6d; font-family: Arial, sans-serif; font-size: 15px; margin: 0 0 16px;">Flip 3D, carousel di feature, stepper guidato e hotspot per mostrare punti chiave del prodotto.</p>
+      <div style="font-family: Arial, sans-serif;">
+        <a href="#" style="background: #0c5de7; border-radius: 6px; color: #fff; display: inline-block; font-family: Arial, sans-serif; font-weight: bold; padding: 12px 20px; text-decoration: none;">Inizia ora</a>
+        <a href="#" style="color: #0c5de7; display: inline-block; font-family: Arial, sans-serif; font-weight: bold; margin-left: 12px; text-decoration: none;">Guarda la demo</a>
       </div>
     </div>
 
-  </label>
+    <div class="features3" style="box-sizing: border-box; display: flex; flex-wrap: wrap; font-family: Arial,sans-serif; gap: 12px; margin: 10px auto; margin-left: auto; margin-right: auto; max-width: 600px; width: 100%;">
+      <div style="background: #ffffff; border-radius: 10px !important; box-shadow: 0 10px 26px rgba(0, 0, 0, 0.14) !important; box-sizing: border-box; flex: 1 1 180px; font-family: Arial, sans-serif; padding: 16px;">
+        <div style="color: #0a2540; font-family: Arial, sans-serif; font-weight: bold; margin-bottom: 6px;">Automazioni</div>
+        <p style="color: #4f5e6d; font-family: Arial, sans-serif; font-size: 14px; margin: 0;">Trigger e follow-up con micro-interazioni per aumentare il CTR.</p>
+      </div>
+      <div style="background: #ffffff; border-radius: 10px !important; box-shadow: 0 10px 26px rgba(0, 0, 0, 0.14) !important; box-sizing: border-box; flex: 1 1 180px; font-family: Arial, sans-serif; padding: 16px;">
+        <div style="color: #0a2540; font-family: Arial, sans-serif; font-weight: bold; margin-bottom: 6px;">Personalizzazione</div>
+        <p style="color: #4f5e6d; font-family: Arial, sans-serif; font-size: 14px; margin: 0;">Contenuti dinamici e sezioni che cambiano in base al profilo.</p>
+      </div>
+      <div style="background: #ffffff; border-radius: 10px !important; box-shadow: 0 10px 26px rgba(0, 0, 0, 0.14) !important; box-sizing: border-box; flex: 1 1 180px; font-family: Arial, sans-serif; padding: 16px;">
+        <div style="color: #0a2540; font-family: Arial, sans-serif; font-weight: bold; margin-bottom: 6px;">Insight in tempo reale</div>
+        <p style="color: #4f5e6d; font-family: Arial, sans-serif; font-size: 14px; margin: 0;">Monitoraggio live di aperture, tap e interazioni sui moduli cinetici.</p>
+      </div>
+    </div>
+
+    <div class="offer" style="background: linear-gradient(135deg,#0c5de7,#1535b1); border-radius: 10px !important; box-shadow: 0 10px 26px rgba(0, 0, 0, 0.14) !important; box-sizing: border-box; color: #fff; font-family: Arial,sans-serif; margin: 14px auto; margin-left: auto; margin-right: auto; max-width: 600px; padding: 20px; width: 100%;">
+      <div style="align-items: center; display: flex; flex-wrap: wrap; font-family: Arial, sans-serif; gap: 10px; justify-content: space-between;">
+        <div style="font-family: Arial, sans-serif;">
+          <div style="font-family: Arial, sans-serif; font-size: 18px; font-weight: bold; margin: 0 0 6px;">Offerta lancio</div>
+          <div style="font-family: Arial, sans-serif; font-size: 14px; margin: 0;">Setup + primo mese inclusi per le prime 50 attivazioni.</div>
+        </div>
+        <div style="font-family: Arial, sans-serif; text-align: right;">
+          <div style="font-family: Arial, sans-serif; font-size: 13px; opacity: 0.85;">da</div>
+          <div style="font-family: Arial, sans-serif; font-size: 22px; font-weight: bold;">€ 990</div>
+          <a href="#" style="background: #ffffff; border-radius: 6px; color: #0c5de7; display: inline-block; font-family: Arial, sans-serif; font-weight: bold; margin-top: 6px; padding: 10px 16px; text-decoration: none;">Prenota una call</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="stepper" style="background: #ffffff; border-radius: 10px !important; box-shadow: 0 10px 26px rgba(0, 0, 0, 0.14) !important; box-sizing: border-box; font-family: Arial,sans-serif; margin: 16px auto; margin-left: auto; margin-right: auto; max-width: 600px; padding: 16px; width: 100%;">
+      <input type="radio" name="stepper" id="step1" checked="" style="display: none; font-family: Arial, sans-serif;">
+      <input type="radio" name="stepper" id="step2" style="display: none; font-family: Arial, sans-serif;">
+      <input type="radio" name="stepper" id="step3" style="display: none; font-family: Arial, sans-serif;">
+
+      <div class="stepper-tabs" style="display: flex; flex-wrap: wrap; font-family: Arial, sans-serif; gap: 8px; margin-bottom: 12px;">
+        <label for="step1" style="background: #f7f9fc; border: 1px solid #dce3ed; border-color: #0c5de7; border-radius: 6px; color: #0a2540; cursor: pointer; flex: 1 1 100px; font-family: Arial, sans-serif; font-weight: bold; padding: 10px; text-align: center;">1. Racconta</label>
+        <label for="step2" style="background: #f7f9fc; border: 1px solid #dce3ed; border-radius: 6px; color: #0a2540; cursor: pointer; flex: 1 1 100px; font-family: Arial, sans-serif; font-weight: bold; padding: 10px; text-align: center;">2. Coinvolgi</label>
+        <label for="step3" style="background: #f7f9fc; border: 1px solid #dce3ed; border-radius: 6px; color: #0a2540; cursor: pointer; flex: 1 1 100px; font-family: Arial, sans-serif; font-weight: bold; padding: 10px; text-align: center;">3. Converti</label>
+      </div>
+
+      <div class="stepper-panels" style="font-family: Arial, sans-serif;">
+        <div class="step-panel panel1" style="display: block; font-family: Arial, sans-serif; padding: 8px 4px;">
+          <h3 style="color: #0a2540; font-family: Arial, sans-serif; font-size: 17px; margin: 0 0 6px;">Racconta la storia</h3>
+          <p style="color: #4f5e6d; font-family: Arial, sans-serif; font-size: 14px; margin: 0;">Usa il flip e il carousel per introdurre il prodotto con ritmo leggero.</p>
+        </div>
+        <div class="step-panel panel2" style="display: none; font-family: Arial, sans-serif; padding: 8px 4px;">
+          <h3 style="color: #0a2540; font-family: Arial, sans-serif; font-size: 17px; margin: 0 0 6px;">Coinvolgi con azioni</h3>
+          <p style="color: #4f5e6d; font-family: Arial, sans-serif; font-size: 14px; margin: 0;">Mostra varianti, FAQ e micro-hotspot per far esplorare il contenuto.</p>
+        </div>
+        <div class="step-panel panel3" style="display: none; font-family: Arial, sans-serif; padding: 8px 4px;">
+          <h3 style="color: #0a2540; font-family: Arial, sans-serif; font-size: 17px; margin: 0 0 6px;">Porta alla conversione</h3>
+          <p style="color: #4f5e6d; font-family: Arial, sans-serif; font-size: 14px; margin: 0;">CTA primario + link testuale; duplica i CTA nel fallback per massima resa.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel" style="background: #fff; border-radius: 10px !important; box-shadow: 0 10px 26px rgba(0, 0, 0, 0.14) !important; box-sizing: border-box; font-family: Arial, sans-serif; margin: 20px auto; margin-left: auto; margin-right: auto; max-width: 600px; overflow: hidden; width: 100%;">
+      <input type="radio" name="hero" id="slide1" checked="" style="display: none; font-family: Arial, sans-serif;">
+      <input type="radio" name="hero" id="slide2" style="display: none; font-family: Arial, sans-serif;">
+      <input type="radio" name="hero" id="slide3" style="display: none; font-family: Arial, sans-serif;">
+
+      <div class="carousel-track" style="display: flex; font-family: Arial, sans-serif; transform: translateX(0%); transition: transform .7s ease; width: 300%;">
+        <div class="c-slide" style="box-sizing: border-box; font-family: Arial, sans-serif; padding: 24px; width: 100%;">
+          <h3 style="font-family: Arial, sans-serif; font-size: 18px; margin: 0 0 8px;">Feature A</h3>
+          <p style="font-family: Arial, sans-serif; font-size: 15px; line-height: 1.4; margin: 0;">Automazioni leggere per campagne piu rapide.</p>
+        </div>
+        <div class="c-slide" style="box-sizing: border-box; font-family: Arial, sans-serif; padding: 24px; width: 100%;">
+          <h3 style="font-family: Arial, sans-serif; font-size: 18px; margin: 0 0 8px;">Feature B</h3>
+          <p style="font-family: Arial, sans-serif; font-size: 15px; line-height: 1.4; margin: 0;">Personalizzazioni dinamiche senza codice.</p>
+        </div>
+        <div class="c-slide" style="box-sizing: border-box; font-family: Arial, sans-serif; padding: 24px; width: 100%;">
+          <h3 style="font-family: Arial, sans-serif; font-size: 18px; margin: 0 0 8px;">Feature C</h3>
+          <p style="font-family: Arial, sans-serif; font-size: 15px; line-height: 1.4; margin: 0;">Reportistica in tempo reale per iterare subito.</p>
+        </div>
+      </div>
+
+      <div class="carousel-dots" style="background: #fff; font-family: Arial, sans-serif; padding: 10px 0; text-align: center;">
+        <label for="slide1" style="background: #d0d5dd; border-radius: 50%; cursor: pointer; display: inline-block; font-family: Arial, sans-serif; height: 10px; margin: 0 6px; width: 10px;"></label>
+        <label for="slide2" style="background: #d0d5dd; border-radius: 50%; cursor: pointer; display: inline-block; font-family: Arial, sans-serif; height: 10px; margin: 0 6px; width: 10px;"></label>
+        <label for="slide3" style="background: #d0d5dd; border-radius: 50%; cursor: pointer; display: inline-block; font-family: Arial, sans-serif; height: 10px; margin: 0 6px; width: 10px;"></label>
+      </div>
+    </div>
+
+    <div class="accordion" style="border-radius: 10px !important; box-shadow: 0 10px 26px rgba(0, 0, 0, 0.14) !important; box-sizing: border-box; font-family: Arial, sans-serif; margin: 20px auto; margin-left: auto; margin-right: auto; max-width: 600px; width: 100%;">
+      <input type="checkbox" id="faq2" style="display: none; font-family: Arial, sans-serif;">
+      <label for="faq2" style="background: #ffffff; border: 1px solid #dce3ed; border-radius: 6px; cursor: pointer; display: block; font-family: Arial, sans-serif; font-weight: bold; margin: 10px 0 0; padding: 14px 16px;">Serve hosting immagini?</label>
+      <div class="acc-body" style="background: #f7f9fc; border: 1px solid #dce3ed; border-radius: 0 0 6px 6px; box-sizing: border-box; font-family: Arial, sans-serif; max-height: 0; overflow: hidden; padding: 0 16px; transition: max-height .4s ease;">Si, link assoluti alle immagini/SVG per l'invio reale.</div>
+
+      <input type="checkbox" id="faq3" style="display: none; font-family: Arial, sans-serif;">
+      <label for="faq3" style="background: #ffffff; border: 1px solid #dce3ed; border-radius: 6px; cursor: pointer; display: block; font-family: Arial, sans-serif; font-weight: bold; margin: 10px 0 0; padding: 14px 16px;">Posso personalizzare i CTA?</label>
+      <div class="acc-body" style="background: #f7f9fc; border: 1px solid #dce3ed; border-radius: 0 0 6px 6px; box-sizing: border-box; font-family: Arial, sans-serif; max-height: 0; overflow: hidden; padding: 0 16px; transition: max-height .4s ease;">Certo: colori, testi e URL modificabili, con bottoni duplicati nel fallback.</div>
+    </div>
+
+    <div class="hotspot" style="background: #ffffff; border-radius: 10px !important; box-shadow: 0 10px 26px rgba(0, 0, 0, 0.14) !important; box-sizing: border-box; font-family: Arial,sans-serif; margin: 20px auto; margin-left: auto; margin-right: auto; max-width: 600px; padding: 16px; width: 100%;">
+      <h3 style="color: #0a2540; font-family: Arial, sans-serif; font-size: 18px; margin: 0 0 8px;">Hotspot prodotto</h3>
+      <p style="color: #4f5e6d; font-family: Arial, sans-serif; font-size: 14px; margin: 0 0 12px;">Tocca i punti per scoprire i dettagli.</p>
+
+      <input type="checkbox" id="hs1" style="display: none; font-family: Arial, sans-serif;">
+      <input type="checkbox" id="hs2" style="display: none; font-family: Arial, sans-serif;">
+      <input type="checkbox" id="hs3" style="display: none; font-family: Arial, sans-serif;">
+
+      <div class="hotspot-visual" style="background: linear-gradient(135deg,#0c5de7,#00bfff); border-radius: 8px; font-family: Arial, sans-serif; overflow: hidden; padding-top: 55%; position: relative;">
+        <label for="hs1" class="hotspot-dot dot1" style="background: #fff; border: 2px solid #0c5de7; border-radius: 50%; cursor: pointer; font-family: Arial, sans-serif; height: 18px; left: 24%; position: absolute; top: 34%; width: 18px;"></label>
+        <label for="hs2" class="hotspot-dot dot2" style="background: #fff; border: 2px solid #0c5de7; border-radius: 50%; cursor: pointer; font-family: Arial, sans-serif; height: 18px; left: 55%; position: absolute; top: 48%; width: 18px;"></label>
+        <label for="hs3" class="hotspot-dot dot3" style="background: #fff; border: 2px solid #0c5de7; border-radius: 50%; cursor: pointer; font-family: Arial, sans-serif; height: 18px; left: 72%; position: absolute; top: 22%; width: 18px;"></label>
+
+        <div class="hotspot-bubble bubble1" style="background: #ffffff; border-radius: 8px; box-shadow: 0 8px 18px rgba(0,0,0,0.16); color: #0a2540; font-family: Arial, sans-serif; font-size: 13px; left: 30%; min-width: 160px; opacity: 0; padding: 10px 12px; pointer-events: none; position: absolute; top: 42%; transform: translateY(6px); transition: all .3s ease;">Micro-interazione: flip card in apertura.</div>
+        <div class="hotspot-bubble bubble2" style="background: #ffffff; border-radius: 8px; box-shadow: 0 8px 18px rgba(0,0,0,0.16); color: #0a2540; font-family: Arial, sans-serif; font-size: 13px; left: 42%; min-width: 160px; opacity: 0; padding: 10px 12px; pointer-events: none; position: absolute; top: 60%; transform: translateY(6px); transition: all .3s ease;">Carousel di feature con radio compatibili.</div>
+        <div class="hotspot-bubble bubble3" style="background: #ffffff; border-radius: 8px; box-shadow: 0 8px 18px rgba(0,0,0,0.16); color: #0a2540; font-family: Arial, sans-serif; font-size: 13px; left: 62%; min-width: 160px; opacity: 0; padding: 10px 12px; pointer-events: none; position: absolute; top: 30%; transform: translateY(6px); transition: all .3s ease;">CTA duplicati per aumentare il clickthrough.</div>
+      </div>
+
+      <ul class="hotspot-list" style="color: #4f5e6d; font-family: Arial, sans-serif; font-size: 13px; margin: 12px 0 0; padding: 0 0 0 18px;">
+        <li style="font-family: Arial, sans-serif;">Flip iniziale per catturare l'attenzione</li>
+        <li style="font-family: Arial, sans-serif;">Carousel per alternare feature e testimonial</li>
+        <li style="font-family: Arial, sans-serif;">CTA primario e secondario replicati</li>
+      </ul>
+    </div>
+
+    <div class="testimonial" style="background: #ffffff; border-radius: 10px !important; box-shadow: 0 10px 26px rgba(0, 0, 0, 0.14) !important; box-sizing: border-box; font-family: Arial,sans-serif; margin: 18px auto; margin-left: auto; margin-right: auto; max-width: 600px; padding: 18px; width: 100%;">
+      <div style="color: #0a2540; font-family: Arial, sans-serif; font-size: 16px; font-weight: bold; margin: 0 0 8px;">"Abbiamo aumentato il CTR del 28% con le sezioni cinetiche"</div>
+      <div style="color: #4f5e6d; font-family: Arial, sans-serif; font-size: 14px;">Giulia R., Marketing Manager</div>
+    </div>
+
+    <div class="timeline" style="background: #ffffff; border-radius: 10px !important; box-shadow: 0 10px 26px rgba(0, 0, 0, 0.14) !important; box-sizing: border-box; font-family: Arial,sans-serif; margin: 18px auto 24px; margin-left: auto; margin-right: auto; max-width: 600px; padding: 16px; width: 100%;">
+      <h3 style="color: #0a2540; font-family: Arial, sans-serif; font-size: 18px; margin: 0 0 10px;">Come funziona</h3>
+      <ol style="color: #4f5e6d; font-family: Arial, sans-serif; font-size: 14px; line-height: 1.5; margin: 0; padding-left: 18px;">
+        <li style="font-family: Arial, sans-serif;">Brief e raccolta asset: testi, CTA e colori.</li>
+        <li style="font-family: Arial, sans-serif;">Set up moduli cinetici: flip, carousel, stepper, hotspot.</li>
+        <li style="font-family: Arial, sans-serif;">QA multi-client e invio pilota con report.</li>
+      </ol>
+    </div>
+
+    <div class="footer" style="box-sizing: border-box; color: #5b6b7d; font-family: Arial,sans-serif; font-size: 12px; margin: 0 auto 20px; margin-left: auto; margin-right: auto; max-width: 600px; padding: 10px 16px; text-align: center; width: 100%;">
+      Belleville Kinetic · Via Email 123 · Milano<br style="font-family: Arial, sans-serif;">
+      <a href="#" style="color: #0c5de7; font-family: Arial, sans-serif; text-decoration: none;">Gestisci preferenze</a> · <a href="#" style="color: #0c5de7; font-family: Arial, sans-serif; text-decoration: none;">Disiscriviti</a>
+    </div>
+
+  </div>
 
 
 
 
-</div></body></html>
+</body></html>

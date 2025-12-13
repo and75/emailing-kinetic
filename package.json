@@ -2,10 +2,14 @@
   "name": "email-kinetic-demo",
   "version": "1.0.0",
   "scripts": {
-    "dev": "live-server src",
-    "build": "node build-email.js"
+    "html": "gulp html",
+    "watch": "gulp watch",
+    "dev": "npm run html && live-server src",
+    "build": "npm run html && node build-email.js"
   },
   "devDependencies": {
+    "gulp": "^5.0.0",
+    "gulp-file-include": "^2.3.0",
     "inline-css": "^4.0.0",
     "live-server": "^1.2.2"
   },

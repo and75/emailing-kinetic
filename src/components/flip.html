@@ -1,0 +1,68 @@
+<label style="display:block; cursor:pointer; margin:0;">
+  <input type="checkbox" style="display:none;" />
+
+  <div class="flip-card" style="max-width:600px; margin:0 auto; position:relative;">
+
+    <div class="flip-inner">
+
+      <!-- Lato frontale -->
+      <div class="flip-front" style="border-radius:8px; overflow:hidden; background:#007bff;">
+        <!-- SVG interno al posto dell'immagine -->
+        <div style="width:100%; height:260px; display:block;">
+          <svg viewBox="0 0 600 260" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#007bff;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#00bfff;stop-opacity:1" />
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="600" height="260" fill="url(#grad)" />
+            <circle cx="120" cy="130" r="60" fill="#ffffff22" />
+            <circle cx="500" cy="80" r="40" fill="#ffffff33" />
+            <text x="50%" y="50%" text-anchor="middle" fill="#ffffff" font-size="32" font-family="Arial, sans-serif">
+              <tspan class="lang-it">Nuove funzionalita</tspan><tspan class="lang-fr">Nouvelles fonctionnalités</tspan>
+            </text>
+            <text x="50%" y="70%" text-anchor="middle" fill="#ffffffdd" font-size="18" font-family="Arial, sans-serif">
+              <tspan class="lang-it">Passi il mouse o tocchi per scoprire di piu</tspan><tspan class="lang-fr">Survolez ou touchez pour en savoir plus</tspan>
+            </text>
+          </svg>
+        </div>
+
+        <div style="padding:20px; font-family:Arial, sans-serif; background:#ffffff;">
+          <h2 style="margin:0; font-size:24px;"><span class="lang-it">Scopra le novita</span><span class="lang-fr">Découvrez les nouveautés</span></h2>
+          <p style="font-size:16px; margin:10px 0 0;">
+            <span class="lang-it">Passi il mouse (desktop) o tocchi (mobile) la card per vedere il retro animato.</span>
+            <span class="lang-fr">Survolez (desktop) ou touchez (mobile) la carte pour voir le verso animé.</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Lato retro -->
+      <div class="flip-back" style="border-radius:8px; overflow:hidden; background:#f8f9fa;">
+        <div style="padding:30px 20px; font-family:Arial, sans-serif; text-align:center;">
+          <h2 style="font-size:24px; margin:0 0 10px;"><span class="lang-it">Eccole qui!</span><span class="lang-fr">Les voici !</span></h2>
+          <p style="font-size:16px; margin:0 0 15px;">
+            <span class="lang-it">Email interattive con animazioni leggere, micro-interazioni e contenuti dinamici per campagne davvero coinvolgenti.</span>
+            <span class="lang-fr">Emails interactifs avec animations légères, micro-interactions et contenus dynamiques pour des campagnes engageantes.</span>
+          </p>
+          <p style="font-size:15px; margin:0 0 20px;">
+            <span class="lang-it">Compatibile con i principali client moderni (Apple Mail, iOS Mail), con un fallback statico per gli altri.</span>
+            <span class="lang-fr">Compatible avec les principaux clients modernes (Apple Mail, iOS Mail), avec un fallback statique pour les autres.</span>
+          </p>
+          <a href="#" style="display:inline-block;
+                    margin-top:5px;
+                    background:#007bff;
+                    color:#ffffff;
+                    padding:12px 24px;
+                    border-radius:6px;
+                    text-decoration:none;
+                    font-weight:bold;">
+            <span class="lang-it">Scopra di piu</span><span class="lang-fr">En savoir plus</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</label>

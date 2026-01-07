@@ -4,12 +4,13 @@
   "scripts": {
     "html": "gulp html",
     "watch": "gulp watch",
-    "dev": "npm run html && live-server src",
-    "build": "npm run html && node build-email.js"
+    "dev": "npm run build && live-server dist",
+    "build": "gulp"
   },
   "devDependencies": {
     "gulp": "^5.0.0",
     "gulp-file-include": "^2.3.0",
+    "gulp-htmlmin": "^5.0.1",
     "inline-css": "^4.0.0",
     "live-server": "^1.2.2"
   },

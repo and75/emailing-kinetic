@@ -1,3 +1,212 @@
+.global-reset *,
+.global-reset *::before,
+.global-reset *::after {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a[x-apple-data-detectors] {
+  color: inherit !important;
+  text-decoration: inherit !important;
+}
+
+#MessageViewBody a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  line-height: inherit;
+}
+
+.desktop_hide,
+.desktop_hide table {
+  mso-hide: all;
+  display: none;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.image_block img + div {
+  display: none;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+}
+
+.fallback-desktop {
+  display: block;
+}
+
+.carousel,
+.carousel-mobile {
+  display: none;
+}
+
+.supports-kinetic .fallback-desktop {
+  display: none !important;
+}
+
+.supports-kinetic .carousel,
+.supports-kinetic .carousel-mobile {
+  display: block !important;
+}
+
+/* Preview toggle helper */
+.force-fallback .carousel,
+.force-fallback .carousel-mobile {
+  display: none !important;
+}
+
+.force-fallback .fallback-desktop {
+  display: block !important;
+}
+
+#preview-toggle button.active {
+  background: #0c5de7 !important;
+  color: #fff !important;
+  border-color: #0c5de7 !important;
+}
+
+/* Feature detection per client moderni */
+@supports ((animation: slide 1s ease) and (transform: translateX(0))) {
+  .fallback-desktop {
+    display: none !important;
+  }
+
+  .carousel,
+  .carousel-mobile {
+    display: block !important;
+  }
+}
+
+@media (max-width: 620px) {
+  .image_block div.fullWidth {
+    max-width: 100% !important;
+  }
+
+  .mobile_hide {
+    display: none;
+  }
+
+  .row-content {
+    width: 100% !important;
+  }
+
+  .stack .column {
+    width: 100%;
+    display: block;
+  }
+
+  .mobile_hide {
+    min-height: 0;
+    max-height: 0;
+    max-width: 0;
+    overflow: hidden;
+    font-size: 0;
+  }
+
+  .desktop_hide,
+  .desktop_hide table {
+    display: table !important;
+    max-height: none !important;
+  }
+
+  .row-11 .column-1 .block-4.paragraph_block td.pad,
+  .row-13 .column-1 .block-4.paragraph_block td.pad,
+  .row-9 .column-1 .block-4.paragraph_block td.pad {
+    padding: 10px 5px 15px !important;
+  }
+
+  .row-11 .column-1 .block-6.image_block td.pad,
+  .row-13 .column-1 .block-6.image_block td.pad,
+  .row-23 .column-1,
+  .row-24 .column-1,
+  .row-9 .column-1 .block-6.image_block td.pad {
+    padding: 0 0 5px !important;
+  }
+
+  .row-15 .column-1 .block-1.divider_block td.pad {
+    padding: 10px 0 0 !important;
+  }
+
+  .row-15 .column-1 .block-1.divider_block .alignment table,
+  .row-18 .column-1 .block-1.divider_block .alignment table,
+  .row-23 .column-1 .block-1.divider_block .alignment table {
+    display: inline-table;
+  }
+
+  .row-18 .column-1 .block-1.divider_block td.pad,
+  .row-19 .column-1 .block-1.image_block td.pad {
+    padding: 0 10px !important;
+  }
+
+  .row-21 .column-1 .block-2.paragraph_block td.pad,
+  .row-21 .column-2 .block-2.paragraph_block td.pad,
+  .row-21 .column-3 .block-2.paragraph_block td.pad,
+  .row-21 .column-4 .block-2.paragraph_block td.pad {
+    padding: 10px 0 !important;
+  }
+
+  .row-22 .column-1 .block-1.image_block td.pad {
+    padding: 0 5px 0 0 !important;
+  }
+
+  .row-22 .column-1 .block-1.image_block .alignment div {
+    margin: 0 0 0 auto !important;
+  }
+
+  .row-22 .column-2 .block-1.image_block td.pad {
+    padding: 0 0 0 5px !important;
+  }
+
+  .row-22 .column-2 .block-1.image_block .alignment div {
+    margin: 0 auto 0 0 !important;
+  }
+
+  .row-23 .column-1 .block-1.divider_block td.pad {
+    padding: 5px 10px 0 !important;
+  }
+
+  .row-24 .column-1 .block-1.paragraph_block td.pad > div {
+    font-size: 10px !important;
+  }
+
+  .row-6 .column-1 {
+    padding: 5px 0 40px !important;
+  }
+
+  .row-11 .column-1,
+  .row-13 .column-1,
+  .row-15 .column-1,
+  .row-18 .column-1,
+  .row-19 .column-1,
+  .row-9 .column-1 {
+    padding: 5px 0 0 !important;
+  }
+
+  .row-14 .column-1,
+  .row-17 .column-1 {
+    padding: 0 !important;
+  }
+
+  .row-22 .column-1,
+  .row-22 .column-2 {
+    padding: 10px 0 5px !important;
+  }
+}
+
 .email-shell,
 .email-shell * {
   font-family: Arial, sans-serif;
@@ -36,34 +245,26 @@
   background: #f3f6fa;
 }
 
-/* Allinea larghezze e box model su 600px */
-.preheader,
-.header,
-.fallback,
-.hero,
-.features3,
-.offer,
-.stepper,
-.carousel,
-.accordion,
-.hotspot,
-.testimonial,
-.timeline,
-.footer {
-  width: 100%;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  box-sizing: border-box;
-}
 
-.features3 > div {
-  box-sizing: border-box;
-}
 
 /* Comportamenti interattivi (non dipendono dal 3D) */
 .carousel-track {
   transition: transform 0.7s ease;
+}
+
+.carousel-dots label {
+  background: #ffffff;
+}
+
+/* Attiva la versione carosello sui client che supportano flex + translate */
+@supports (display: flex) and (transform: translateX(0)) and (transition: transform 0.7s ease) {
+  .fallback {
+    display: none !important;
+  }
+
+  .carousel {
+    display: block !important;
+  }
 }
 
 #slide1:checked ~ .carousel-track {
@@ -71,17 +272,148 @@
 }
 
 #slide2:checked ~ .carousel-track {
-  transform: translateX(-33.333%);
+  transform: translateX(-100%);
 }
 
 #slide3:checked ~ .carousel-track {
-  transform: translateX(-66.666%);
+  transform: translateX(-200%);
+}
+
+#slide4:checked ~ .carousel-track {
+  transform: translateX(-300%);
+}
+
+#slide5:checked ~ .carousel-track {
+  transform: translateX(-400%);
+}
+
+#slide6:checked ~ .carousel-track {
+  transform: translateX(-500%);
+}
+
+#mslide1:checked ~ .carousel-track {
+  transform: translateX(0%);
+}
+
+#mslide2:checked ~ .carousel-track {
+  transform: translateX(-100%);
+}
+
+#mslide3:checked ~ .carousel-track {
+  transform: translateX(-200%);
+}
+
+#mslide4:checked ~ .carousel-track {
+  transform: translateX(-300%);
+}
+
+#mslide5:checked ~ .carousel-track {
+  transform: translateX(-400%);
+}
+
+#mslide6:checked ~ .carousel-track {
+  transform: translateX(-500%);
 }
 
 #slide1:checked ~ .carousel-dots label[for="slide1"],
 #slide2:checked ~ .carousel-dots label[for="slide2"],
-#slide3:checked ~ .carousel-dots label[for="slide3"] {
-  background: #007bff;
+#slide3:checked ~ .carousel-dots label[for="slide3"],
+#slide4:checked ~ .carousel-dots label[for="slide4"],
+#slide5:checked ~ .carousel-dots label[for="slide5"],
+#slide6:checked ~ .carousel-dots label[for="slide6"] {
+  background: #ffc107 !important;
+}
+
+#mslide1:checked ~ .carousel-dots label[for="mslide1"],
+#mslide2:checked ~ .carousel-dots label[for="mslide2"],
+#mslide3:checked ~ .carousel-dots label[for="mslide3"],
+#mslide4:checked ~ .carousel-dots label[for="mslide4"],
+#mslide5:checked ~ .carousel-dots label[for="mslide5"],
+#mslide6:checked ~ .carousel-dots label[for="mslide6"] {
+  background: #ffc107 !important;
+}
+
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.carousel-nav label {
+  display: none;
+  width: 160px;
+  height: 160px;
+  background: none;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  z-index: 3;
+}
+.carousel-nav img {
+  width: 160px;
+  height: 160px;
+  display: block;
+}
+
+.carousel-mobile .carousel-nav label {
+  display: none;
+  width: 100px;
+  height: 100px;
+  background: none;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  z-index: 3;
+}
+.carousel-mobile .carousel-nav img {
+  width: 100px;
+  height: 100px;
+  display: block;
+}
+
+#slide1:checked ~ .carousel-nav .prev1,
+#slide1:checked ~ .carousel-nav .next1,
+#slide2:checked ~ .carousel-nav .prev2,
+#slide2:checked ~ .carousel-nav .next2,
+#slide3:checked ~ .carousel-nav .prev3,
+#slide3:checked ~ .carousel-nav .next3,
+#slide4:checked ~ .carousel-nav .prev4,
+#slide4:checked ~ .carousel-nav .next4,
+#slide5:checked ~ .carousel-nav .prev5,
+#slide5:checked ~ .carousel-nav .next5,
+#slide6:checked ~ .carousel-nav .prev6,
+#slide6:checked ~ .carousel-nav .next6 {
+  display: flex;
+}
+
+#mslide1:checked ~ .carousel-nav .prev1,
+#mslide1:checked ~ .carousel-nav .next1,
+#mslide2:checked ~ .carousel-nav .prev2,
+#mslide2:checked ~ .carousel-nav .next2,
+#mslide3:checked ~ .carousel-nav .prev3,
+#mslide3:checked ~ .carousel-nav .next3,
+#mslide4:checked ~ .carousel-nav .prev4,
+#mslide4:checked ~ .carousel-nav .next4,
+#mslide5:checked ~ .carousel-nav .prev5,
+#mslide5:checked ~ .carousel-nav .next5,
+#mslide6:checked ~ .carousel-nav .prev6,
+#mslide6:checked ~ .carousel-nav .next6 {
+  display: flex;
 }
 
 #faq2:checked + label + .acc-body,
@@ -165,19 +497,6 @@
   transform: none;
 }
 
-/* Ombra coerente su tutti i blocchi principali */
-.hero,
-.features3 > div,
-.offer,
-.stepper,
-.carousel,
-.accordion,
-.hotspot,
-.testimonial,
-.timeline {
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.14) !important;
-  border-radius: 10px !important;
-}
 
 @media screen and (min-width: 0px) {
   .email-shell {
@@ -248,3 +567,82 @@
     }
   }
 }
+.global-reset *,
+.global-reset *::before,
+.global-reset *::after {
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a[x-apple-data-detectors] {
+  color: inherit !important;
+  text-decoration: inherit !important;
+}
+
+#MessageViewBody a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  line-height: inherit;
+}
+
+.desktop_hide,
+.desktop_hide table {
+  mso-hide: all;
+  display: none;
+  max-height: 0;
+  overflow: hidden;
+}
+
+.image_block img + div {
+  display: none;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+}
+
+.fallback-desktop {
+  display: block;
+}
+
+.carousel {
+  display: none;
+}
+
+.supports-kinetic .fallback-desktop {
+  display: none !important;
+}
+
+.supports-kinetic .carousel {
+  display: block !important;
+}
+
+/* Preview toggle helper */
+.force-fallback .carousel {
+  display: none !important;
+}
+
+.force-fallback .fallback-desktop {
+  display: block !important;
+}
+
+#preview-toggle button.active {
+  background: #0c5de7 !important;
+  color: #fff !important;
+  border-color: #0c5de7 !important;
+}
+
+.email-shell,

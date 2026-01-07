@@ -5,9 +5,6 @@
     <title></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
     <!--[if mso]>
             <xml
                 ><w:WordDocument xmlns:w="urn:schemas-microsoft-com:office:word"
@@ -19,655 +16,162 @@
     <!--[if !mso]><!-->
     <!--<![endif]-->
     <style>
-        .global-reset *,
-        .global-reset *::before,
-        .global-reset *::after {
-          box-sizing: border-box;
-        }
-
         * {
-          box-sizing: border-box;
+            box-sizing: border-box;
         }
 
         body {
-          margin: 0;
-          padding: 0;
+            margin: 0;
+            padding: 0;
         }
 
         a[x-apple-data-detectors] {
-          color: inherit !important;
-          text-decoration: inherit !important;
+            color: inherit !important;
+            text-decoration: inherit !important;
         }
 
         #MessageViewBody a {
-          color: inherit;
-          text-decoration: none;
+            color: inherit;
+            text-decoration: none;
         }
 
         p {
-          line-height: inherit;
+            line-height: inherit;
         }
 
         .desktop_hide,
         .desktop_hide table {
-          mso-hide: all;
-          display: none;
-          max-height: 0;
-          overflow: hidden;
+            mso-hide: all;
+            display: none;
+            max-height: 0;
+            overflow: hidden;
         }
 
-        .image_block img + div {
-          display: none;
+        .image_block img+div {
+            display: none;
         }
 
         sub,
         sup {
-          font-size: 75%;
-          line-height: 0;
-        }
-
-        .fallback-desktop {
-          display: block;
-        }
-
-        .carousel,
-        .carousel-mobile {
-          display: none;
-        }
-
-        .supports-kinetic .fallback-desktop {
-          display: none !important;
-        }
-
-        .supports-kinetic .carousel,
-        .supports-kinetic .carousel-mobile {
-          display: block !important;
-        }
-
-        /* Preview toggle helper */
-        .force-fallback .carousel,
-        .force-fallback .carousel-mobile {
-          display: none !important;
-        }
-
-        .force-fallback .fallback-desktop {
-          display: block !important;
-        }
-
-        #preview-toggle button.active {
-          background: #0c5de7 !important;
-          color: #fff !important;
-          border-color: #0c5de7 !important;
-        }
-
-        /* Feature detection per client moderni */
-        @supports ((animation: slide 1s ease) and (transform: translateX(0))) {
-          .fallback-desktop {
-            display: none !important;
-          }
-
-          .carousel,
-          .carousel-mobile {
-            display: block !important;
-          }
+            font-size: 75%;
+            line-height: 0;
         }
 
         @media (max-width: 620px) {
-          .image_block div.fullWidth {
-            max-width: 100% !important;
-          }
-
-          .mobile_hide {
-            display: none;
-          }
-
-          .row-content {
-            width: 100% !important;
-          }
-
-          .stack .column {
-            width: 100%;
-            display: block;
-          }
-
-          .mobile_hide {
-            min-height: 0;
-            max-height: 0;
-            max-width: 0;
-            overflow: hidden;
-            font-size: 0;
-          }
-
-          .desktop_hide,
-          .desktop_hide table {
-            display: table !important;
-            max-height: none !important;
-          }
-
-          .row-11 .column-1 .block-4.paragraph_block td.pad,
-          .row-13 .column-1 .block-4.paragraph_block td.pad,
-          .row-9 .column-1 .block-4.paragraph_block td.pad {
-            padding: 10px 5px 15px !important;
-          }
-
-          .row-11 .column-1 .block-6.image_block td.pad,
-          .row-13 .column-1 .block-6.image_block td.pad,
-          .row-23 .column-1,
-          .row-24 .column-1,
-          .row-9 .column-1 .block-6.image_block td.pad {
-            padding: 0 0 5px !important;
-          }
-
-          .row-15 .column-1 .block-1.divider_block td.pad {
-            padding: 10px 0 0 !important;
-          }
-
-          .row-15 .column-1 .block-1.divider_block .alignment table,
-          .row-18 .column-1 .block-1.divider_block .alignment table,
-          .row-23 .column-1 .block-1.divider_block .alignment table {
-            display: inline-table;
-          }
-
-          .row-18 .column-1 .block-1.divider_block td.pad,
-          .row-19 .column-1 .block-1.image_block td.pad {
-            padding: 0 10px !important;
-          }
-
-          .row-21 .column-1 .block-2.paragraph_block td.pad,
-          .row-21 .column-2 .block-2.paragraph_block td.pad,
-          .row-21 .column-3 .block-2.paragraph_block td.pad,
-          .row-21 .column-4 .block-2.paragraph_block td.pad {
-            padding: 10px 0 !important;
-          }
-
-          .row-22 .column-1 .block-1.image_block td.pad {
-            padding: 0 5px 0 0 !important;
-          }
-
-          .row-22 .column-1 .block-1.image_block .alignment div {
-            margin: 0 0 0 auto !important;
-          }
-
-          .row-22 .column-2 .block-1.image_block td.pad {
-            padding: 0 0 0 5px !important;
-          }
-
-          .row-22 .column-2 .block-1.image_block .alignment div {
-            margin: 0 auto 0 0 !important;
-          }
-
-          .row-23 .column-1 .block-1.divider_block td.pad {
-            padding: 5px 10px 0 !important;
-          }
-
-          .row-24 .column-1 .block-1.paragraph_block td.pad > div {
-            font-size: 10px !important;
-          }
-
-          .row-6 .column-1 {
-            padding: 5px 0 40px !important;
-          }
-
-          .row-11 .column-1,
-          .row-13 .column-1,
-          .row-15 .column-1,
-          .row-18 .column-1,
-          .row-19 .column-1,
-          .row-9 .column-1 {
-            padding: 5px 0 0 !important;
-          }
-
-          .row-14 .column-1,
-          .row-17 .column-1 {
-            padding: 0 !important;
-          }
-
-          .row-22 .column-1,
-          .row-22 .column-2 {
-            padding: 10px 0 5px !important;
-          }
-        }
-
-        .email-shell,
-        .email-shell * {
-          font-family: Arial, sans-serif;
-        }
-
-        .toggle-static,
-        .toggle-animata {
-          font-family: Arial, sans-serif;
-        }
-
-        .toggle-lang {
-          font-family: Arial, sans-serif;
-        }
-
-        .lang-fr {
-          display: none !important;
-        }
-
-        #fr:target ~ .email-shell .lang-fr {
-          display: inline !important;
-        }
-
-        #fr:target ~ .email-shell .lang-it {
-          display: none !important;
-        }
-
-        .fallback {
-          display: block;
-        }
-
-        .flip-card {
-          display: none;
-        }
-
-        .email-shell {
-          background: #f3f6fa;
-        }
-
-
-
-        /* Comportamenti interattivi (non dipendono dal 3D) */
-        .carousel-track {
-          transition: transform 0.7s ease;
-        }
-
-        .carousel-dots label {
-          background: #ffffff;
-        }
-
-        /* Attiva la versione carosello sui client che supportano flex + translate */
-        @supports (display: flex) and (transform: translateX(0)) and (transition: transform 0.7s ease) {
-          .fallback {
-            display: none !important;
-          }
-
-          .carousel {
-            display: block !important;
-          }
-        }
-
-        #slide1:checked ~ .carousel-track {
-          transform: translateX(0%);
-        }
-
-        #slide2:checked ~ .carousel-track {
-          transform: translateX(-100%);
-        }
-
-        #slide3:checked ~ .carousel-track {
-          transform: translateX(-200%);
-        }
-
-        #slide4:checked ~ .carousel-track {
-          transform: translateX(-300%);
-        }
-
-        #slide5:checked ~ .carousel-track {
-          transform: translateX(-400%);
-        }
-
-        #slide6:checked ~ .carousel-track {
-          transform: translateX(-500%);
-        }
-
-        #mslide1:checked ~ .carousel-track {
-          transform: translateX(0%);
-        }
-
-        #mslide2:checked ~ .carousel-track {
-          transform: translateX(-100%);
-        }
-
-        #mslide3:checked ~ .carousel-track {
-          transform: translateX(-200%);
-        }
-
-        #mslide4:checked ~ .carousel-track {
-          transform: translateX(-300%);
-        }
-
-        #mslide5:checked ~ .carousel-track {
-          transform: translateX(-400%);
-        }
-
-        #mslide6:checked ~ .carousel-track {
-          transform: translateX(-500%);
-        }
-
-        #slide1:checked ~ .carousel-dots label[for="slide1"],
-        #slide2:checked ~ .carousel-dots label[for="slide2"],
-        #slide3:checked ~ .carousel-dots label[for="slide3"],
-        #slide4:checked ~ .carousel-dots label[for="slide4"],
-        #slide5:checked ~ .carousel-dots label[for="slide5"],
-        #slide6:checked ~ .carousel-dots label[for="slide6"] {
-          background: #ffc107 !important;
-        }
-
-        #mslide1:checked ~ .carousel-dots label[for="mslide1"],
-        #mslide2:checked ~ .carousel-dots label[for="mslide2"],
-        #mslide3:checked ~ .carousel-dots label[for="mslide3"],
-        #mslide4:checked ~ .carousel-dots label[for="mslide4"],
-        #mslide5:checked ~ .carousel-dots label[for="mslide5"],
-        #mslide6:checked ~ .carousel-dots label[for="mslide6"] {
-          background: #ffc107 !important;
-        }
-
-        .carousel-nav {
-          position: absolute;
-          top: 50%;
-          left: 0;
-          right: 0;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          transform: translateY(-50%);
-          pointer-events: none;
-          z-index: 2;
-        }
-
-        .carousel-nav label {
-          display: none;
-          width: 160px;
-          height: 160px;
-          background: none;
-          border: none;
-          box-shadow: none;
-          border-radius: 0;
-          padding: 0;
-          align-items: center;
-          justify-content: center;
-          pointer-events: auto;
-          z-index: 3;
-        }
-        .carousel-nav img {
-          width: 160px;
-          height: 160px;
-          display: block;
-        }
-
-        .carousel-mobile .carousel-nav label {
-          display: none;
-          width: 100px;
-          height: 100px;
-          background: none;
-          border: none;
-          box-shadow: none;
-          border-radius: 0;
-          padding: 0;
-          align-items: center;
-          justify-content: center;
-          pointer-events: auto;
-          z-index: 3;
-        }
-        .carousel-mobile .carousel-nav img {
-          width: 100px;
-          height: 100px;
-          display: block;
-        }
-
-        #slide1:checked ~ .carousel-nav .prev1,
-        #slide1:checked ~ .carousel-nav .next1,
-        #slide2:checked ~ .carousel-nav .prev2,
-        #slide2:checked ~ .carousel-nav .next2,
-        #slide3:checked ~ .carousel-nav .prev3,
-        #slide3:checked ~ .carousel-nav .next3,
-        #slide4:checked ~ .carousel-nav .prev4,
-        #slide4:checked ~ .carousel-nav .next4,
-        #slide5:checked ~ .carousel-nav .prev5,
-        #slide5:checked ~ .carousel-nav .next5,
-        #slide6:checked ~ .carousel-nav .prev6,
-        #slide6:checked ~ .carousel-nav .next6 {
-          display: flex;
-        }
-
-        #mslide1:checked ~ .carousel-nav .prev1,
-        #mslide1:checked ~ .carousel-nav .next1,
-        #mslide2:checked ~ .carousel-nav .prev2,
-        #mslide2:checked ~ .carousel-nav .next2,
-        #mslide3:checked ~ .carousel-nav .prev3,
-        #mslide3:checked ~ .carousel-nav .next3,
-        #mslide4:checked ~ .carousel-nav .prev4,
-        #mslide4:checked ~ .carousel-nav .next4,
-        #mslide5:checked ~ .carousel-nav .prev5,
-        #mslide5:checked ~ .carousel-nav .next5,
-        #mslide6:checked ~ .carousel-nav .prev6,
-        #mslide6:checked ~ .carousel-nav .next6 {
-          display: flex;
-        }
-
-        #faq2:checked + label + .acc-body,
-        #faq3:checked + label + .acc-body {
-          max-height: 120px;
-          padding: 12px 16px;
-        }
-
-        .stepper-panels .step-panel {
-          display: none;
-        }
-
-        #step1:checked ~ .stepper-panels .panel1,
-        #step2:checked ~ .stepper-panels .panel2,
-        #step3:checked ~ .stepper-panels .panel3 {
-          display: block;
-        }
-
-        #step1:checked ~ .stepper-tabs label[for="step1"],
-        #step2:checked ~ .stepper-tabs label[for="step2"],
-        #step3:checked ~ .stepper-tabs label[for="step3"] {
-          background: #0c5de7;
-          color: #ffffff;
-          border-color: #0c5de7;
-        }
-
-        .hotspot-bubble {
-          opacity: 0;
-          transform: translateY(6px);
-          pointer-events: none;
-        }
-
-        #hs1:checked ~ .hotspot-visual .bubble1,
-        #hs2:checked ~ .hotspot-visual .bubble2,
-        #hs3:checked ~ .hotspot-visual .bubble3 {
-          opacity: 1;
-          transform: translateY(0);
-          pointer-events: auto;
-        }
-
-        #hs1:checked ~ .hotspot-visual .dot1,
-        #hs2:checked ~ .hotspot-visual .dot2,
-        #hs3:checked ~ .hotspot-visual .dot3 {
-          background: #0c5de7 !important;
-          border-color: #0c5de7 !important;
-          box-shadow: 0 0 0 4px rgba(12, 93, 231, 0.15);
-        }
-
-        /* Modalita statica forzata via anchor #static (solo per preview browser) */
-        #static:target ~ .email-shell .fallback {
-          display: block !important;
-        }
-
-        #static:target ~ .email-shell label,
-        #static:target ~ .email-shell .flip-card {
-          display: none !important;
-        }
-
-        #static:target ~ .email-shell .stepper-tabs {
-          display: none !important;
-        }
-
-        #static:target ~ .email-shell .stepper .step-panel {
-          display: block !important;
-        }
-
-        #static:target ~ .email-shell .carousel-dots {
-          display: none !important;
-        }
-
-        #static:target ~ .email-shell .carousel-track {
-          transform: translateX(0%) !important;
-        }
-
-        #static:target ~ .email-shell .hotspot-visual {
-          opacity: 0.5;
-        }
-
-        #static:target ~ .email-shell .hotspot-bubble {
-          opacity: 0;
-          transform: none;
-        }
-
-
-        @media screen and (min-width: 0px) {
-          .email-shell {
-            background: linear-gradient(135deg, #f3f6fa, #e7ecf3);
-          }
-
-          label {
-            cursor: pointer;
-          }
-
-          @supports (position: absolute) and (transform-style: preserve-3d) and (backface-visibility: hidden) {
-            .fallback {
-              display: none !important;
+            .image_block div.fullWidth {
+                max-width: 100% !important;
             }
 
-            .flip-card {
-              display: block !important;
-              perspective: 1200px;
+            .mobile_hide {
+                display: none;
             }
 
-            .flip-inner {
-              position: relative;
-              width: 100%;
-              height: 420px;
-              /* altezza fissa per evitare collasso */
-              transform-style: preserve-3d;
-              transition: transform 0.8s ease;
+            .row-content {
+                width: 100% !important;
             }
 
-            .flip-front,
-            .flip-back {
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
-              backface-visibility: hidden;
-              border-radius: 10px;
-              overflow: hidden;
-              box-shadow: 0 18px 45px rgba(0, 0, 0, 0.16);
+            .stack .column {
+                width: 100%;
+                display: block;
             }
 
-            .flip-front img,
-            .flip-back img {
-              display: block;
-              width: 100%;
-              height: auto;
+            .mobile_hide {
+                min-height: 0;
+                max-height: 0;
+                max-width: 0;
+                overflow: hidden;
+                font-size: 0;
             }
 
-            .flip-back {
-              transform: rotateY(180deg);
-              background: linear-gradient(135deg, #0c5de7, #1535b1);
-              color: #ffffff;
+            .desktop_hide,
+            .desktop_hide table {
+                display: table !important;
+                max-height: none !important;
             }
 
-            .flip-back h2 {
-              color: #ffffff;
+            .row-11 .column-1 .block-4.paragraph_block td.pad,
+            .row-13 .column-1 .block-4.paragraph_block td.pad,
+            .row-9 .column-1 .block-4.paragraph_block td.pad {
+                padding: 10px 5px 15px !important;
             }
 
-            .flip-back a {
-              box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
+            .row-11 .column-1 .block-6.image_block td.pad,
+            .row-13 .column-1 .block-6.image_block td.pad,
+            .row-23 .column-1,
+            .row-24 .column-1,
+            .row-9 .column-1 .block-6.image_block td.pad {
+                padding: 0 0 5px !important;
             }
 
-            label:hover .flip-inner,
-            label:focus-within .flip-inner,
-            label input:checked ~ .flip-card .flip-inner {
-              transform: rotateY(180deg);
+            .row-15 .column-1 .block-1.divider_block td.pad {
+                padding: 10px 0 0 !important;
             }
-          }
-        }
-        .global-reset *,
-        .global-reset *::before,
-        .global-reset *::after {
-          box-sizing: border-box;
-        }
 
-        * {
-          box-sizing: border-box;
+            .row-15 .column-1 .block-1.divider_block .alignment table,
+            .row-18 .column-1 .block-1.divider_block .alignment table,
+            .row-23 .column-1 .block-1.divider_block .alignment table {
+                display: inline-table;
+            }
+
+            .row-18 .column-1 .block-1.divider_block td.pad,
+            .row-19 .column-1 .block-1.image_block td.pad {
+                padding: 0 10px !important;
+            }
+
+            .row-21 .column-1 .block-2.paragraph_block td.pad,
+            .row-21 .column-2 .block-2.paragraph_block td.pad,
+            .row-21 .column-3 .block-2.paragraph_block td.pad,
+            .row-21 .column-4 .block-2.paragraph_block td.pad {
+                padding: 10px 0 !important;
+            }
+
+            .row-22 .column-1 .block-1.image_block td.pad {
+                padding: 0 5px 0 0 !important;
+            }
+
+            .row-22 .column-1 .block-1.image_block .alignment div {
+                margin: 0 0 0 auto !important;
+            }
+
+            .row-22 .column-2 .block-1.image_block td.pad {
+                padding: 0 0 0 5px !important;
+            }
+
+            .row-22 .column-2 .block-1.image_block .alignment div {
+                margin: 0 auto 0 0 !important;
+            }
+
+            .row-23 .column-1 .block-1.divider_block td.pad {
+                padding: 5px 10px 0 !important;
+            }
+
+            .row-24 .column-1 .block-1.paragraph_block td.pad>div {
+                font-size: 10px !important;
+            }
+
+            .row-6 .column-1 {
+                padding: 5px 0 40px !important;
+            }
+
+            .row-11 .column-1,
+            .row-13 .column-1,
+            .row-15 .column-1,
+            .row-18 .column-1,
+            .row-19 .column-1,
+            .row-9 .column-1 {
+                padding: 5px 0 0 !important;
+            }
+
+            .row-14 .column-1,
+            .row-17 .column-1 {
+                padding: 0 !important;
+            }
+
+            .row-22 .column-1,
+            .row-22 .column-2 {
+                padding: 10px 0 5px !important;
+            }
         }
-
-        body {
-          margin: 0;
-          padding: 0;
-        }
-
-        a[x-apple-data-detectors] {
-          color: inherit !important;
-          text-decoration: inherit !important;
-        }
-
-        #MessageViewBody a {
-          color: inherit;
-          text-decoration: none;
-        }
-
-        p {
-          line-height: inherit;
-        }
-
-        .desktop_hide,
-        .desktop_hide table {
-          mso-hide: all;
-          display: none;
-          max-height: 0;
-          overflow: hidden;
-        }
-
-        .image_block img + div {
-          display: none;
-        }
-
-        sub,
-        sup {
-          font-size: 75%;
-          line-height: 0;
-        }
-
-        .fallback-desktop {
-          display: block;
-        }
-
-        .carousel {
-          display: none;
-        }
-
-        .supports-kinetic .fallback-desktop {
-          display: none !important;
-        }
-
-        .supports-kinetic .carousel {
-          display: block !important;
-        }
-
-        /* Preview toggle helper */
-        .force-fallback .carousel {
-          display: none !important;
-        }
-
-        .force-fallback .fallback-desktop {
-          display: block !important;
-        }
-
-        #preview-toggle button.active {
-          background: #0c5de7 !important;
-          color: #fff !important;
-          border-color: #0c5de7 !important;
-        }
-
-        .email-shell,
-
     </style>
     <!--[if mso
             ]><style>
@@ -699,15 +203,6 @@
             -webkit-text-size-adjust: none;
             text-size-adjust: none;
         ">
-    <div id="preview-toggle"
-        style="display:flex; flex-direction:row; align-items:center; gap:10px; width: 100%; padding:12px 16px; border:1px solid #ddd; border-radius:8px; font-family:Arial,Helvetica,sans-serif; background:#f9fafb; z-index:9999;">
-        <strong style="margin:0;">Preview:</strong>
-        <button id="preview-fallback-btn" type="button"
-            style="padding:8px 12px;border:1px solid #ccc;border-radius:6px;background:#fff;cursor:pointer;">Fallback</button>
-        <button id="preview-kinetic-btn" type="button"
-            style="padding:8px 12px;border:1px solid #0c5de7;border-radius:6px;background:#0c5de7;color:#fff;cursor:pointer;">Kinetic</button>
-        <span style="font-size:12px;color:#555;">Alterna <code>supports-kinetic</code></span>
-    </div>
     <table class="nl-container" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation"
         style="mso-table-lspace: 0; mso-table-rspace: 0; background-color: transparent">
         <tbody>
@@ -804,7 +299,7 @@
                                                         style="mso-table-lspace: 0; mso-table-rspace: 0">
                                                         <tr>
                                                             <td class="pad" style="width: 100%">
-                                                                <div class="alignment fallback-desktop" align="center">
+                                                                <div class="alignment" align="center">
                                                                     <div style="max-width: 600px">
                                                                         <a href="https://www.mcdonalds.fr?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=logo_mcdo&lid=mu51sinp4zkb"
                                                                             target="_blank"><img
@@ -874,7 +369,7 @@
                                                             ">
                                                         <tr>
                                                             <td class="pad" style="width: 100%">
-                                                                <div class="alignment fallback-desktop" align="center">
+                                                                <div class="alignment" align="center">
                                                                     <div style="max-width: 600px">
                                                                         <a href="https://www.mcdonalds.fr?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=logo_mcdo&lid=00s0h6w7wcwh"
                                                                             target="_blank"><img
@@ -927,11 +422,8 @@
                                                         style="mso-table-lspace: 0; mso-table-rspace: 0">
                                                         <tr>
                                                             <td class="pad" style="width: 100%">
-                                                                <!-- Block carosel Desktop -->
                                                                 <div class="alignment" align="center">
-                                                                    <!-- Fallback -->
-                                                                    <div class="fallback-desktop"
-                                                                        style="max-width: 600px">
+                                                                    <div style="max-width: 600px">
                                                                         <a href="https://www.mcdonalds.fr/restaurants/{{custom_attribute.${FavRestaurant1}}}/commander?lid=yw4zt5vt2bab&cat=MERCATO_LEGENDES&utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=gif_produits_mercato"
                                                                             target="_blank"><img
                                                                                 src="https://cdn.braze.eu/appboy/communication/assets/image_assets/images/6945207fcc34be008e95ba74/original.gif?1766137983"
@@ -945,73 +437,8 @@
                                                                                 title="gif_produits_mercato"
                                                                                 height="auto" /></a>
                                                                     </div>
-                                                                    <!-- Fallback end -->
-                                                                    <div class="carousel" style="max-width:600px; height:680px; margin:0px auto; overflow:hidden; background:url('https://test-mail-kinetic.bsys3.fr/images/desktop/Background.png') top/cover no-repeat; ; display:flex; flex-direction:column; justify-content:flex-end; position:relative;">
-                                                                      <input type="radio" name="hero-desktop" id="slide1" checked style="display:none;">
-                                                                      <input type="radio" name="hero-desktop" id="slide2" style="display:none;">
-                                                                      <input type="radio" name="hero-desktop" id="slide3" style="display:none;">
-                                                                      <input type="radio" name="hero-desktop" id="slide4" style="display:none;">
-                                                                      <input type="radio" name="hero-desktop" id="slide5" style="display:none;">
-                                                                      <input type="radio" name="hero-desktop" id="slide6" style="display:none;">
-                                                                      <div class="carousel-dots" style="text-align:center; background:transparent; position:relative; z-index:2; top:608px; height:0">
-                                                                        <label for="slide1" style="display:inline-block; width:15px; height:5px; margin:0 6px; border:1px solid rgba(0,0,0,0.25); cursor:pointer;"></label>
-                                                                        <label for="slide2" style="display:inline-block; width:15px; height:5px; margin:0 6px; border:1px solid rgba(0,0,0,0.25); cursor:pointer;"></label>
-                                                                        <label for="slide3" style="display:inline-block; width:15px; height:5px; margin:0 6px; border:1px solid rgba(0,0,0,0.25); cursor:pointer;"></label>
-                                                                        <label for="slide4" style="display:inline-block; width:15px; height:5px; margin:0 6px; border:1px solid rgba(0,0,0,0.25); cursor:pointer;"></label>
-                                                                        <label for="slide5" style="display:inline-block; width:15px; height:5px; margin:0 6px; border:1px solid rgba(0,0,0,0.25); cursor:pointer;"></label>
-                                                                        <label for="slide6" style="display:inline-block; width:15px; height:5px; margin:0 6px; border:1px solid rgba(0,0,0,0.25); cursor:pointer;"></label>
-                                                                        <label for="slide7" style="display:none;"></label>
-                                                                        <label for="slide8" style="display:none;"></label>
-                                                                        <label for="slide9" style="display:none;"></label>
-                                                                        <label for="slide10" style="display:none;"></label>
-                                                                        <label for="slide11" style="display:none;"></label>
-                                                                      </div>
-                                                                      <div class="carousel-track" style=" display:flex; width:auto; transition:transform .7s ease; box-sizing:border-box;">
-                                                                        <div class="c-slide" style="flex:0 0 100%; box-sizing:border-box;">
-                                                                          <img src="https://test-mail-kinetic.bsys3.fr/images/desktop/1-oreo.png" alt="Slide 1" style="width:100%; height:100%; object-fit:cover;  display:block;">
-                                                                        </div>
-                                                                        <div class="c-slide" style="flex:0 0 100%; box-sizing:border-box;">
-                                                                          <img src="https://test-mail-kinetic.bsys3.fr/images/desktop/2-triple-cheeseburger.png" alt="Slide 2" style="width:100%; height:100%; object-fit:cover;  display:block;">
-                                                                        </div>
-                                                                        <div class="c-slide" style="flex:0 0 100%; box-sizing:border-box;">
-                                                                          <img src="https://test-mail-kinetic.bsys3.fr/images/desktop/3-big-mac.png" alt="Slide 3" style="width:100%; height:100%; object-fit:cover;  display:block;">
-                                                                        </div>
-                                                                        <div class="c-slide" style="flex:0 0 100%; box-sizing:border-box;">
-                                                                          <img src="https://test-mail-kinetic.bsys3.fr/images/desktop/4-apple-sprite.png" alt="Slide 4" style="width:100%; height:100%; object-fit:cover;  display:block;">
-                                                                        </div>
-                                                                        <div class="c-slide" style="flex:0 0 100%; box-sizing:border-box;">
-                                                                          <img src="https://test-mail-kinetic.bsys3.fr/images/desktop/5-souce.png" alt="Slide 5" style="width:100%; height:100%; object-fit:cover;  display:block;">
-                                                                        </div>
-                                                                        <div class="c-slide" style="flex:0 0 100%; box-sizing:border-box;">
-                                                                          <img src="https://test-mail-kinetic.bsys3.fr/images/desktop/6-fries.png" alt="Slide 6" style="width:100%; height:100%; object-fit:cover;  display:block;">
-                                                                        </div>
-                                                                      </div>
-
-                                                                      <div class="carousel-nav">
-                                                                        <label class="prev prev1" for="slide6"><img src="https://test-mail-kinetic.bsys3.fr/images/desktop/arrow-left.png" alt="Precedente"></label>
-                                                                        <label class="next next1" for="slide2"><img src="https://test-mail-kinetic.bsys3.fr/images/desktop/arrow-right.png" alt="Successiva"></label>
-
-                                                                        <label class="prev prev2" for="slide1"><img src="https://test-mail-kinetic.bsys3.fr/images/desktop/arrow-left.png" alt="Precedente"></label>
-                                                                        <label class="next next2" for="slide3"><img src="https://test-mail-kinetic.bsys3.fr/images/desktop/arrow-right.png" alt="Successiva"></label>
-
-                                                                        <label class="prev prev3" for="slide2"><img src="https://test-mail-kinetic.bsys3.fr/images/desktop/arrow-left.png" alt="Precedente"></label>
-                                                                        <label class="next next3" for="slide4"><img src="https://test-mail-kinetic.bsys3.fr/images/desktop/arrow-right.png" alt="Successiva"></label>
-
-                                                                        <label class="prev prev4" for="slide3"><img src="https://test-mail-kinetic.bsys3.fr/images/desktop/arrow-left.png" alt="Precedente"></label>
-                                                                        <label class="next next4" for="slide5"><img src="https://test-mail-kinetic.bsys3.fr/images/desktop/arrow-right.png" alt="Successiva"></label>
-
-                                                                        <label class="prev prev5" for="slide4"><img src="https://test-mail-kinetic.bsys3.fr/images/desktop/arrow-left.png" alt="Precedente"></label>
-                                                                        <label class="next next5" for="slide6"><img src="https://test-mail-kinetic.bsys3.fr/images/desktop/arrow-right.png" alt="Successiva"></label>
-
-                                                                        <label class="prev prev6" for="slide5"><img src="https://test-mail-kinetic.bsys3.fr/images/desktop/arrow-left.png" alt="Precedente"></label>
-                                                                        <label class="next next6" for="slide1"><img src="https://test-mail-kinetic.bsys3.fr/images/desktop/arrow-right.png" alt="Successiva"></label>
-                                                                      </div>
-
-
-                                                                    </div>
-
                                                                 </div>
-                                                            </td>
+                                                                <!-- Inset carosell where -->
                                                         </tr>
                                                     </table>
                                                 </td>
@@ -1068,9 +495,7 @@
                                                         <tr>
                                                             <td class="pad" style="width: 100%">
                                                                 <div class="alignment" align="center">
-                                                                    <!-- Fallback Mobile -->
-                                                                    <div class="fallback-desktop"
-                                                                        style="max-width: 600px">
+                                                                    <div style="max-width: 600px">
                                                                         <a href="https://www.mcdonalds.fr/restaurants/{{custom_attribute.${FavRestaurant1}}}/commander?lid=6zp5gmu6c95i&cat=MERCATO_LEGENDES&utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=gif_produits_mercato"
                                                                             target="_blank"><img
                                                                                 src="https://cdn.braze.eu/appboy/communication/assets/image_assets/images/694520875711f800818c5f9e/original.gif?1766137991"
@@ -1084,67 +509,6 @@
                                                                                 title="gif_produits_mercato"
                                                                                 height="auto" /></a>
                                                                     </div>
-                                                                    <!-- End Fallback -->
-                                                                    <div class="carousel-mobile" style="max-width:430px; margin:0px auto; overflow:hidden; display:flex; flex-direction:column; justify-content:flex-end; position:relative;">
-                                                                      <img src="https://test-mail-kinetic.bsys3.fr/images/mobile/background.png" alt="" style="position:absolute; left:0; top:0; width:100%; z-index:0; pointer-events:none;">
-                                                                      <input type="radio" name="hero-mobile" id="mslide1" checked style="display:none;">
-                                                                      <input type="radio" name="hero-mobile" id="mslide2" style="display:none;">
-                                                                      <input type="radio" name="hero-mobile" id="mslide3" style="display:none;">
-                                                                      <input type="radio" name="hero-mobile" id="mslide4" style="display:none;">
-                                                                      <input type="radio" name="hero-mobile" id="mslide5" style="display:none;">
-                                                                      <input type="radio" name="hero-mobile" id="mslide6" style="display:none;">
-                                                                      <div class="carousel-dots" style="text-align:center; background:transparent; position:absolute; z-index:2; bottom:117px; width: 100% ;height:0">
-                                                                        <label for="mslide1" style="display:inline-block; width:40px; height:5px; margin:0 6px; border:1px solid rgba(0,0,0,0.25); cursor:pointer;"></label>
-                                                                        <label for="mslide2" style="display:inline-block; width:40px; height:5px; margin:0 6px; border:1px solid rgba(0,0,0,0.25); cursor:pointer;"></label>
-                                                                        <label for="mslide3" style="display:inline-block; width:40px; height:5px; margin:0 6px; border:1px solid rgba(0,0,0,0.25); cursor:pointer;"></label>
-                                                                        <label for="mslide4" style="display:inline-block; width:40px; height:5px; margin:0 6px; border:1px solid rgba(0,0,0,0.25); cursor:pointer;"></label>
-                                                                        <label for="mslide5" style="display:inline-block; width:40px; height:5px; margin:0 6px; border:1px solid rgba(0,0,0,0.25); cursor:pointer;"></label>
-                                                                        <label for="mslide6" style="display:inline-block; width:40px; height:5px; margin:0 6px; border:1px solid rgba(0,0,0,0.25); cursor:pointer;"></label>
-                                                                      </div>
-                                                                      <div class="carousel-track" style=" display:flex; width:auto; transition:transform .7s ease; box-sizing:border-box;">
-                                                                        <div class="c-slide" style="flex:0 0 100%; box-sizing:border-box;">
-                                                                          <img src="https://test-mail-kinetic.bsys3.fr/images/mobile/1-oreo.png" alt="Slide 1" style="width:100%; height:100%; object-fit:cover;  display:block;">
-                                                                        </div>
-                                                                        <div class="c-slide" style="flex:0 0 100%; box-sizing:border-box;">
-                                                                          <img src="https://test-mail-kinetic.bsys3.fr/images/mobile/2-triple-cheeseburger.png" alt="Slide 2" style="width:100%; height:100%; object-fit:cover;  display:block;">
-                                                                        </div>
-                                                                        <div class="c-slide" style="flex:0 0 100%; box-sizing:border-box;">
-                                                                          <img src="https://test-mail-kinetic.bsys3.fr/images/mobile/3-big-mac.png" alt="Slide 3" style="width:100%; height:100%; object-fit:cover;  display:block;">
-                                                                        </div>
-                                                                        <div class="c-slide" style="flex:0 0 100%; box-sizing:border-box;">
-                                                                          <img src="https://test-mail-kinetic.bsys3.fr/images/mobile/4-apple-sprite.png" alt="Slide 4" style="width:100%; height:100%; object-fit:cover;  display:block;">
-                                                                        </div>
-                                                                        <div class="c-slide" style="flex:0 0 100%; box-sizing:border-box;">
-                                                                          <img src="https://test-mail-kinetic.bsys3.fr/images/mobile/5-souce.png" alt="Slide 5" style="width:100%; height:100%; object-fit:cover;  display:block;">
-                                                                        </div>
-                                                                        <div class="c-slide" style="flex:0 0 100%; box-sizing:border-box;">
-                                                                          <img src="https://test-mail-kinetic.bsys3.fr/images/mobile/6-fries.png" alt="Slide 6" style="width:100%; height:100%; object-fit:cover;  display:block;">
-                                                                        </div>
-                                                                      </div>
-
-                                                                      <div class="carousel-nav">
-                                                                        <label class="prev prev1" for="mslide6"><img src="https://test-mail-kinetic.bsys3.fr/images/mobile/arrow-left.png" alt="Precedente"></label>
-                                                                        <label class="next next1" for="mslide2"><img src="https://test-mail-kinetic.bsys3.fr/images/mobile/arrow-right.png" alt="Successiva"></label>
-
-                                                                        <label class="prev prev2" for="mslide1"><img src="https://test-mail-kinetic.bsys3.fr/images/mobile/arrow-left.png" alt="Precedente"></label>
-                                                                        <label class="next next2" for="mslide3"><img src="https://test-mail-kinetic.bsys3.fr/images/mobile/arrow-right.png" alt="Successiva"></label>
-
-                                                                        <label class="prev prev3" for="mslide2"><img src="https://test-mail-kinetic.bsys3.fr/images/mobile/arrow-left.png" alt="Precedente"></label>
-                                                                        <label class="next next3" for="mslide4"><img src="https://test-mail-kinetic.bsys3.fr/images/mobile/arrow-right.png" alt="Successiva"></label>
-
-                                                                        <label class="prev prev4" for="mslide3"><img src="https://test-mail-kinetic.bsys3.fr/images/mobile/arrow-left.png" alt="Precedente"></label>
-                                                                        <label class="next next4" for="mslide5"><img src="https://test-mail-kinetic.bsys3.fr/images/mobile/arrow-right.png" alt="Successiva"></label>
-
-                                                                        <label class="prev prev5" for="mslide4"><img src="https://test-mail-kinetic.bsys3.fr/images/mobile/arrow-left.png" alt="Precedente"></label>
-                                                                        <label class="next next5" for="mslide6"><img src="https://test-mail-kinetic.bsys3.fr/images/mobile/arrow-right.png" alt="Successiva"></label>
-
-                                                                        <label class="prev prev6" for="mslide5"><img src="https://test-mail-kinetic.bsys3.fr/images/mobile/arrow-left.png" alt="Precedente"></label>
-                                                                        <label class="next next6" for="mslide1"><img src="https://test-mail-kinetic.bsys3.fr/images/mobile/arrow-right.png" alt="Successiva"></label>
-                                                                      </div>
-
-
-                                                                    </div>
-
                                                                 </div>
                                                                 <!-- Inset carosell here -->
                                                             </td>
@@ -3544,7 +2908,7 @@
                                                         cellpadding="0" cellspacing="0" role="presentation"
                                                         style="mso-table-lspace: 0; mso-table-rspace: 0">
                                                         <tr>
-                                                            <td class="pad manger-bouger" style="width: 100%">
+                                                            <td class="pad" style="width: 100%">
                                                                 <div class="alignment" align="center">
                                                                     <div style="max-width: 600px">
                                                                         <a href="https://www.mangerbouger.fr/?lid=5po6j22gqgm1"
@@ -3617,7 +2981,7 @@
                                                                 overflow: hidden;
                                                             ">
                                                         <tr>
-                                                            <td class="pad manger-bouger" style="width: 100%">
+                                                            <td class="pad" style="width: 100%">
                                                                 <div class="alignment" align="center">
                                                                     <div style="max-width: 600px">
                                                                         <a href="https://www.mangerbouger.fr/?lid=5oue36rwd9ok"
@@ -3648,52 +3012,7 @@
             </tr>
         </tbody>
     </table>
-    <!-- Preview toggle: simulate fallback vs kinetic -->
-    <style id="preview-toggle-css">
-        .force-fallback .carousel {
-            display: none !important;
-        }
-
-        .force-fallback .fallback-desktop {
-            display: block !important;
-        }
-
-        #preview-toggle button.active {
-            background: #0c5de7 !important;
-            color: #fff !important;
-            border-color: #0c5de7 !important;
-        }
-    </style>
-
     <!-- End -->
-    <script>
-        (function () {
-            var fallbackBtn = document.getElementById('preview-fallback-btn');
-            var kineticBtn = document.getElementById('preview-kinetic-btn');
-
-            function setMode(mode) {
-                if (mode === 'fallback') {
-                    document.body.classList.add('force-fallback');
-                    document.body.classList.remove('supports-kinetic');
-                    fallbackBtn.classList.add('active');
-                    kineticBtn.classList.remove('active');
-                } else {
-                    document.body.classList.add('supports-kinetic');
-                    document.body.classList.remove('force-fallback');
-                    kineticBtn.classList.add('active');
-                    fallbackBtn.classList.remove('active');
-                }
-            }
-
-            fallbackBtn.addEventListener('click', function () { setMode('fallback'); });
-            kineticBtn.addEventListener('click', function () { setMode('kinetic'); });
-
-            // init: default to kinetic (as per original)
-            document.body.classList.add('supports-kinetic');
-            document.body.classList.remove('force-fallback');
-            setMode('kinetic');
-        })();
-    </script>
 </body>
 
 </html>

@@ -1,6 +1,4 @@
-.global-reset *,
-.global-reset *::before,
-.global-reset *::after {
+.global-reset * {
   box-sizing: border-box;
 }
 
@@ -81,18 +79,6 @@ sup {
   background: #0c5de7 !important;
   color: #fff !important;
   border-color: #0c5de7 !important;
-}
-
-/* Feature detection per client moderni */
-@supports ((animation: slide 1s ease) and (transform: translateX(0))) {
-  .fallback-desktop {
-    display: none !important;
-  }
-
-  .carousel,
-  .carousel-mobile {
-    display: block !important;
-  }
 }
 
 @media (max-width: 620px) {
@@ -229,14 +215,6 @@ sup {
   display: none !important;
 }
 
-#fr:target ~ .email-shell .lang-fr {
-  display: inline !important;
-}
-
-#fr:target ~ .email-shell .lang-it {
-  display: none !important;
-}
-
 .fallback {
   display: block;
 }
@@ -260,13 +238,14 @@ sup {
   background: #ffffff;
 }
 
-/* Attiva la versione carosello sui client che supportano flex + translate */
-@supports (display: flex) and (transform: translateX(0)) and (transition: transform 0.7s ease) {
-  .fallback {
+/* Attiva la versione carosello solo con :checked + flex/transform */
+@supports (display: flex) and (transform: translateX(0)) and (transition: transform 0.7s ease) and (selector(:checked)) and (selector(input:checked ~ .carousel-track)) {
+  .fallback-desktop {
     display: none !important;
   }
 
-  .carousel {
+  .carousel,
+  .carousel-mobile {
     display: block !important;
   }
 }
@@ -466,41 +445,6 @@ sup {
   box-shadow: 0 0 0 4px rgba(12, 93, 231, 0.15);
 }
 
-/* Modalita statica forzata via anchor #static (solo per preview browser) */
-#static:target ~ .email-shell .fallback {
-  display: block !important;
-}
-
-#static:target ~ .email-shell label,
-#static:target ~ .email-shell .flip-card {
-  display: none !important;
-}
-
-#static:target ~ .email-shell .stepper-tabs {
-  display: none !important;
-}
-
-#static:target ~ .email-shell .stepper .step-panel {
-  display: block !important;
-}
-
-#static:target ~ .email-shell .carousel-dots {
-  display: none !important;
-}
-
-#static:target ~ .email-shell .carousel-track {
-  transform: translateX(0%) !important;
-}
-
-#static:target ~ .email-shell .hotspot-visual {
-  opacity: 0.5;
-}
-
-#static:target ~ .email-shell .hotspot-bubble {
-  opacity: 0;
-  transform: none;
-}
-
 
 @media screen and (min-width: 0px) {
   .email-shell {
@@ -571,9 +515,7 @@ sup {
     }
   }
 }
-.global-reset *,
-.global-reset *::before,
-.global-reset *::after {
+.global-reset * {
   box-sizing: border-box;
 }
 
@@ -616,37 +558,6 @@ sub,
 sup {
   font-size: 75%;
   line-height: 0;
-}
-
-.fallback-desktop {
-  display: block;
-}
-
-.carousel {
-  display: none;
-}
-
-.supports-kinetic .fallback-desktop {
-  display: none !important;
-}
-
-.supports-kinetic .carousel {
-  display: block !important;
-}
-
-/* Preview toggle helper */
-.force-fallback .carousel {
-  display: none !important;
-}
-
-.force-fallback .fallback-desktop {
-  display: block !important;
-}
-
-#preview-toggle button.active {
-  background: #0c5de7 !important;
-  color: #fff !important;
-  border-color: #0c5de7 !important;
 }
 
 .email-shell,

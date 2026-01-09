@@ -45,21 +45,13 @@
 </head>
 
 <body class="body forceBgColor" style="
-            background-color: #f2f2f2;
+            background-color: transparent;
             margin: 0;
             padding: 0;
             -webkit-text-size-adjust: none;
             text-size-adjust: none;
         ">
-    <div id="preview-toggle"
-        style="display:flex; flex-direction:row; align-items:center; gap:10px; width: 100%; padding:12px 16px; border:1px solid #ddd; border-radius:8px; font-family:Arial,Helvetica,sans-serif; background:#f9fafb; z-index:9999;">
-        <strong style="margin:0;">Preview:</strong>
-        <button id="preview-fallback-btn" type="button"
-            style="padding:8px 12px;border:1px solid #ccc;border-radius:6px;background:#fff;cursor:pointer;">Fallback</button>
-        <button id="preview-kinetic-btn" type="button"
-            style="padding:8px 12px;border:1px solid #0c5de7;border-radius:6px;background:#0c5de7;color:#fff;cursor:pointer;">Kinetic</button>
-        <span style="font-size:12px;color:#555;">Alterna <code>supports-kinetic</code></span>
-    </div>
+
     <table class="nl-container" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation"
         style="mso-table-lspace: 0; mso-table-rspace: 0; background-color: transparent">
         <tbody>
@@ -2879,6 +2871,7 @@
         </tbody>
     </table>
     <!-- End -->
+    /*
     <script>
         (function () {
             var fallbackBtn = document.getElementById('preview-fallback-btn');
@@ -2906,7 +2899,7 @@
             document.body.classList.remove('force-fallback');
             setMode('kinetic');
         })();
-    </script>
+    </script> */
 </body>
 
 </html>

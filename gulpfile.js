@@ -1,6 +1,7 @@
 const { src, dest, watch, series, parallel } = require('gulp');
 const fileInclude = require('gulp-file-include');
 const htmlmin = require('gulp-htmlmin');
+const through2 = require('through2');
 
 const paths = {
   html: 'src/index.html',
@@ -17,6 +18,27 @@ function html() {
         basepath: 'src',
         prefix: '@@',
         indent: true,
+      })
+    )
+    // emit both the normal index.html and a cleaned index-test.html with placeholders stripped
+    .pipe(
+      through2.obj(function (file, _, cb) {
+        const content = file.contents.toString();
+
+        const mainFile = file.clone();
+        mainFile.contents = Buffer.from(content);
+
+        const testFile = file.clone();
+        testFile.contents = Buffer.from(
+          content
+            .replace(/{%[\s\S]*?%}/g, '') // remove template tags
+            .replace(/{{[\s\S]*?}}/g, 'TEST') // neutralize double-brace placeholders
+        );
+        testFile.path = testFile.path.replace(/index\.html$/i, 'index-test.html');
+
+        this.push(mainFile);
+        this.push(testFile);
+        cb();
       })
     )
     // .pipe(

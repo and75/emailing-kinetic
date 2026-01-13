@@ -238,8 +238,8 @@ sup {
   background: #ffffff;
 }
 
-/* Attiva la versione carosello solo con :checked + flex/transform */
-@supports (display: flex) and (transform: translateX(0)) and (transition: transform 0.7s ease) and (selector(:checked)) and (selector(input:checked ~ .carousel-track)) {
+/* Attiva la versione carosello con WebKit + flex/transform */
+@supports (-webkit-appearance: none) and (display: flex) and (transform: translateX(0)) and (transition: transform 0.7s ease) {
   .fallback-desktop {
     display: none !important;
   }

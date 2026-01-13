@@ -5,9 +5,6 @@
     <title></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
     <!--[if mso]>
             <xml
                 ><w:WordDocument xmlns:w="urn:schemas-microsoft-com:office:word"
@@ -18,13 +15,7 @@
         <![endif]-->
     <!--[if !mso]><!-->
     <!--<![endif]-->
-
     <style>
-        /* Base reset */
-        .global-reset * {
-            box-sizing: border-box;
-        }
-
         * {
             box-sizing: border-box;
         }
@@ -32,11 +23,6 @@
         body {
             margin: 0;
             padding: 0;
-        }
-
-        table {
-            border-collapse: collapse;
-            border-spacing: 0;
         }
 
         a[x-apple-data-detectors] {
@@ -53,13 +39,6 @@
             line-height: inherit;
         }
 
-        sub,
-        sup {
-            font-size: 75%;
-            line-height: 0;
-        }
-
-        /* Visibility helpers */
         .desktop_hide,
         .desktop_hide table {
             mso-hide: all;
@@ -72,296 +51,12 @@
             display: none;
         }
 
-        .fallback-desktop {
-            display: block;
+        sub,
+        sup {
+            font-size: 75%;
+            line-height: 0;
         }
 
-        .carousel,
-        .carousel-mobile {
-            display: none;
-        }
-
-        .supports-kinetic .fallback-desktop {
-            display: none !important;
-        }
-
-        .supports-kinetic .carousel,
-        .supports-kinetic .carousel-mobile {
-            display: block !important;
-        }
-
-        /* Preview toggle helper */
-        .force-fallback .carousel,
-        .force-fallback .carousel-mobile {
-            display: none !important;
-        }
-
-        .force-fallback .fallback-desktop {
-            display: block !important;
-        }
-
-        #preview-toggle button.active {
-            background: #0c5de7 !important;
-            color: #fff !important;
-            border-color: #0c5de7 !important;
-        }
-
-        /* Typography */
-        .email-shell,
-        .email-shell * {
-            font-family: Arial, sans-serif;
-        }
-
-        .toggle-static,
-        .toggle-animata {
-            font-family: Arial, sans-serif;
-        }
-
-        .toggle-lang {
-            font-family: Arial, sans-serif;
-        }
-
-        .lang-fr {
-            display: none !important;
-        }
-
-        /* Shell */
-        .email-shell {
-            background: #f3f6fa;
-        }
-
-        .fallback {
-            display: block;
-        }
-
-        .flip-card {
-            display: none;
-        }
-
-        /* Carousel base */
-        .carousel-track {
-            transition: transform 0.7s ease;
-        }
-
-        .carousel-dots label {
-            background: #ffffff;
-        }
-
-        /* Attiva la versione carosello con WebKit + flex/transform */
-        @supports (-webkit-appearance: none) and (display: flex) and (transform: translateX(0)) and (transition: transform 0.7s ease) {
-            .fallback-desktop {
-                display: none !important;
-            }
-
-            .carousel,
-            .carousel-mobile {
-                display: flex !important;
-            }
-        }
-
-        #slide1:checked~.carousel-track {
-            transform: translateX(0%);
-        }
-
-        #slide2:checked~.carousel-track {
-            transform: translateX(-100%);
-        }
-
-        #slide3:checked~.carousel-track {
-            transform: translateX(-200%);
-        }
-
-        #slide4:checked~.carousel-track {
-            transform: translateX(-300%);
-        }
-
-        #slide5:checked~.carousel-track {
-            transform: translateX(-400%);
-        }
-
-        #slide6:checked~.carousel-track {
-            transform: translateX(-500%);
-        }
-
-        #mslide1:checked~.carousel-track {
-            transform: translateX(0%);
-        }
-
-        #mslide2:checked~.carousel-track {
-            transform: translateX(-100%);
-        }
-
-        #mslide3:checked~.carousel-track {
-            transform: translateX(-200%);
-        }
-
-        #mslide4:checked~.carousel-track {
-            transform: translateX(-300%);
-        }
-
-        #mslide5:checked~.carousel-track {
-            transform: translateX(-400%);
-        }
-
-        #mslide6:checked~.carousel-track {
-            transform: translateX(-500%);
-        }
-
-        #slide1:checked~.carousel-dots label[for="slide1"],
-        #slide2:checked~.carousel-dots label[for="slide2"],
-        #slide3:checked~.carousel-dots label[for="slide3"],
-        #slide4:checked~.carousel-dots label[for="slide4"],
-        #slide5:checked~.carousel-dots label[for="slide5"],
-        #slide6:checked~.carousel-dots label[for="slide6"] {
-            background: #ffc107 !important;
-        }
-
-        #mslide1:checked~.carousel-dots label[for="mslide1"],
-        #mslide2:checked~.carousel-dots label[for="mslide2"],
-        #mslide3:checked~.carousel-dots label[for="mslide3"],
-        #mslide4:checked~.carousel-dots label[for="mslide4"],
-        #mslide5:checked~.carousel-dots label[for="mslide5"],
-        #mslide6:checked~.carousel-dots label[for="mslide6"] {
-            background: #ffc107 !important;
-        }
-
-        .row-6 .column-1 {
-            max-width: 600px;
-        }
-
-        .carousel-nav {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transform: translateY(-50%);
-            pointer-events: none;
-            z-index: 2;
-        }
-
-        .carousel-nav label {
-            display: none;
-            width: 160px;
-            height: 160px;
-            background: none;
-            border: none;
-            box-shadow: none;
-            border-radius: 0;
-            padding: 0;
-            align-items: center;
-            justify-content: center;
-            pointer-events: auto;
-            z-index: 3;
-        }
-
-        .carousel-nav img {
-            width: 160px;
-            height: 160px;
-            display: block;
-        }
-
-        .carousel-mobile .carousel-nav label {
-            display: none;
-            width: 100px;
-            height: 100px;
-            background: none;
-            border: none;
-            box-shadow: none;
-            border-radius: 0;
-            padding: 0;
-            align-items: center;
-            justify-content: center;
-            pointer-events: auto;
-            z-index: 3;
-        }
-
-        .carousel-mobile .carousel-nav img {
-            width: 100px;
-            height: 100px;
-            display: block;
-        }
-
-        #slide1:checked~.carousel-nav .prev1,
-        #slide1:checked~.carousel-nav .next1,
-        #slide2:checked~.carousel-nav .prev2,
-        #slide2:checked~.carousel-nav .next2,
-        #slide3:checked~.carousel-nav .prev3,
-        #slide3:checked~.carousel-nav .next3,
-        #slide4:checked~.carousel-nav .prev4,
-        #slide4:checked~.carousel-nav .next4,
-        #slide5:checked~.carousel-nav .prev5,
-        #slide5:checked~.carousel-nav .next5,
-        #slide6:checked~.carousel-nav .prev6,
-        #slide6:checked~.carousel-nav .next6 {
-            display: flex;
-        }
-
-        #mslide1:checked~.carousel-nav .prev1,
-        #mslide1:checked~.carousel-nav .next1,
-        #mslide2:checked~.carousel-nav .prev2,
-        #mslide2:checked~.carousel-nav .next2,
-        #mslide3:checked~.carousel-nav .prev3,
-        #mslide3:checked~.carousel-nav .next3,
-        #mslide4:checked~.carousel-nav .prev4,
-        #mslide4:checked~.carousel-nav .next4,
-        #mslide5:checked~.carousel-nav .prev5,
-        #mslide5:checked~.carousel-nav .next5,
-        #mslide6:checked~.carousel-nav .prev6,
-        #mslide6:checked~.carousel-nav .next6 {
-            display: flex;
-        }
-
-        /* Interactions */
-        #faq2:checked+label+.acc-body,
-        #faq3:checked+label+.acc-body {
-            max-height: 120px;
-            padding: 12px 16px;
-        }
-
-        .stepper-panels .step-panel {
-            display: none;
-        }
-
-        #step1:checked~.stepper-panels .panel1,
-        #step2:checked~.stepper-panels .panel2,
-        #step3:checked~.stepper-panels .panel3 {
-            display: block;
-        }
-
-        #step1:checked~.stepper-tabs label[for="step1"],
-        #step2:checked~.stepper-tabs label[for="step2"],
-        #step3:checked~.stepper-tabs label[for="step3"] {
-            background: #0c5de7;
-            color: #ffffff;
-            border-color: #0c5de7;
-        }
-
-        .hotspot-bubble {
-            opacity: 0;
-            transform: translateY(6px);
-            pointer-events: none;
-        }
-
-        #hs1:checked~.hotspot-visual .bubble1,
-        #hs2:checked~.hotspot-visual .bubble2,
-        #hs3:checked~.hotspot-visual .bubble3 {
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: auto;
-        }
-
-        #hs1:checked~.hotspot-visual .dot1,
-        #hs2:checked~.hotspot-visual .dot2,
-        #hs3:checked~.hotspot-visual .dot3 {
-            background: #0c5de7 !important;
-            border-color: #0c5de7 !important;
-            box-shadow: 0 0 0 4px rgba(12, 93, 231, 0.15);
-        }
-
-        /* Responsive */
         @media (max-width: 620px) {
             .image_block div.fullWidth {
                 max-width: 100% !important;
@@ -477,19 +172,9 @@
                 padding: 10px 0 5px !important;
             }
         }
-
-        @media screen and (min-width: 0px) {
-            .email-shell {
-                background: linear-gradient(135deg, #f3f6fa, #e7ecf3);
-            }
-
-            label {
-                cursor: pointer;
-            }
-        }
     </style>
-
-    <!--[if mso]><style>
+    <!--[if mso
+            ]><style>
                 sup,
                 sub {
                     font-size: 100% !important;
@@ -500,13 +185,15 @@
                 sub {
                     mso-text-raise: -10%;
                 }
-            </style><![endif]-->
-    <!--[if true]><style>
+            </style>
+        <![endif]-->
+    <!--[if true
+            ]><style>
                 .forceBgColor {
                     background-color: white !important;
                 }
-            </style><![endif]-->
-
+            </style><!
+        [endif]-->
 </head>
 
 <body class="body forceBgColor" style="
@@ -516,7 +203,6 @@
             -webkit-text-size-adjust: none;
             text-size-adjust: none;
         ">
-
     <table class="nl-container" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation"
         style="mso-table-lspace: 0; mso-table-rspace: 0; background-color: transparent">
         <tbody>
@@ -531,7 +217,7 @@
                                         cellspacing="0" role="presentation" style="
                                                 mso-table-lspace: 0;
                                                 mso-table-rspace: 0;
-                                                  border-radius: 0;
+                                                border-radius: 0;
                                                 color: #000;
                                                 width: 600px;
                                                 margin: 0 auto;
@@ -613,8 +299,7 @@
                                                         style="mso-table-lspace: 0; mso-table-rspace: 0">
                                                         <tr>
                                                             <td class="pad" style="width: 100%">
-                                                                <div class="alignment fallback-desktop" align="center"
-                                                                    style="display:block;">
+                                                                <div class="alignment" align="center">
                                                                     <div style="max-width: 600px">
                                                                         <a href="https://www.mcdonalds.fr?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=logo_mcdo&lid=mu51sinp4zkb"
                                                                             target="_blank"><img
@@ -684,8 +369,7 @@
                                                             ">
                                                         <tr>
                                                             <td class="pad" style="width: 100%">
-                                                                <div class="alignment fallback-desktop" align="center"
-                                                                    style="display:block;">
+                                                                <div class="alignment" align="center">
                                                                     <div style="max-width: 600px">
                                                                         <a href="https://www.mcdonalds.fr?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=logo_mcdo&lid=00s0h6w7wcwh"
                                                                             target="_blank"><img
@@ -738,11 +422,8 @@
                                                         style="mso-table-lspace: 0; mso-table-rspace: 0">
                                                         <tr>
                                                             <td class="pad" style="width: 100%">
-                                                                <!-- Block carosel Desktop -->
                                                                 <div class="alignment" align="center">
-                                                                    <!-- Fallback -->
-                                                                    <div class="fallback-desktop"
-                                                                        style="max-width: 600px; display:block;">
+                                                                    <div style="max-width: 600px">
                                                                         <a href="https://www.mcdonalds.fr/restaurants/{{custom_attribute.${FavRestaurant1}}}/commander?lid=yw4zt5vt2bab&cat=MERCATO_LEGENDES&utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=gif_produits_mercato"
                                                                             target="_blank"><img
                                                                                 src="https://cdn.braze.eu/appboy/communication/assets/image_assets/images/6945207fcc34be008e95ba74/original.gif?1766137983"
@@ -756,10 +437,8 @@
                                                                                 title="gif_produits_mercato"
                                                                                 height="auto" /></a>
                                                                     </div>
-                                                                    <!-- Fallback end -->
-                                                                    @@include('components/carousel.html')
                                                                 </div>
-                                                            </td>
+                                                                <!-- Inset carosell where -->
                                                         </tr>
                                                     </table>
                                                 </td>
@@ -816,9 +495,7 @@
                                                         <tr>
                                                             <td class="pad" style="width: 100%">
                                                                 <div class="alignment" align="center">
-                                                                    <!-- Fallback Mobile -->
-                                                                    <div class="fallback-desktop"
-                                                                        style="max-width: 600px; display:block;">
+                                                                    <div style="max-width: 600px">
                                                                         <a href="https://www.mcdonalds.fr/restaurants/{{custom_attribute.${FavRestaurant1}}}/commander?lid=6zp5gmu6c95i&cat=MERCATO_LEGENDES&utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=gif_produits_mercato"
                                                                             target="_blank"><img
                                                                                 src="https://cdn.braze.eu/appboy/communication/assets/image_assets/images/694520875711f800818c5f9e/original.gif?1766137991"
@@ -832,8 +509,6 @@
                                                                                 title="gif_produits_mercato"
                                                                                 height="auto" /></a>
                                                                     </div>
-                                                                    <!-- End Fallback -->
-                                                                    @@include('components/carouselMobile.html')
                                                                 </div>
                                                                 <!-- Inset carosell here -->
                                                             </td>
@@ -849,7 +524,7 @@
                     </table>
                     <!--<![endif]-->
                     <table class="row row-6" align="center" width="100%" border="0" cellpadding="0" cellspacing="0"
-                        role="presentation" style="mso-table-lspace: 0; mso-table-rspace: 0; margin:-1px 0 0 0;">
+                        role="presentation" style="mso-table-lspace: 0; mso-table-rspace: 0">
                         <tbody>
                             <tr>
                                 <td>
@@ -883,20 +558,20 @@
                                                                         padding-left: 0;
                                                                     ">
                                                                 <div class="alignment" align="center">
-                                                                    <div style="max-width: 600px; display:block;">
-                                                                        <a href="https://www.mcdonalds.fr/restaurants/{{custom_attribute.\${FavRestaurant1}}}/commander?lid=gmy97ol4mnyj&cat=MERCATO_LEGENDES&utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=cta_je_compose_ma_team"
+                                                                    <div style="max-width: 300px">
+                                                                        <a href="https://www.mcdonalds.fr/restaurants/{{custom_attribute.${FavRestaurant1}}}/commander?lid=gmy97ol4mnyj&cat=MERCATO_LEGENDES&utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=cta_je_compose_ma_team"
                                                                             target="_blank"><img
-                                                                                src="https://test-mail-kinetic.bsys3.fr/images/cta.png"
+                                                                                src="https://cdn.braze.eu/appboy/communication/assets/image_assets/images/694520fe662a36008d95b7ef/original.png?1766138110"
                                                                                 style="
                                                                                         display: block;
                                                                                         height: auto;
                                                                                         border: 0;
                                                                                         width: 100%;
-                                                                                    " alt="cta_je_compose_ma_team"
+                                                                                    " width="300"
+                                                                                alt="cta_je_compose_ma_team"
                                                                                 title="cta_je_compose_ma_team"
                                                                                 height="auto" /></a>
                                                                     </div>
-                                                                    <!-- End Fallback -->
                                                                 </div>
                                                             </td>
                                                         </tr>
@@ -943,8 +618,7 @@
                                                                             font-family: Arial, Sans-serif;
                                                                             text-align: center;
                                                                         " align="center">
-                                                                    {% if custom_attribute.${is_subscribed} == '1'
-                                                                    %}
+                                                                    
                                                                 </div>
                                                             </td>
                                                         </tr>
@@ -991,7 +665,7 @@
                                                                             font-family: Arial, Sans-serif;
                                                                             text-align: center;
                                                                         " align="center">
-                                                                    {% if custom_attribute.${compteur_fid} <= 199 %}
+                                                                    
                                                                         </div>
                                                             </td>
                                                         </tr>
@@ -1052,10 +726,8 @@
                                                                             line-height: 1.2;
                                                                             text-align: center;
                                                                             mso-line-height-alt: 26px;
-                                                                            width: 100%;
                                                                         ">
-                                                                    <p
-                                                                        style="margin: 0;width: 100%;text-align: center;">
+                                                                    <p style="margin: 0">
                                                                         Le recrutement continue...
                                                                     </p>
                                                                 </div>
@@ -1266,7 +938,7 @@
                                                                             font-family: Arial, Sans-serif;
                                                                             text-align: center;
                                                                         " align="center">
-                                                                    {% elsif custom_attribute.${compteur_fid} <= 599 %}
+                                                                    
                                                                         </div>
                                                             </td>
                                                         </tr>
@@ -1327,10 +999,8 @@
                                                                             line-height: 1.2;
                                                                             text-align: center;
                                                                             mso-line-height-alt: 26px;
-                                                                            width: 100%;
                                                                         ">
-                                                                    <p
-                                                                        style="margin: 0; width: 100%;text-align: center;">
+                                                                    <p style="margin: 0">
                                                                         Le recrutement continue...
                                                                     </p>
                                                                 </div>
@@ -1541,7 +1211,7 @@
                                                                             font-family: Arial, Sans-serif;
                                                                             text-align: center;
                                                                         " align="center">
-                                                                    {% else %}
+                                                                   
                                                                 </div>
                                                             </td>
                                                         </tr>
@@ -1586,13 +1256,13 @@
                                                                 word-break: break-word;
                                                             ">
                                                         <tr>
-                                                            <td class="pad" align="center" style="
+                                                            <td class="pad" style="
                                                                         padding-bottom: 15px;
                                                                         padding-left: 10px;
                                                                         padding-right: 10px;
                                                                         padding-top: 10px;
                                                                     ">
-                                                                <p style="
+                                                                <div style="
                                                                             color: #000;
                                                                             direction: ltr;
                                                                             font-family: Arial, Sans-serif;
@@ -1602,11 +1272,11 @@
                                                                             line-height: 1.2;
                                                                             text-align: center;
                                                                             mso-line-height-alt: 26px;
-                                                                            width: 100%;
                                                                         ">
-                                                                    Le recrutement continue...
-                                                                </p>
-
+                                                                    <p style="margin: 0">
+                                                                        Le recrutement continue...
+                                                                    </p>
+                                                                </div>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -1812,7 +1482,7 @@
                                                                             font-family: Arial, Sans-serif;
                                                                             text-align: center;
                                                                         " align="center">
-                                                                    {% endif %}
+                                                                    
                                                                 </div>
                                                             </td>
                                                         </tr>
@@ -1885,7 +1555,7 @@
                                                                             font-family: Arial, Sans-serif;
                                                                             text-align: center;
                                                                         " align="center">
-                                                                    {% endif %}
+                                                                    
                                                                 </div>
                                                             </td>
                                                         </tr>
@@ -3048,8 +2718,7 @@
                                                                             rel="noopener">mcdonalds.fr.</a>
                                                                     </p>
                                                                     <p style="margin: 0; margin-bottom: 0">
-                                                                        &nbsp;{% if
-                                                                        custom_attribute.${is_subscribed} == '1' %}
+                                                                        &nbsp;
                                                                     </p>
                                                                     <p style="margin: 0; margin-bottom: 0">
                                                                         **Durée limitée. Les objets collectors sont
@@ -3066,7 +2735,7 @@
                                                                             rel="noopener">mcdonalds.fr</a>.
                                                                     </p>
                                                                     <p style="margin: 0; margin-bottom: 0">
-                                                                        {% endif %}<br />
+                                                                        <br />
                                                                         © 2026 The Coca-Cola Company, Sprite est
                                                                         une marque déposée de The Coca-Cola Company.
                                                                     </p>
@@ -3237,7 +2906,7 @@
                                                         cellpadding="0" cellspacing="0" role="presentation"
                                                         style="mso-table-lspace: 0; mso-table-rspace: 0">
                                                         <tr>
-                                                            <td class="pad manger-bouger" style="width: 100%">
+                                                            <td class="pad" style="width: 100%">
                                                                 <div class="alignment" align="center">
                                                                     <div style="max-width: 600px">
                                                                         <a href="https://www.mangerbouger.fr/?lid=5po6j22gqgm1"
@@ -3310,7 +2979,7 @@
                                                                 overflow: hidden;
                                                             ">
                                                         <tr>
-                                                            <td class="pad manger-bouger" style="width: 100%">
+                                                            <td class="pad" style="width: 100%">
                                                                 <div class="alignment" align="center">
                                                                     <div style="max-width: 600px">
                                                                         <a href="https://www.mangerbouger.fr/?lid=5oue36rwd9ok"

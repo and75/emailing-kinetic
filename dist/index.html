@@ -18,9 +18,7 @@
         <![endif]-->
     <!--[if !mso]><!-->
     <!--<![endif]-->
-
     <style>
-        /* Base reset */
         .global-reset * {
             box-sizing: border-box;
         }
@@ -53,13 +51,6 @@
             line-height: inherit;
         }
 
-        sub,
-        sup {
-            font-size: 75%;
-            line-height: 0;
-        }
-
-        /* Visibility helpers */
         .desktop_hide,
         .desktop_hide table {
             mso-hide: all;
@@ -70,6 +61,12 @@
 
         .image_block img+div {
             display: none;
+        }
+
+        sub,
+        sup {
+            font-size: 75%;
+            line-height: 0;
         }
 
         .fallback-desktop {
@@ -106,262 +103,6 @@
             border-color: #0c5de7 !important;
         }
 
-        /* Typography */
-        .email-shell,
-        .email-shell * {
-            font-family: Arial, sans-serif;
-        }
-
-        .toggle-static,
-        .toggle-animata {
-            font-family: Arial, sans-serif;
-        }
-
-        .toggle-lang {
-            font-family: Arial, sans-serif;
-        }
-
-        .lang-fr {
-            display: none !important;
-        }
-
-        /* Shell */
-        .email-shell {
-            background: #f3f6fa;
-        }
-
-        .fallback {
-            display: block;
-        }
-
-        .flip-card {
-            display: none;
-        }
-
-        /* Carousel base */
-        .carousel-track {
-            transition: transform 0.7s ease;
-        }
-
-        .carousel-dots label {
-            background: #ffffff;
-        }
-
-        /* Attiva la versione carosello con WebKit + flex/transform */
-        @supports (-webkit-appearance: none) and (display: flex) and (transform: translateX(0)) and (transition: transform 0.7s ease) {
-            .fallback-desktop {
-                display: none !important;
-            }
-
-            .carousel,
-            .carousel-mobile {
-                display: flex !important;
-            }
-        }
-
-        #slide1:checked~.carousel-track {
-            transform: translateX(0%);
-        }
-
-        #slide2:checked~.carousel-track {
-            transform: translateX(-100%);
-        }
-
-        #slide3:checked~.carousel-track {
-            transform: translateX(-200%);
-        }
-
-        #slide4:checked~.carousel-track {
-            transform: translateX(-300%);
-        }
-
-        #slide5:checked~.carousel-track {
-            transform: translateX(-400%);
-        }
-
-        #slide6:checked~.carousel-track {
-            transform: translateX(-500%);
-        }
-
-        #mslide1:checked~.carousel-track {
-            transform: translateX(0%);
-        }
-
-        #mslide2:checked~.carousel-track {
-            transform: translateX(-100%);
-        }
-
-        #mslide3:checked~.carousel-track {
-            transform: translateX(-200%);
-        }
-
-        #mslide4:checked~.carousel-track {
-            transform: translateX(-300%);
-        }
-
-        #mslide5:checked~.carousel-track {
-            transform: translateX(-400%);
-        }
-
-        #mslide6:checked~.carousel-track {
-            transform: translateX(-500%);
-        }
-
-        #slide1:checked~.carousel-dots label[for="slide1"],
-        #slide2:checked~.carousel-dots label[for="slide2"],
-        #slide3:checked~.carousel-dots label[for="slide3"],
-        #slide4:checked~.carousel-dots label[for="slide4"],
-        #slide5:checked~.carousel-dots label[for="slide5"],
-        #slide6:checked~.carousel-dots label[for="slide6"] {
-            background: #ffc107 !important;
-        }
-
-        #mslide1:checked~.carousel-dots label[for="mslide1"],
-        #mslide2:checked~.carousel-dots label[for="mslide2"],
-        #mslide3:checked~.carousel-dots label[for="mslide3"],
-        #mslide4:checked~.carousel-dots label[for="mslide4"],
-        #mslide5:checked~.carousel-dots label[for="mslide5"],
-        #mslide6:checked~.carousel-dots label[for="mslide6"] {
-            background: #ffc107 !important;
-        }
-
-        .row-6 .column-1 {
-            max-width: 600px;
-        }
-
-        .carousel-nav {
-            position: absolute;
-            top: 50%;
-            left: 0;
-            right: 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transform: translateY(-50%);
-            pointer-events: none;
-            z-index: 2;
-        }
-
-        .carousel-nav label {
-            display: none;
-            width: 160px;
-            height: 160px;
-            background: none;
-            border: none;
-            box-shadow: none;
-            border-radius: 0;
-            padding: 0;
-            align-items: center;
-            justify-content: center;
-            pointer-events: auto;
-            z-index: 3;
-        }
-
-        .carousel-nav img {
-            width: 160px;
-            height: 160px;
-            display: block;
-        }
-
-        .carousel-mobile .carousel-nav label {
-            display: none;
-            width: 100px;
-            height: 100px;
-            background: none;
-            border: none;
-            box-shadow: none;
-            border-radius: 0;
-            padding: 0;
-            align-items: center;
-            justify-content: center;
-            pointer-events: auto;
-            z-index: 3;
-        }
-
-        .carousel-mobile .carousel-nav img {
-            width: 100px;
-            height: 100px;
-            display: block;
-        }
-
-        #slide1:checked~.carousel-nav .prev1,
-        #slide1:checked~.carousel-nav .next1,
-        #slide2:checked~.carousel-nav .prev2,
-        #slide2:checked~.carousel-nav .next2,
-        #slide3:checked~.carousel-nav .prev3,
-        #slide3:checked~.carousel-nav .next3,
-        #slide4:checked~.carousel-nav .prev4,
-        #slide4:checked~.carousel-nav .next4,
-        #slide5:checked~.carousel-nav .prev5,
-        #slide5:checked~.carousel-nav .next5,
-        #slide6:checked~.carousel-nav .prev6,
-        #slide6:checked~.carousel-nav .next6 {
-            display: flex;
-        }
-
-        #mslide1:checked~.carousel-nav .prev1,
-        #mslide1:checked~.carousel-nav .next1,
-        #mslide2:checked~.carousel-nav .prev2,
-        #mslide2:checked~.carousel-nav .next2,
-        #mslide3:checked~.carousel-nav .prev3,
-        #mslide3:checked~.carousel-nav .next3,
-        #mslide4:checked~.carousel-nav .prev4,
-        #mslide4:checked~.carousel-nav .next4,
-        #mslide5:checked~.carousel-nav .prev5,
-        #mslide5:checked~.carousel-nav .next5,
-        #mslide6:checked~.carousel-nav .prev6,
-        #mslide6:checked~.carousel-nav .next6 {
-            display: flex;
-        }
-
-        /* Interactions */
-        #faq2:checked+label+.acc-body,
-        #faq3:checked+label+.acc-body {
-            max-height: 120px;
-            padding: 12px 16px;
-        }
-
-        .stepper-panels .step-panel {
-            display: none;
-        }
-
-        #step1:checked~.stepper-panels .panel1,
-        #step2:checked~.stepper-panels .panel2,
-        #step3:checked~.stepper-panels .panel3 {
-            display: block;
-        }
-
-        #step1:checked~.stepper-tabs label[for="step1"],
-        #step2:checked~.stepper-tabs label[for="step2"],
-        #step3:checked~.stepper-tabs label[for="step3"] {
-            background: #0c5de7;
-            color: #ffffff;
-            border-color: #0c5de7;
-        }
-
-        .hotspot-bubble {
-            opacity: 0;
-            transform: translateY(6px);
-            pointer-events: none;
-        }
-
-        #hs1:checked~.hotspot-visual .bubble1,
-        #hs2:checked~.hotspot-visual .bubble2,
-        #hs3:checked~.hotspot-visual .bubble3 {
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: auto;
-        }
-
-        #hs1:checked~.hotspot-visual .dot1,
-        #hs2:checked~.hotspot-visual .dot2,
-        #hs3:checked~.hotspot-visual .dot3 {
-            background: #0c5de7 !important;
-            border-color: #0c5de7 !important;
-            box-shadow: 0 0 0 4px rgba(12, 93, 231, 0.15);
-        }
-
-        /* Responsive */
         @media (max-width: 620px) {
             .image_block div.fullWidth {
                 max-width: 100% !important;
@@ -478,6 +219,257 @@
             }
         }
 
+        .email-shell,
+        .email-shell * {
+            font-family: Arial, sans-serif;
+        }
+
+        .toggle-static,
+        .toggle-animata {
+            font-family: Arial, sans-serif;
+        }
+
+        .toggle-lang {
+            font-family: Arial, sans-serif;
+        }
+
+        .lang-fr {
+            display: none !important;
+        }
+
+        .fallback {
+            display: block;
+        }
+
+        .flip-card {
+            display: none;
+        }
+
+        .email-shell {
+            background: #f3f6fa;
+        }
+
+
+
+        /* Comportamenti interattivi (non dipendono dal 3D) */
+        .carousel-track {
+            transition: transform 0.7s ease;
+        }
+
+        .carousel-dots label {
+            background: #ffffff;
+        }
+
+        /* Attiva la versione carosello con WebKit + flex/transform */
+        @supports (-webkit-appearance: none) and (display: flex) and (transform: translateX(0)) and (transition: transform 0.7s ease) {
+            .fallback-desktop {
+                display: none !important;
+            }
+
+            .carousel,
+            .carousel-mobile {
+                display: block !important;
+            }
+        }
+
+        #slide1:checked~.carousel-track {
+            transform: translateX(0%);
+        }
+
+        #slide2:checked~.carousel-track {
+            transform: translateX(-100%);
+        }
+
+        #slide3:checked~.carousel-track {
+            transform: translateX(-200%);
+        }
+
+        #slide4:checked~.carousel-track {
+            transform: translateX(-300%);
+        }
+
+        #slide5:checked~.carousel-track {
+            transform: translateX(-400%);
+        }
+
+        #slide6:checked~.carousel-track {
+            transform: translateX(-500%);
+        }
+
+        #mslide1:checked~.carousel-track {
+            transform: translateX(0%);
+        }
+
+        #mslide2:checked~.carousel-track {
+            transform: translateX(-100%);
+        }
+
+        #mslide3:checked~.carousel-track {
+            transform: translateX(-200%);
+        }
+
+        #mslide4:checked~.carousel-track {
+            transform: translateX(-300%);
+        }
+
+        #mslide5:checked~.carousel-track {
+            transform: translateX(-400%);
+        }
+
+        #mslide6:checked~.carousel-track {
+            transform: translateX(-500%);
+        }
+
+        #slide1:checked~.carousel-dots label[for="slide1"],
+        #slide2:checked~.carousel-dots label[for="slide2"],
+        #slide3:checked~.carousel-dots label[for="slide3"],
+        #slide4:checked~.carousel-dots label[for="slide4"],
+        #slide5:checked~.carousel-dots label[for="slide5"],
+        #slide6:checked~.carousel-dots label[for="slide6"] {
+            background: #ffc107 !important;
+        }
+
+        #mslide1:checked~.carousel-dots label[for="mslide1"],
+        #mslide2:checked~.carousel-dots label[for="mslide2"],
+        #mslide3:checked~.carousel-dots label[for="mslide3"],
+        #mslide4:checked~.carousel-dots label[for="mslide4"],
+        #mslide5:checked~.carousel-dots label[for="mslide5"],
+        #mslide6:checked~.carousel-dots label[for="mslide6"] {
+            background: #ffc107 !important;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transform: translateY(-50%);
+            pointer-events: none;
+            z-index: 2;
+        }
+
+        .carousel-nav label {
+            display: none;
+            width: 160px;
+            height: 160px;
+            background: none;
+            border: none;
+            box-shadow: none;
+            border-radius: 0;
+            padding: 0;
+            align-items: center;
+            justify-content: center;
+            pointer-events: auto;
+            z-index: 3;
+        }
+
+        .carousel-nav img {
+            width: 160px;
+            height: 160px;
+            display: block;
+        }
+
+        .carousel-mobile .carousel-nav label {
+            display: none;
+            width: 100px;
+            height: 100px;
+            background: none;
+            border: none;
+            box-shadow: none;
+            border-radius: 0;
+            padding: 0;
+            align-items: center;
+            justify-content: center;
+            pointer-events: auto;
+            z-index: 3;
+        }
+
+        .carousel-mobile .carousel-nav img {
+            width: 100px;
+            height: 100px;
+            display: block;
+        }
+
+        #slide1:checked~.carousel-nav .prev1,
+        #slide1:checked~.carousel-nav .next1,
+        #slide2:checked~.carousel-nav .prev2,
+        #slide2:checked~.carousel-nav .next2,
+        #slide3:checked~.carousel-nav .prev3,
+        #slide3:checked~.carousel-nav .next3,
+        #slide4:checked~.carousel-nav .prev4,
+        #slide4:checked~.carousel-nav .next4,
+        #slide5:checked~.carousel-nav .prev5,
+        #slide5:checked~.carousel-nav .next5,
+        #slide6:checked~.carousel-nav .prev6,
+        #slide6:checked~.carousel-nav .next6 {
+            display: flex;
+        }
+
+        #mslide1:checked~.carousel-nav .prev1,
+        #mslide1:checked~.carousel-nav .next1,
+        #mslide2:checked~.carousel-nav .prev2,
+        #mslide2:checked~.carousel-nav .next2,
+        #mslide3:checked~.carousel-nav .prev3,
+        #mslide3:checked~.carousel-nav .next3,
+        #mslide4:checked~.carousel-nav .prev4,
+        #mslide4:checked~.carousel-nav .next4,
+        #mslide5:checked~.carousel-nav .prev5,
+        #mslide5:checked~.carousel-nav .next5,
+        #mslide6:checked~.carousel-nav .prev6,
+        #mslide6:checked~.carousel-nav .next6 {
+            display: flex;
+        }
+
+        #faq2:checked+label+.acc-body,
+        #faq3:checked+label+.acc-body {
+            max-height: 120px;
+            padding: 12px 16px;
+        }
+
+        .stepper-panels .step-panel {
+            display: none;
+        }
+
+        #step1:checked~.stepper-panels .panel1,
+        #step2:checked~.stepper-panels .panel2,
+        #step3:checked~.stepper-panels .panel3 {
+            display: block;
+        }
+
+        #step1:checked~.stepper-tabs label[for="step1"],
+        #step2:checked~.stepper-tabs label[for="step2"],
+        #step3:checked~.stepper-tabs label[for="step3"] {
+            background: #0c5de7;
+            color: #ffffff;
+            border-color: #0c5de7;
+        }
+
+        .hotspot-bubble {
+            opacity: 0;
+            transform: translateY(6px);
+            pointer-events: none;
+        }
+
+        #hs1:checked~.hotspot-visual .bubble1,
+        #hs2:checked~.hotspot-visual .bubble2,
+        #hs3:checked~.hotspot-visual .bubble3 {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        #hs1:checked~.hotspot-visual .dot1,
+        #hs2:checked~.hotspot-visual .dot2,
+        #hs3:checked~.hotspot-visual .dot3 {
+            background: #0c5de7 !important;
+            border-color: #0c5de7 !important;
+            box-shadow: 0 0 0 4px rgba(12, 93, 231, 0.15);
+        }
+
+
         @media screen and (min-width: 0px) {
             .email-shell {
                 background: linear-gradient(135deg, #f3f6fa, #e7ecf3);
@@ -486,10 +478,117 @@
             label {
                 cursor: pointer;
             }
-        }
-    </style>
 
-    <!--[if mso]><style>
+            @supports (position: absolute) and (transform-style: preserve-3d) and (backface-visibility: hidden) {
+                .fallback {
+                    display: none !important;
+                }
+
+                .flip-card {
+                    display: block !important;
+                    perspective: 1200px;
+                }
+
+                .flip-inner {
+                    position: relative;
+                    width: 100%;
+                    height: 420px;
+                    /* altezza fissa per evitare collasso */
+                    transform-style: preserve-3d;
+                    transition: transform 0.8s ease;
+                }
+
+                .flip-front,
+                .flip-back {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    backface-visibility: hidden;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.16);
+                }
+
+                .flip-front img,
+                .flip-back img {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                }
+
+                .flip-back {
+                    transform: rotateY(180deg);
+                    background: linear-gradient(135deg, #0c5de7, #1535b1);
+                    color: #ffffff;
+                }
+
+                .flip-back h2 {
+                    color: #ffffff;
+                }
+
+                .flip-back a {
+                    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
+                }
+
+                label:hover .flip-inner,
+                label:focus-within .flip-inner,
+                label input:checked~.flip-card .flip-inner {
+                    transform: rotateY(180deg);
+                }
+            }
+        }
+
+        .global-reset * {
+            box-sizing: border-box;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        a[x-apple-data-detectors] {
+            color: inherit !important;
+            text-decoration: inherit !important;
+        }
+
+        #MessageViewBody a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        p {
+            line-height: inherit;
+        }
+
+        .desktop_hide,
+        .desktop_hide table {
+            mso-hide: all;
+            display: none;
+            max-height: 0;
+            overflow: hidden;
+        }
+
+        .image_block img+div {
+            display: none;
+        }
+
+        sub,
+        sup {
+            font-size: 75%;
+            line-height: 0;
+        }
+
+        .email-shell,
+    </style>
+    <!--[if mso
+            ]><style>
                 sup,
                 sub {
                     font-size: 100% !important;
@@ -500,13 +599,15 @@
                 sub {
                     mso-text-raise: -10%;
                 }
-            </style><![endif]-->
-    <!--[if true]><style>
+            </style>
+        <![endif]-->
+    <!--[if true
+            ]><style>
                 .forceBgColor {
                     background-color: white !important;
                 }
-            </style><![endif]-->
-
+            </style><!
+        [endif]-->
 </head>
 
 <body class="body forceBgColor" style="
@@ -516,7 +617,6 @@
             -webkit-text-size-adjust: none;
             text-size-adjust: none;
         ">
-
     <table class="nl-container" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation"
         style="mso-table-lspace: 0; mso-table-rspace: 0; background-color: transparent">
         <tbody>
@@ -531,7 +631,7 @@
                                         cellspacing="0" role="presentation" style="
                                                 mso-table-lspace: 0;
                                                 mso-table-rspace: 0;
-                                                  border-radius: 0;
+                                                border-radius: 0;
                                                 color: #000;
                                                 width: 600px;
                                                 margin: 0 auto;
@@ -586,8 +686,9 @@
                             </tr>
                         </tbody>
                     </table>
-                    <table class="row row-2 mobile_hide" align="center" width="100%" border="0" cellpadding="0"
-                        cellspacing="0" role="presentation" style="mso-table-lspace: 0; mso-table-rspace: 0">
+                    <table class="row row-2 mobile_hide header-fallback" align="center" width="100%" border="0"
+                        cellpadding="0" cellspacing="0" role="presentation"
+                        style="mso-table-lspace: 0; mso-table-rspace: 0">
                         <tbody>
                             <tr>
                                 <td>
@@ -616,7 +717,7 @@
                                                                 <div class="alignment fallback-desktop" align="center"
                                                                     style="display:block;">
                                                                     <div style="max-width: 600px">
-                                                                        <a href="https://www.mcdonalds.fr?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=logo_mcdo&lid=mu51sinp4zkb"
+                                                                        <a href="https://www.mcdonalds.fr?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=logo_mcdo&lid=uleb7t1v793s"
                                                                             target="_blank"><img
                                                                                 src="https://cdn.braze.eu/appboy/communication/assets/image_assets/images/694521322d8b04008fbd6f6a/original.png?1766138161"
                                                                                 style="
@@ -640,8 +741,8 @@
                         </tbody>
                     </table>
                     <!--[if !mso]><!-->
-                    <table class="row row-3 desktop_hide" align="center" width="100%" border="0" cellpadding="0"
-                        cellspacing="0" role="presentation" style="
+                    <table class="row row-3 desktop_hide header-fallback-mobile" align="center" width="100%" border="0"
+                        cellpadding="0" cellspacing="0" role="presentation" style="
                                 mso-table-lspace: 0;
                                 mso-table-rspace: 0;
                                 mso-hide: all;
@@ -687,7 +788,7 @@
                                                                 <div class="alignment fallback-desktop" align="center"
                                                                     style="display:block;">
                                                                     <div style="max-width: 600px">
-                                                                        <a href="https://www.mcdonalds.fr?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=logo_mcdo&lid=00s0h6w7wcwh"
+                                                                        <a href="https://www.mcdonalds.fr?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=logo_mcdo&lid=9bcem4ou38y9"
                                                                             target="_blank"><img
                                                                                 src="https://cdn.braze.eu/appboy/communication/assets/image_assets/images/69452687de05b607083f5671/original.png?1766139527"
                                                                                 style="
@@ -711,8 +812,10 @@
                         </tbody>
                     </table>
                     <!--<![endif]-->
-                    <table class="row row-4 mobile_hide" align="center" width="100%" border="0" cellpadding="0"
-                        cellspacing="0" role="presentation" style="mso-table-lspace: 0; mso-table-rspace: 0">
+
+                    <table class="row row-4 mobile_hide carousel-row-desktop" align="center" width="100%" border="0"
+                        cellpadding="0" cellspacing="0" role="presentation"
+                        style="mso-table-lspace: 0; mso-table-rspace: 0">
                         <tbody>
                             <tr>
                                 <td>
@@ -743,7 +846,7 @@
                                                                     <!-- Fallback -->
                                                                     <div class="fallback-desktop"
                                                                         style="max-width: 600px; display:block;">
-                                                                        <a href="https://www.mcdonalds.fr/restaurants/{{custom_attribute.${FavRestaurant1}}}/commander?lid=yw4zt5vt2bab&cat=MERCATO_LEGENDES&utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=gif_produits_mercato"
+                                                                        <a href="https://www.mcdonalds.fr/restaurants/{{custom_attribute.${FavRestaurant1}}}/commander?lid=acajwr1jwb3e&cat=MERCATO_LEGENDES&utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=gif_produits_mercato"
                                                                             target="_blank"><img
                                                                                 src="https://cdn.braze.eu/appboy/communication/assets/image_assets/images/6945207fcc34be008e95ba74/original.gif?1766137983"
                                                                                 style="
@@ -757,93 +860,169 @@
                                                                                 height="auto" /></a>
                                                                     </div>
                                                                     <!-- Fallback end -->
-                                                                    <!--[if !mso]><!-- --><div class="carousel"
-                                                                      style="mso-hide:all; max-width:600px; max-height:1220px; margin:0px auto; overflow:hidden; background:url('https://test-mail-kinetic.bsys3.fr/images/background_d.jpg') top/100% no-repeat; ; display:none; flex-direction:column; justify-content:flex-end; position:relative;">
-                                                                      <input type="radio" name="hero-desktop" id="slide1" checked style="display:none;">
-                                                                      <input type="radio" name="hero-desktop" id="slide2" style="display:none;">
-                                                                      <input type="radio" name="hero-desktop" id="slide3" style="display:none;">
-                                                                      <input type="radio" name="hero-desktop" id="slide4" style="display:none;">
-                                                                      <input type="radio" name="hero-desktop" id="slide5" style="display:none;">
-                                                                      <input type="radio" name="hero-desktop" id="slide6" style="display:none;">
-                                                                      <div class="carousel-track" style=" display:flex; width:auto; transition:transform .7s ease; box-sizing:border-box;">
+                                                                    <!--[if !mso]><!-->
+                                                                    <div class="carousel"
+                                                                        style="max-width:600px; max-height:1220px; margin:0px auto; overflow:hidden; background:url('https://cdn.braze.eu/image_uploads/files/69675a4130f11e00702538b4/original.jpg?1768380992') top/100% no-repeat; ; display:none; flex-direction:column; justify-content:flex-end; position:relative;">
+                                                                        <input type="radio" name="hero-desktop"
+                                                                            id="slide1" checked style="display:none;">
+                                                                        <input type="radio" name="hero-desktop"
+                                                                            id="slide2" style="display:none;">
+                                                                        <input type="radio" name="hero-desktop"
+                                                                            id="slide3" style="display:none;">
+                                                                        <input type="radio" name="hero-desktop"
+                                                                            id="slide4" style="display:none;">
+                                                                        <input type="radio" name="hero-desktop"
+                                                                            id="slide5" style="display:none;">
+                                                                        <input type="radio" name="hero-desktop"
+                                                                            id="slide6" style="display:none;">
+                                                                        <div class="carousel-track"
+                                                                            style=" display:flex; width:auto; transition:transform .7s ease; box-sizing:border-box;">
 
 
-                                                                        <div class="c-slide" style="flex:0 0 100%; box-sizing:border-box;">
-                                                                          <a href="https://www.mcdonalds.fr/restaurants/%7B%7Bcustom_attribute.$%7BFavRestaurant1%7D%7D%7D/commander" target="_blank" style="display:block; text-decoration:none; line-height:0;">
-                                                                            <img src="https://test-mail-kinetic.bsys3.fr/images/3-big-mac_d.png" alt="Slide 3"
-                                                                              style="width:100%; height:100%; object-fit:cover;  display:block;">
-                                                                          </a>
+                                                                            <div class="c-slide"
+                                                                                style="flex:0 0 100%; box-sizing:border-box;">
+                                                                                <a href="https://www.mcdonalds.fr/restaurants/%7B%7Bcustom_attribute.$%7BFavRestaurant1%7D%7D%7D/commander?lid=hmthgkmygmfw"
+                                                                                    target="_blank"
+                                                                                    style="display:block; text-decoration:none; line-height:0;">
+                                                                                    <img src='https://cdn.braze.eu/image_uploads/files/69675a4230f11e00702538b5/original.png?1768380993'
+                                                                                        alt="Slide 3"
+                                                                                        style="width:100%; height:100%; object-fit:cover;  display:block;">
+                                                                                </a>
+                                                                            </div>
+                                                                            <div class="c-slide"
+                                                                                style="flex:0 0 100%; box-sizing:border-box;">
+                                                                                <a href="https://www.mcdonalds.fr/restaurants/%7B%7Bcustom_attribute.$%7BFavRestaurant1%7D%7D%7D/commander?lid=zh57qld87ebp"
+                                                                                    target="_blank"
+                                                                                    style="display:block; text-decoration:none; line-height:0;">
+                                                                                    <img src='https://cdn.braze.eu/image_uploads/files/69675a4330f11e00702538b7/original.png?1768380995'
+                                                                                        alt="Slide 2"
+                                                                                        style="width:100%; height:100%; object-fit:cover;  display:block;">
+                                                                                </a>
+                                                                            </div>
+                                                                            <div class="c-slide"
+                                                                                style="flex:0 0 100%; box-sizing:border-box;">
+                                                                                <a href="https://www.mcdonalds.fr/restaurants/%7B%7Bcustom_attribute.$%7BFavRestaurant1%7D%7D%7D/commander?lid=ld1yalyg3b0f"
+                                                                                    target="_blank"
+                                                                                    style="display:block; text-decoration:none; line-height:0;">
+                                                                                    <img src='https://cdn.braze.eu/image_uploads/files/69675a3c30f11e00702538ac/original.png?1768380987'
+                                                                                        alt="Slide 6"
+                                                                                        style="width:100%; height:100%; object-fit:cover;  display:block;">
+                                                                                </a>
+                                                                            </div>
+                                                                            <div class="c-slide"
+                                                                                style="flex:0 0 100%; box-sizing:border-box;">
+                                                                                <a href="https://www.mcdonalds.fr/restaurants/%7B%7Bcustom_attribute.$%7BFavRestaurant1%7D%7D%7D/commander?lid=2cn0s1jcak03"
+                                                                                    target="_blank"
+                                                                                    style="display:block; text-decoration:none; line-height:0;">
+                                                                                    <img src='https://cdn.braze.eu/image_uploads/files/69675a3a30f11e00702538a9/original.png?1768380985'
+                                                                                        alt="Slide 5"
+                                                                                        style="width:100%; height:100%; object-fit:cover;  display:block;">
+                                                                                </a>
+                                                                            </div>
+                                                                            <div class="c-slide"
+                                                                                style="flex:0 0 100%; box-sizing:border-box;">
+                                                                                <a href="https://www.mcdonalds.fr/restaurants/%7B%7Bcustom_attribute.$%7BFavRestaurant1%7D%7D%7D/commander?lid=czzwd0zemsfg"
+                                                                                    target="_blank"
+                                                                                    style="display:block; text-decoration:none; line-height:0;">
+                                                                                    <img src='https://cdn.braze.eu/image_uploads/files/69675a3b30f11e00702538ab/original.png?1768380987'
+                                                                                        alt="Slide 4"
+                                                                                        style="width:100%; height:100%; object-fit:cover;  display:block;">
+                                                                                </a>
+                                                                            </div>
+                                                                            <div class="c-slide"
+                                                                                style="flex:0 0 100%; box-sizing:border-box;">
+                                                                                <a href="https://www.mcdonalds.fr/restaurants/%7B%7Bcustom_attribute.$%7BFavRestaurant1%7D%7D%7D/commander?lid=geqmzptbpehj"
+                                                                                    target="_blank"
+                                                                                    style="display:block; text-decoration:none; line-height:0;">
+                                                                                    <img src='https://cdn.braze.eu/image_uploads/files/69675a4530f11e00702538ba/original.png?1768380996'
+                                                                                        alt="Slide 1"
+                                                                                        style="width:100%; height:100%; object-fit:cover;  display:block;">
+                                                                                </a>
+                                                                            </div>
                                                                         </div>
-                                                                            <div class="c-slide" style="flex:0 0 100%; box-sizing:border-box;">
-                                                                          <a href="https://www.mcdonalds.fr/restaurants/%7B%7Bcustom_attribute.$%7BFavRestaurant1%7D%7D%7D/commander" target="_blank" style="display:block; text-decoration:none; line-height:0;">
-                                                                            <img src="https://test-mail-kinetic.bsys3.fr/images/2-triple-cheeseburger_d.png" alt="Slide 2"
-                                                                              style="width:100%; height:100%; object-fit:cover;  display:block;">
-                                                                          </a>
+                                                                        <div class="carousel-dots"
+                                                                            style="text-align: center; background: #050303;height: 30px; max-width:600px;">
+                                                                            <label for="slide1"
+                                                                                style="display:inline-block; width:35px; height:5px; margin:0 5px; border:1px solid rgba(0,0,0,0.25); cursor:pointer;"></label>
+                                                                            <label for="slide2"
+                                                                                style="display:inline-block; width:35px; height:5px; margin:0 6px; border:1px solid rgba(0,0,0,0.25); cursor:pointer;"></label>
+                                                                            <label for="slide3"
+                                                                                style="display:inline-block; width:35px; height:5px; margin:0 6px; border:1px solid rgba(0,0,0,0.25); cursor:pointer;"></label>
+                                                                            <label for="slide4"
+                                                                                style="display:inline-block; width:35px; height:5px; margin:0 6px; border:1px solid rgba(0,0,0,0.25); cursor:pointer;"></label>
+                                                                            <label for="slide5"
+                                                                                style="display:inline-block; width:35px; height:5px; margin:0 6px; border:1px solid rgba(0,0,0,0.25); cursor:pointer;"></label>
+                                                                            <label for="slide6"
+                                                                                style="display:inline-block; width:35px; height:5px; margin:0 6px; border:1px solid rgba(0,0,0,0.25); cursor:pointer;"></label>
                                                                         </div>
-                                                                        <div class="c-slide" style="flex:0 0 100%; box-sizing:border-box;">
-                                                                          <a href="https://www.mcdonalds.fr/restaurants/%7B%7Bcustom_attribute.$%7BFavRestaurant1%7D%7D%7D/commander" target="_blank" style="display:block; text-decoration:none; line-height:0;">
-                                                                            <img src="https://test-mail-kinetic.bsys3.fr/images/6-fries_d.png" alt="Slide 6"
-                                                                              style="width:100%; height:100%; object-fit:cover;  display:block;">
-                                                                          </a>
+                                                                        <div class="carousel-legend"
+                                                                            style="width:100%; height:50px;background:#050303;">
+                                                                            <img src='https://cdn.braze.eu/image_uploads/files/69675a4230f11e00702538b6/original.png?1768380994'
+                                                                                alt="Legend"
+                                                                                style="max-width:390px; height:auto; display:block;">
                                                                         </div>
-                                                                        <div class="c-slide" style="flex:0 0 100%; box-sizing:border-box;">
-                                                                          <a href="https://www.mcdonalds.fr/restaurants/%7B%7Bcustom_attribute.$%7BFavRestaurant1%7D%7D%7D/commander" target="_blank" style="display:block; text-decoration:none; line-height:0;">
-                                                                            <img src="https://test-mail-kinetic.bsys3.fr/images/5-souce_d.png" alt="Slide 5"
-                                                                              style="width:100%; height:100%; object-fit:cover;  display:block;">
-                                                                          </a>
+                                                                        <div class="carousel-nav">
+                                                                            <label class="prev prev1" for="slide6"><img
+                                                                                    src='https://cdn.braze.eu/image_uploads/files/69675a3e30f11e00702538b0/original.png?1768380990'
+                                                                                    alt="Precedente"></label>
+                                                                            <label class="next next1" for="slide2"><img
+                                                                                    src='https://cdn.braze.eu/image_uploads/files/69675a4030f11e00702538b3/original.png?1768380992'
+                                                                                    alt="Successiva"></label>
+
+                                                                            <label class="prev prev2" for="slide1"><img
+                                                                                    src='https://cdn.braze.eu/image_uploads/files/69675a3e30f11e00702538b0/original.png?1768380990'
+                                                                                    alt="Precedente"></label>
+                                                                            <label class="next next2" for="slide3"><img
+                                                                                    src='https://cdn.braze.eu/image_uploads/files/69675a4030f11e00702538b3/original.png?1768380992'
+                                                                                    alt="Successiva"></label>
+
+                                                                            <label class="prev prev3" for="slide2"><img
+                                                                                    src='https://cdn.braze.eu/image_uploads/files/69675a3e30f11e00702538b0/original.png?1768380990'
+                                                                                    alt="Precedente"></label>
+                                                                            <label class="next next3" for="slide4"><img
+                                                                                    src='https://cdn.braze.eu/image_uploads/files/69675a4030f11e00702538b3/original.png?1768380992'
+                                                                                    alt="Successiva"></label>
+
+                                                                            <label class="prev prev4" for="slide3"><img
+                                                                                    src='https://cdn.braze.eu/image_uploads/files/69675a3e30f11e00702538b0/original.png?1768380990'
+                                                                                    alt="Precedente"></label>
+                                                                            <label class="next next4" for="slide5"><img
+                                                                                    src='https://cdn.braze.eu/image_uploads/files/69675a4030f11e00702538b3/original.png?1768380992'
+                                                                                    alt="Successiva"></label>
+
+                                                                            <label class="prev prev5" for="slide4"><img
+                                                                                    src='https://cdn.braze.eu/image_uploads/files/69675a3e30f11e00702538b0/original.png?1768380990'
+                                                                                    alt="Precedente"></label>
+                                                                            <label class="next next5" for="slide6"><img
+                                                                                    src='https://cdn.braze.eu/image_uploads/files/69675a4030f11e00702538b3/original.png?1768380992'
+                                                                                    alt="Successiva"></label>
+
+                                                                            <label class="prev prev6" for="slide5"><img
+                                                                                    src='https://cdn.braze.eu/image_uploads/files/69675a3e30f11e00702538b0/original.png?1768380990'
+                                                                                    alt="Precedente"></label>
+                                                                            <label class="next next6" for="slide1"><img
+                                                                                    src='https://cdn.braze.eu/image_uploads/files/69675a4030f11e00702538b3/original.png?1768380992'
+                                                                                    alt="Successiva"></label>
                                                                         </div>
-                                                                        <div class="c-slide" style="flex:0 0 100%; box-sizing:border-box;">
-                                                                          <a href="https://www.mcdonalds.fr/restaurants/%7B%7Bcustom_attribute.$%7BFavRestaurant1%7D%7D%7D/commander" target="_blank" style="display:block; text-decoration:none; line-height:0;">
-                                                                            <img src="https://test-mail-kinetic.bsys3.fr/images/4-apple-sprite_d.png" alt="Slide 4"
-                                                                              style="width:100%; height:100%; object-fit:cover;  display:block;">
-                                                                          </a>
+                                                                    </div>
+                                                                    <!--<![endif]-->
+                                                                    <div width="100%">
+                                                                        <div style="margin-top:-1px;" align="center"
+                                                                            width="100%">
+                                                                            <a href="https://www.mcdonalds.fr/restaurants/{{custom_attribute.${FavRestaurant1}}}/commander?lid=h27jczflfkqr&cat=MERCATO_LEGENDES&utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=cta_je_compose_ma_team"
+                                                                                target="_blank"><img
+                                                                                    src='https://cdn.braze.eu/image_uploads/files/69675a4430f11e00702538b8/original.png?1768380995'
+                                                                                    style="
+                                                                                        display: block;
+                                                                                        height: auto;
+                                                                                        border: 0;
+                                                                                        max-width: 600px;
+                                                                                    " width="100%"
+                                                                                    alt="cta_je_compose_ma_team"
+                                                                                    title="cta_je_compose_ma_team"
+                                                                                    height="auto" /></a>
                                                                         </div>
-                                                                        <div class="c-slide" style="flex:0 0 100%; box-sizing:border-box;">
-                                                                          <a href="https://www.mcdonalds.fr/restaurants/%7B%7Bcustom_attribute.$%7BFavRestaurant1%7D%7D%7D/commander" target="_blank" style="display:block; text-decoration:none; line-height:0;">
-                                                                            <img src="https://test-mail-kinetic.bsys3.fr/images/1-oreo_d.png" alt="Slide 1"
-                                                                              style="width:100%; height:100%; object-fit:cover;  display:block;">
-                                                                          </a>
-                                                                        </div>
-                                                                      </div>
-                                                                      <div class="carousel-dots" style="text-align: center; background: #050303;height: 30px; max-width:600px;">
-                                                                        <label for="slide1"
-                                                                          style="display:inline-block; width:35px; height:5px; margin:0 5px; border:1px solid rgba(0,0,0,0.25); cursor:pointer;"></label>
-                                                                        <label for="slide2"
-                                                                          style="display:inline-block; width:35px; height:5px; margin:0 6px; border:1px solid rgba(0,0,0,0.25); cursor:pointer;"></label>
-                                                                        <label for="slide3"
-                                                                          style="display:inline-block; width:35px; height:5px; margin:0 6px; border:1px solid rgba(0,0,0,0.25); cursor:pointer;"></label>
-                                                                        <label for="slide4"
-                                                                          style="display:inline-block; width:35px; height:5px; margin:0 6px; border:1px solid rgba(0,0,0,0.25); cursor:pointer;"></label>
-                                                                        <label for="slide5"
-                                                                          style="display:inline-block; width:35px; height:5px; margin:0 6px; border:1px solid rgba(0,0,0,0.25); cursor:pointer;"></label>
-                                                                        <label for="slide6"
-                                                                          style="display:inline-block; width:35px; height:5px; margin:0 6px; border:1px solid rgba(0,0,0,0.25); cursor:pointer;"></label>
-                                                                      </div>
-                                                                      <div class="carousel-legend" style="width:100%; height:50px;background:#050303;">
-                                                                        <img src="https://test-mail-kinetic.bsys3.fr/images/legend_d.png" alt="Legend" style="max-width:390px; height:auto; display:block;">
-                                                                      </div>
-                                                                      <div class="carousel-nav">
-                                                                        <label class="prev prev1" for="slide6"><img src="https://test-mail-kinetic.bsys3.fr/images/arrow-left_d.png" alt="Precedente"></label>
-                                                                        <label class="next next1" for="slide2"><img src="https://test-mail-kinetic.bsys3.fr/images/arrow-right_d.png" alt="Successiva"></label>
-
-                                                                        <label class="prev prev2" for="slide1"><img src="https://test-mail-kinetic.bsys3.fr/images/arrow-left_d.png" alt="Precedente"></label>
-                                                                        <label class="next next2" for="slide3"><img src="https://test-mail-kinetic.bsys3.fr/images/arrow-right_d.png" alt="Successiva"></label>
-
-                                                                        <label class="prev prev3" for="slide2"><img src="https://test-mail-kinetic.bsys3.fr/images/arrow-left_d.png" alt="Precedente"></label>
-                                                                        <label class="next next3" for="slide4"><img src="https://test-mail-kinetic.bsys3.fr/images/arrow-right_d.png" alt="Successiva"></label>
-
-                                                                        <label class="prev prev4" for="slide3"><img src="https://test-mail-kinetic.bsys3.fr/images/arrow-left_d.png" alt="Precedente"></label>
-                                                                        <label class="next next4" for="slide5"><img src="https://test-mail-kinetic.bsys3.fr/images/arrow-right_d.png" alt="Successiva"></label>
-
-                                                                        <label class="prev prev5" for="slide4"><img src="https://test-mail-kinetic.bsys3.fr/images/arrow-left_d.png" alt="Precedente"></label>
-                                                                        <label class="next next5" for="slide6"><img src="https://test-mail-kinetic.bsys3.fr/images/arrow-right_d.png" alt="Successiva"></label>
-
-                                                                        <label class="prev prev6" for="slide5"><img src="https://test-mail-kinetic.bsys3.fr/images/arrow-left_d.png" alt="Precedente"></label>
-                                                                        <label class="next next6" for="slide1"><img src="https://test-mail-kinetic.bsys3.fr/images/arrow-right_d.png" alt="Successiva"></label>
-                                                                      </div>
-
-                                                                    </div><!--<![endif]-->
-
+                                                                    </div>
                                                                 </div>
                                                             </td>
                                                         </tr>
@@ -856,9 +1035,10 @@
                             </tr>
                         </tbody>
                     </table>
+
                     <!--[if !mso]><!-->
-                    <table class="row row-5 desktop_hide" align="center" width="100%" border="0" cellpadding="0"
-                        cellspacing="0" role="presentation" style="
+                    <table class="row row-5 desktop_hide carousel-row-mobile" align="center" width="100%" border="0"
+                        cellpadding="0" cellspacing="0" role="presentation" style="
                                 mso-table-lspace: 0;
                                 mso-table-rspace: 0;
                                 mso-hide: all;
@@ -903,9 +1083,10 @@
                                                             <td class="pad" style="width: 100%">
                                                                 <div class="alignment" align="center">
                                                                     <!-- Fallback Mobile -->
+                                                                    <!--[if !mso]><!-->
                                                                     <div class="fallback-desktop"
                                                                         style="max-width: 600px; display:block;">
-                                                                        <a href="https://www.mcdonalds.fr/restaurants/{{custom_attribute.${FavRestaurant1}}}/commander?lid=6zp5gmu6c95i&cat=MERCATO_LEGENDES&utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=gif_produits_mercato"
+                                                                        <a href="https://www.mcdonalds.fr/restaurants/{{custom_attribute.${FavRestaurant1}}}/commander?lid=0d3qp8znds35&cat=MERCATO_LEGENDES&utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=gif_produits_mercato"
                                                                             target="_blank"><img
                                                                                 src="https://cdn.braze.eu/appboy/communication/assets/image_assets/images/694520875711f800818c5f9e/original.gif?1766137991"
                                                                                 style="
@@ -918,96 +1099,176 @@
                                                                                 title="gif_produits_mercato"
                                                                                 height="auto" /></a>
                                                                     </div>
+                                                                    <!--<![endif]-->
                                                                     <!-- End Fallback -->
-                                                                    <!--[if !mso]><!-- --><div class="carousel-mobile"
-                                                                      style="mso-hide:all; max-width:430px; margin:0px auto; overflow:hidden; display:none; flex-direction:column; justify-content:flex-end; position:relative;">
-                                                                      <img src="https://test-mail-kinetic.bsys3.fr/images/background_m.jpg" alt=""
-                                                                        style="position:absolute; left:0; top:0; width:100%; z-index:0; pointer-events:none;">
-                                                                      <input type="radio" name="hero-mobile" id="mslide1" checked style="display:none;">
-                                                                      <input type="radio" name="hero-mobile" id="mslide2" style="display:none;">
-                                                                      <input type="radio" name="hero-mobile" id="mslide3" style="display:none;">
-                                                                      <input type="radio" name="hero-mobile" id="mslide4" style="display:none;">
-                                                                      <input type="radio" name="hero-mobile" id="mslide5" style="display:none;">
-                                                                      <input type="radio" name="hero-mobile" id="mslide6" style="display:none;">
+                                                                    <!--[if !mso]><!-->
+                                                                    <div class="carousel-mobile"
+                                                                        style="max-width:600px; margin:0px auto; overflow:hidden; display:none; flex-direction:column; justify-content:flex-end; position:relative;">
+                                                                        <img src='https://cdn.braze.eu/image_uploads/files/69675a3d30f11e00702538ae/original.jpg?1768380989'
+                                                                            alt=""
+                                                                            style="position:absolute; left:0; top:0; width:100%; z-index:0; pointer-events:none;">
+                                                                        <input type="radio" name="hero-mobile"
+                                                                            id="mslide1" checked style="display:none;">
+                                                                        <input type="radio" name="hero-mobile"
+                                                                            id="mslide2" style="display:none;">
+                                                                        <input type="radio" name="hero-mobile"
+                                                                            id="mslide3" style="display:none;">
+                                                                        <input type="radio" name="hero-mobile"
+                                                                            id="mslide4" style="display:none;">
+                                                                        <input type="radio" name="hero-mobile"
+                                                                            id="mslide5" style="display:none;">
+                                                                        <input type="radio" name="hero-mobile"
+                                                                            id="mslide6" style="display:none;">
 
-                                                                      <div class="carousel-track" style=" display:flex; width:auto; transition:transform .7s ease; box-sizing:border-box;">
+                                                                        <div class="carousel-track"
+                                                                            style=" display:flex; width:auto; transition:transform .7s ease; box-sizing:border-box;">
 
-                                                                        <div class="c-slide" style="flex:0 0 100%; box-sizing:border-box;">
-                                                                          <a href="https://www.mcdonalds.fr/restaurants/%7B%7Bcustom_attribute.$%7BFavRestaurant1%7D%7D%7D/commander" target="_blank" style="display:block; text-decoration:none; line-height:0;">
-                                                                            <img src="https://test-mail-kinetic.bsys3.fr/images/2-triple-cheeseburger_m.png" alt="Slide 2"
-                                                                              style="width:100%; height:100%; object-fit:cover;  display:block;">
-                                                                          </a>
+                                                                            <div class="c-slide"
+                                                                                style="flex:0 0 100%; box-sizing:border-box;">
+                                                                                <a href="https://www.mcdonalds.fr/restaurants/%7B%7Bcustom_attribute.$%7BFavRestaurant1%7D%7D%7D/commander?lid=t48334ny2tlh"
+                                                                                    target="_blank"
+                                                                                    style="display:block; text-decoration:none; line-height:0;">
+                                                                                    <img src='https://cdn.braze.eu/image_uploads/files/69675a3730f11e00702538a5/original.png?1768380983'
+                                                                                        alt="Slide 2"
+                                                                                        style="width:100%; height:100%; object-fit:cover;  display:block;">
+                                                                                </a>
+                                                                            </div>
+                                                                            <div class="c-slide"
+                                                                                style="flex:0 0 100%; box-sizing:border-box;">
+                                                                                <a href="https://www.mcdonalds.fr/restaurants/%7B%7Bcustom_attribute.$%7BFavRestaurant1%7D%7D%7D/commander?lid=fzfe50lqfnil"
+                                                                                    target="_blank"
+                                                                                    style="display:block; text-decoration:none; line-height:0;">
+                                                                                    <img src='https://cdn.braze.eu/image_uploads/files/69675a3630f11e00702538a4/original.png?1768380982'
+                                                                                        alt="Slide 3"
+                                                                                        style="width:100%; height:100%; object-fit:cover;  display:block;">
+                                                                                </a>
+                                                                            </div>
+                                                                            <div class="c-slide"
+                                                                                style="flex:0 0 100%; box-sizing:border-box;">
+                                                                                <a href="https://www.mcdonalds.fr/restaurants/%7B%7Bcustom_attribute.$%7BFavRestaurant1%7D%7D%7D/commander?lid=qari2go0fywh"
+                                                                                    target="_blank"
+                                                                                    style="display:block; text-decoration:none; line-height:0;">
+                                                                                    <img src='https://cdn.braze.eu/image_uploads/files/69675a4030f11e00702538b2/original.png?1768380991'
+                                                                                        alt="Slide 6"
+                                                                                        style="width:100%; height:100%; object-fit:cover;  display:block;">
+                                                                                </a>
+                                                                            </div>
+                                                                            <div class="c-slide"
+                                                                                style="flex:0 0 100%; box-sizing:border-box;">
+                                                                                <a href="https://www.mcdonalds.fr/restaurants/%7B%7Bcustom_attribute.$%7BFavRestaurant1%7D%7D%7D/commander?lid=lan55o6f67ph"
+                                                                                    target="_blank"
+                                                                                    style="display:block; text-decoration:none; line-height:0;">
+                                                                                    <img src='https://cdn.braze.eu/image_uploads/files/69675a3e30f11e00702538af/original.png?1768380989'
+                                                                                        alt="Slide 5"
+                                                                                        style="width:100%; height:100%; object-fit:cover;  display:block;">
+                                                                                </a>
+                                                                            </div>
+                                                                            <div class="c-slide"
+                                                                                style="flex:0 0 100%; box-sizing:border-box;">
+                                                                                <a href="https://www.mcdonalds.fr/restaurants/%7B%7Bcustom_attribute.$%7BFavRestaurant1%7D%7D%7D/commander?lid=hy1kgu7dpr65"
+                                                                                    target="_blank"
+                                                                                    style="display:block; text-decoration:none; line-height:0;">
+                                                                                    <img src='https://cdn.braze.eu/image_uploads/files/69675a3f30f11e00702538b1/original.png?1768380991'
+                                                                                        alt="Slide 4"
+                                                                                        style="width:100%; height:100%; object-fit:cover;  display:block;">
+                                                                                </a>
+                                                                            </div>
+                                                                            <div class="c-slide"
+                                                                                style="flex:0 0 100%; box-sizing:border-box;">
+                                                                                <a href="https://www.mcdonalds.fr/restaurants/%7B%7Bcustom_attribute.$%7BFavRestaurant1%7D%7D%7D/commander?lid=kvrlsxu0quq8"
+                                                                                    target="_blank"
+                                                                                    style="display:block; text-decoration:none; line-height:0;">
+                                                                                    <img src='https://cdn.braze.eu/image_uploads/files/69675a3930f11e00702538a8/original.png?1768380984'
+                                                                                        alt="Slide 1"
+                                                                                        style="width:100%; height:100%; object-fit:cover;  display:block;">
+                                                                                </a>
+                                                                            </div>
                                                                         </div>
-                                                                        <div class="c-slide" style="flex:0 0 100%; box-sizing:border-box;">
-                                                                          <a href="https://www.mcdonalds.fr/restaurants/%7B%7Bcustom_attribute.$%7BFavRestaurant1%7D%7D%7D/commander" target="_blank" style="display:block; text-decoration:none; line-height:0;">
-                                                                            <img src="https://test-mail-kinetic.bsys3.fr/images/3-big-mac_m.png" alt="Slide 3"
-                                                                              style="width:100%; height:100%; object-fit:cover;  display:block;">
-                                                                          </a>
+                                                                        <div class="carousel-dots"
+                                                                            style="text-align:center; background:#050303; height:34px; margin:-1px">
+                                                                            <label for="mslide1"
+                                                                                style="display:inline-block; width:40px; height:5px; margin:0 6px; border:1px solid rgba(0,0,0,0.25); cursor:pointer;"></label>
+                                                                            <label for="mslide2"
+                                                                                style="display:inline-block; width:40px; height:5px; margin:0 6px; border:1px solid rgba(0,0,0,0.25); cursor:pointer;"></label>
+                                                                            <label for="mslide3"
+                                                                                style="display:inline-block; width:40px; height:5px; margin:0 6px; border:1px solid rgba(0,0,0,0.25); cursor:pointer;"></label>
+                                                                            <label for="mslide4"
+                                                                                style="display:inline-block; width:40px; height:5px; margin:0 6px; border:1px solid rgba(0,0,0,0.25); cursor:pointer;"></label>
+                                                                            <label for="mslide5"
+                                                                                style="display:inline-block; width:40px; height:5px; margin:0 6px; border:1px solid rgba(0,0,0,0.25); cursor:pointer;"></label>
+                                                                            <label for="mslide6"
+                                                                                style="display:inline-block; width:40px; height:5px; margin:0 6px; border:1px solid rgba(0,0,0,0.25); cursor:pointer;"></label>
                                                                         </div>
-                                                                        <div class="c-slide" style="flex:0 0 100%; box-sizing:border-box;">
-                                                                          <a href="https://www.mcdonalds.fr/restaurants/%7B%7Bcustom_attribute.$%7BFavRestaurant1%7D%7D%7D/commander" target="_blank" style="display:block; text-decoration:none; line-height:0;">
-                                                                            <img src="https://test-mail-kinetic.bsys3.fr/images/6-fries_m.png" alt="Slide 6"
-                                                                              style="width:100%; height:100%; object-fit:cover;  display:block;">
-                                                                          </a>
+                                                                        <div class="carousel-legend"
+                                                                            style="width:100%; height:50px; background:#050303; margin-top:-1px;">
+                                                                            <img src='https://cdn.braze.eu/image_uploads/files/69675a3830f11e00702538a6/original.png?1768380983'
+                                                                                alt="Legend"
+                                                                                style="max-width:290px; height:auto; display:block;">
                                                                         </div>
-                                                                        <div class="c-slide" style="flex:0 0 100%; box-sizing:border-box;">
-                                                                          <a href="https://www.mcdonalds.fr/restaurants/%7B%7Bcustom_attribute.$%7BFavRestaurant1%7D%7D%7D/commander" target="_blank" style="display:block; text-decoration:none; line-height:0;">
-                                                                            <img src="https://test-mail-kinetic.bsys3.fr/images/5-souce_m.png" alt="Slide 5"
-                                                                              style="width:100%; height:100%; object-fit:cover;  display:block;">
-                                                                          </a>
+                                                                        <div class="carousel-nav"
+                                                                            style="margin-top: -1px;">
+                                                                            <label class="prev prev1" for="mslide6"><img
+                                                                                    src='https://cdn.braze.eu/image_uploads/files/69675a3a30f11e00702538aa/original.png?1768380986'
+                                                                                    alt="Precedente"></label>
+                                                                            <label class="next next1" for="mslide2"><img
+                                                                                    src='https://cdn.braze.eu/image_uploads/files/69675a3c30f11e00702538ad/original.png?1768380988'
+                                                                                    alt="Successiva"></label>
+
+                                                                            <label class="prev prev2" for="mslide1"><img
+                                                                                    src='https://cdn.braze.eu/image_uploads/files/69675a3a30f11e00702538aa/original.png?1768380986'
+                                                                                    alt="Precedente"></label>
+                                                                            <label class="next next2" for="mslide3"><img
+                                                                                    src='https://cdn.braze.eu/image_uploads/files/69675a3c30f11e00702538ad/original.png?1768380988'
+                                                                                    alt="Successiva"></label>
+
+                                                                            <label class="prev prev3" for="mslide2"><img
+                                                                                    src='https://cdn.braze.eu/image_uploads/files/69675a3a30f11e00702538aa/original.png?1768380986'
+                                                                                    alt="Precedente"></label>
+                                                                            <label class="next next3" for="mslide4"><img
+                                                                                    src='https://cdn.braze.eu/image_uploads/files/69675a3c30f11e00702538ad/original.png?1768380988'
+                                                                                    alt="Successiva"></label>
+
+                                                                            <label class="prev prev4" for="mslide3"><img
+                                                                                    src='https://cdn.braze.eu/image_uploads/files/69675a3a30f11e00702538aa/original.png?1768380986'
+                                                                                    alt="Precedente"></label>
+                                                                            <label class="next next4" for="mslide5"><img
+                                                                                    src='https://cdn.braze.eu/image_uploads/files/69675a3c30f11e00702538ad/original.png?1768380988'
+                                                                                    alt="Successiva"></label>
+
+                                                                            <label class="prev prev5" for="mslide4"><img
+                                                                                    src='https://cdn.braze.eu/image_uploads/files/69675a3a30f11e00702538aa/original.png?1768380986'
+                                                                                    alt="Precedente"></label>
+                                                                            <label class="next next5" for="mslide6"><img
+                                                                                    src='https://cdn.braze.eu/image_uploads/files/69675a3c30f11e00702538ad/original.png?1768380988'
+                                                                                    alt="Successiva"></label>
+
+                                                                            <label class="prev prev6" for="mslide5"><img
+                                                                                    src='https://cdn.braze.eu/image_uploads/files/69675a3a30f11e00702538aa/original.png?1768380986'
+                                                                                    alt="Precedente"></label>
+                                                                            <label class="next next6" for="mslide1"><img
+                                                                                    src='https://cdn.braze.eu/image_uploads/files/69675a3c30f11e00702538ad/original.png?1768380988'
+                                                                                    alt="Successiva"></label>
                                                                         </div>
-                                                                        <div class="c-slide" style="flex:0 0 100%; box-sizing:border-box;">
-                                                                          <a href="https://www.mcdonalds.fr/restaurants/%7B%7Bcustom_attribute.$%7BFavRestaurant1%7D%7D%7D/commander" target="_blank" style="display:block; text-decoration:none; line-height:0;">
-                                                                            <img src="https://test-mail-kinetic.bsys3.fr/images/4-apple-sprite_m.png" alt="Slide 4"
-                                                                              style="width:100%; height:100%; object-fit:cover;  display:block;">
-                                                                          </a>
+
+                                                                    </div>
+                                                                    <!--<![endif]-->
+                                                                    <div width="100%" bgcolor="#000000">
+                                                                        <div style="margin-top:-1px;" align="center"
+                                                                            width="100%">
+                                                                            <a href="https://www.mcdonalds.fr/restaurants/{{custom_attribute.${FavRestaurant1}}}/commander?lid=r3vvc14l7onu&cat=MERCATO_LEGENDES&utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=cta_je_compose_ma_team"
+                                                                                target="_blank"><img
+                                                                                    src='https://cdn.braze.eu/image_uploads/files/69675a3830f11e00702538a7/original.png?1768380984'
+                                                                                    style="
+                                                                                        display: block;
+                                                                                        height: auto;
+                                                                                        border: 0;
+                                                                                        max-width: 600px;
+                                                                                    " width="100%"
+                                                                                    alt="cta_je_compose_ma_team"
+                                                                                    title="cta_je_compose_ma_team"
+                                                                                    height="auto" /></a>
                                                                         </div>
-                                                                        <div class="c-slide" style="flex:0 0 100%; box-sizing:border-box;">
-                                                                          <a href="https://www.mcdonalds.fr/restaurants/%7B%7Bcustom_attribute.$%7BFavRestaurant1%7D%7D%7D/commander" target="_blank" style="display:block; text-decoration:none; line-height:0;">
-                                                                            <img src="https://test-mail-kinetic.bsys3.fr/images/1-oreo_m.png" alt="Slide 1"
-                                                                              style="width:100%; height:100%; object-fit:cover;  display:block;">
-                                                                          </a>
-                                                                        </div>
-                                                                      </div>
-                                                                      <div class="carousel-dots" style="text-align:center; background:#050303; height:34px; margin:-1px">
-                                                                        <label for="mslide1"
-                                                                          style="display:inline-block; width:40px; height:5px; margin:0 6px; border:1px solid rgba(0,0,0,0.25); cursor:pointer;"></label>
-                                                                        <label for="mslide2"
-                                                                          style="display:inline-block; width:40px; height:5px; margin:0 6px; border:1px solid rgba(0,0,0,0.25); cursor:pointer;"></label>
-                                                                        <label for="mslide3"
-                                                                          style="display:inline-block; width:40px; height:5px; margin:0 6px; border:1px solid rgba(0,0,0,0.25); cursor:pointer;"></label>
-                                                                        <label for="mslide4"
-                                                                          style="display:inline-block; width:40px; height:5px; margin:0 6px; border:1px solid rgba(0,0,0,0.25); cursor:pointer;"></label>
-                                                                        <label for="mslide5"
-                                                                          style="display:inline-block; width:40px; height:5px; margin:0 6px; border:1px solid rgba(0,0,0,0.25); cursor:pointer;"></label>
-                                                                        <label for="mslide6"
-                                                                          style="display:inline-block; width:40px; height:5px; margin:0 6px; border:1px solid rgba(0,0,0,0.25); cursor:pointer;"></label>
-                                                                      </div>
-                                                                      <div class="carousel-legend" style="width:100%; height:84px;background:#050303; margin-top:-1px;">
-                                                                        <img src="https://test-mail-kinetic.bsys3.fr/images/legend_m.png" alt="Legend" style="max-width:290px; height:auto; display:block;">
-                                                                      </div>
-                                                                      <div class="carousel-nav" style="margin-top: -1px;">
-                                                                        <label class="prev prev1" for="mslide6"><img src="https://test-mail-kinetic.bsys3.fr/images/arrow-left_m.png" alt="Precedente"></label>
-                                                                        <label class="next next1" for="mslide2"><img src="https://test-mail-kinetic.bsys3.fr/images/arrow-right_m.png" alt="Successiva"></label>
-
-                                                                        <label class="prev prev2" for="mslide1"><img src="https://test-mail-kinetic.bsys3.fr/images/arrow-left_m.png" alt="Precedente"></label>
-                                                                        <label class="next next2" for="mslide3"><img src="https://test-mail-kinetic.bsys3.fr/images/arrow-right_m.png" alt="Successiva"></label>
-
-                                                                        <label class="prev prev3" for="mslide2"><img src="https://test-mail-kinetic.bsys3.fr/images/arrow-left_m.png" alt="Precedente"></label>
-                                                                        <label class="next next3" for="mslide4"><img src="https://test-mail-kinetic.bsys3.fr/images/arrow-right_m.png" alt="Successiva"></label>
-
-                                                                        <label class="prev prev4" for="mslide3"><img src="https://test-mail-kinetic.bsys3.fr/images/arrow-left_m.png" alt="Precedente"></label>
-                                                                        <label class="next next4" for="mslide5"><img src="https://test-mail-kinetic.bsys3.fr/images/arrow-right_m.png" alt="Successiva"></label>
-
-                                                                        <label class="prev prev5" for="mslide4"><img src="https://test-mail-kinetic.bsys3.fr/images/arrow-left_m.png" alt="Precedente"></label>
-                                                                        <label class="next next5" for="mslide6"><img src="https://test-mail-kinetic.bsys3.fr/images/arrow-right_m.png" alt="Successiva"></label>
-
-                                                                        <label class="prev prev6" for="mslide5"><img src="https://test-mail-kinetic.bsys3.fr/images/arrow-left_m.png" alt="Precedente"></label>
-                                                                        <label class="next next6" for="mslide1"><img src="https://test-mail-kinetic.bsys3.fr/images/arrow-right_m.png" alt="Successiva"></label>
-                                                                      </div>
-
-                                                                    </div><!--<![endif]-->
-
+                                                                    </div>
                                                                 </div>
                                                                 <!-- Inset carosell here -->
                                                             </td>
@@ -1022,67 +1283,7 @@
                         </tbody>
                     </table>
                     <!--<![endif]-->
-                    <table class="row row-6" align="center" width="100%" border="0" cellpadding="0" cellspacing="0"
-                        role="presentation" style="mso-table-lspace: 0; mso-table-rspace: 0; margin:-1px 0 0 0;">
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <table class="row-content stack" align="center" border="0" cellpadding="0"
-                                        cellspacing="0" role="presentation" style="
-                                                mso-table-lspace: 0;
-                                                mso-table-rspace: 0;
-                                                background-color: #050303;
-                                                color: #000;
-                                                width: 600px;
-                                                margin: 0 auto;
-                                            " width="600">
-                                        <tbody>
-                                            <tr>
-                                                <td class="column column-1" width="100%" style="
-                                                            mso-table-lspace: 0;
-                                                            mso-table-rspace: 0;
-                                                            font-weight: 400;
-                                                            text-align: left;
-                                                            padding-bottom: 40px;
-                                                            padding-top: 5px;
-                                                            vertical-align: top;
-                                                        ">
-                                                    <table class="image_block block-1" width="100%" border="0"
-                                                        cellpadding="0" cellspacing="0" role="presentation"
-                                                        style="mso-table-lspace: 0; mso-table-rspace: 0">
-                                                        <tr>
-                                                            <td class="pad" style="
-                                                                        width: 100%;
-                                                                        padding-right: 0;
-                                                                        padding-left: 0;
-                                                                    ">
-                                                                <div class="alignment" align="center">
-                                                                    <div style="max-width: 600px; display:block;">
-                                                                        <a href="https://www.mcdonalds.fr/restaurants/{{custom_attribute.\${FavRestaurant1}}}/commander?lid=gmy97ol4mnyj&cat=MERCATO_LEGENDES&utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=cta_je_compose_ma_team"
-                                                                            target="_blank"><img
-                                                                                src="https://test-mail-kinetic.bsys3.fr/images/cta.png"
-                                                                                style="
-                                                                                        display: block;
-                                                                                        height: auto;
-                                                                                        border: 0;
-                                                                                        width: 100%;
-                                                                                    " alt="cta_je_compose_ma_team"
-                                                                                title="cta_je_compose_ma_team"
-                                                                                height="auto" /></a>
-                                                                    </div>
-                                                                    <!-- End Fallback -->
-                                                                </div>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+
                     <table class="row row-7" align="center" width="100%" border="0" cellpadding="0" cellspacing="0"
                         role="presentation" style="mso-table-lspace: 0; mso-table-rspace: 0">
                         <tbody>
@@ -1204,35 +1405,15 @@
                                                             vertical-align: top;
                                                         ">
                                                     <table class="paragraph_block block-1" width="100%" border="0"
-                                                        cellpadding="0" cellspacing="0" role="presentation" style="
-                                                                mso-table-lspace: 0;
-                                                                mso-table-rspace: 0;
-                                                                word-break: break-word;
-                                                            ">
+                                                        cellpadding="0" cellspacing="0" role="presentation"
+                                                        style="mso-table-lspace:0;mso-table-rspace:0;word-break:break-word;">
                                                         <tr>
-                                                            <td class="pad" style="
-                                                                        padding-bottom: 15px;
-                                                                        padding-left: 10px;
-                                                                        padding-right: 10px;
-                                                                        padding-top: 10px;
-                                                                    ">
-                                                                <div style="
-                                                                            color: #000;
-                                                                            direction: ltr;
-                                                                            font-family: Arial, Sans-serif;
-                                                                            font-size: 22px;
-                                                                            font-weight: 700;
-                                                                            letter-spacing: 0;
-                                                                            line-height: 1.2;
-                                                                            text-align: center;
-                                                                            mso-line-height-alt: 26px;
-                                                                            width: 100%;
-                                                                        ">
-                                                                    <p
-                                                                        style="margin: 0;width: 100%;text-align: center;">
-                                                                        Le recrutement continue...
-                                                                    </p>
-                                                                </div>
+                                                            <td class="pad" align="center"
+                                                                style="padding:10px 10px 15px 10px;text-align:center;">
+                                                                <p
+                                                                    style="margin:0;color:#000;direction:ltr;font-family:Arial, sans-serif;font-size:22px;font-weight:700;letter-spacing:0;line-height:1.2;mso-line-height-alt:26px;text-align:center;">
+                                                                    Le recrutement continue...
+                                                                </p>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -1247,7 +1428,7 @@
                                                                     ">
                                                                 <div class="alignment" align="center">
                                                                     <div class="fullWidth" style="max-width: 600px">
-                                                                        <a href="https://www.mcdonalds.fr/mon-compte/programme-fidelite?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=image_deux_nouveaux_joueurs&lid=yx7sy7buarl9"
+                                                                        <a href="https://www.mcdonalds.fr/mon-compte/programme-fidelite?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=image_deux_nouveaux_joueurs&lid=tpfzu4ktcy5a"
                                                                             target="_blank"><img
                                                                                 src="https://cdn.braze.eu/appboy/communication/assets/image_assets/images/69452203c6a081050ef52ada/original.png?1766138370"
                                                                                 style="
@@ -1282,7 +1463,7 @@
                                                                     ">
                                                                 <div class="alignment" align="center">
                                                                     <div class="fullWidth" style="max-width: 600px">
-                                                                        <a href="https://www.mcdonalds.fr/mon-compte/programme-fidelite?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=image_deux_nouveaux_joueurs&lid=291962x434dp"
+                                                                        <a href="https://www.mcdonalds.fr/mon-compte/programme-fidelite?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=image_deux_nouveaux_joueurs&lid=z47hz6aj0bc8"
                                                                             target="_blank"><img
                                                                                 src="https://cdn.braze.eu/appboy/communication/assets/image_assets/images/69452215697a10008e97c33d/original.png?1766138389"
                                                                                 style="
@@ -1380,17 +1561,17 @@
                                                                         padding-right: 0;
                                                                         padding-left: 0;
                                                                     ">
-                                                                <div class="alignment" align="center">
-                                                                    <div style="max-width: 300px">
-                                                                        <a href="https://www.mcdonalds.fr/mon-compte/programme-fidelite?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=cta_cest_pour_moi&lid=hweelugjves2"
+                                                                <div class="alignment cpm-1" align="center" with="100%">
+                                                                    <div style="max-width: 600px; width:100%">
+                                                                        <a href="https://www.mcdonalds.fr/mon-compte/programme-fidelite?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=cta_cest_pour_moi&lid=lfhv8n06qoqd"
                                                                             target="_blank"><img
-                                                                                src="https://cdn.braze.eu/appboy/communication/assets/image_assets/images/694522598804db05b3839dbd/original.png?1766138457"
+                                                                                src='https://cdn.braze.eu/image_uploads/files/69675a4430f11e00702538b9/original.png?1768380996'
                                                                                 style="
                                                                                         display: block;
                                                                                         height: auto;
                                                                                         border: 0;
-                                                                                        width: 100%;
-                                                                                    " width="300" alt="C'est pour moi"
+                                                                                        max-width: 600px;
+                                                                                    " width="100%" alt="C'est pour moi"
                                                                                 title="C'est pour moi"
                                                                                 height="auto" /></a>
                                                                     </div>
@@ -1479,32 +1660,14 @@
                                                             vertical-align: top;
                                                         ">
                                                     <table class="paragraph_block block-1" width="100%" border="0"
-                                                        cellpadding="0" cellspacing="0" role="presentation" style="
-                                                                mso-table-lspace: 0;
-                                                                mso-table-rspace: 0;
-                                                                word-break: break-word;
-                                                            ">
+                                                        cellpadding="0" cellspacing="0" role="presentation"
+                                                        style="mso-table-lspace:0;mso-table-rspace:0;word-break:break-word;">
                                                         <tr>
-                                                            <td class="pad" style="
-                                                                        padding-bottom: 15px;
-                                                                        padding-left: 10px;
-                                                                        padding-right: 10px;
-                                                                        padding-top: 10px;
-                                                                    ">
-                                                                <div style="
-                                                                            color: #000;
-                                                                            direction: ltr;
-                                                                            font-family: Arial, Sans-serif;
-                                                                            font-size: 22px;
-                                                                            font-weight: 700;
-                                                                            letter-spacing: 0;
-                                                                            line-height: 1.2;
-                                                                            text-align: center;
-                                                                            mso-line-height-alt: 26px;
-                                                                            width: 100%;
-                                                                        ">
-                                                                    <p
-                                                                        style="margin: 0; width: 100%;text-align: center;">
+                                                            <td class="pad" align="center"
+                                                                style="padding:10px 10px 15px 10px;text-align:center;">
+                                                                <div
+                                                                    style="color:#000;direction:ltr;font-family:Arial, sans-serif;font-size:22px;font-weight:700;letter-spacing:0;line-height:1.2;mso-line-height-alt:26px;text-align:center;">
+                                                                    <p style="margin:0;text-align:center;">
                                                                         Le recrutement continue...
                                                                     </p>
                                                                 </div>
@@ -1522,7 +1685,7 @@
                                                                     ">
                                                                 <div class="alignment" align="center">
                                                                     <div class="fullWidth" style="max-width: 600px">
-                                                                        <a href="https://www.mcdonalds.fr/mon-compte/programme-fidelite?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=image_maillot_de_legendes&lid=kqe4gcwjg59f"
+                                                                        <a href="https://www.mcdonalds.fr/mon-compte/programme-fidelite?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=image_maillot_de_legendes&lid=01xk8w0hsmi0"
                                                                             target="_blank"><img
                                                                                 src="https://cdn.braze.eu/appboy/communication/assets/image_assets/images/69452807a9ea47008f4eb143/original.png?1766139911"
                                                                                 style="
@@ -1557,7 +1720,7 @@
                                                                     ">
                                                                 <div class="alignment" align="center">
                                                                     <div class="fullWidth" style="max-width: 600px">
-                                                                        <a href="https://www.mcdonalds.fr/mon-compte/programme-fidelite?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=image_maillot_de_legendes&lid=nwqa2kgkbsqs"
+                                                                        <a href="https://www.mcdonalds.fr/mon-compte/programme-fidelite?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=image_maillot_de_legendes&lid=kqo0w2nfml8g"
                                                                             target="_blank"><img
                                                                                 src="https://cdn.braze.eu/appboy/communication/assets/image_assets/images/694527902c0f77008e147c3c/original.png?1766139791"
                                                                                 style="
@@ -1655,17 +1818,18 @@
                                                                         padding-right: 0;
                                                                         padding-left: 0;
                                                                     ">
-                                                                <div class="alignment" align="center">
-                                                                    <div style="max-width: 300px">
-                                                                        <a href="https://www.mcdonalds.fr/mon-compte/programme-fidelite?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=cta_cest_pour_moi&lid=3zensedmrb7f"
+                                                                <div class="alignment cpm-2" align="center"
+                                                                    width="100%">
+                                                                    <div style="max-width: 600px; width:100%">
+                                                                        <a href="https://www.mcdonalds.fr/mon-compte/programme-fidelite?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=cta_cest_pour_moi&lid=yukjv2tqifmw"
                                                                             target="_blank"><img
-                                                                                src="https://cdn.braze.eu/appboy/communication/assets/image_assets/images/694522598804db05b3839dbd/original.png?1766138457"
+                                                                                src='https://cdn.braze.eu/image_uploads/files/69675a4430f11e00702538b9/original.png?1768380996'
                                                                                 style="
                                                                                         display: block;
                                                                                         height: auto;
                                                                                         border: 0;
-                                                                                        width: 100%;
-                                                                                    " width="300" alt="C'est pour moi"
+                                                                                       max-width: 600px;
+                                                                                    " width="100%" alt="C'est pour moi"
                                                                                 title="C'est pour moi"
                                                                                 height="auto" /></a>
                                                                     </div>
@@ -1754,33 +1918,17 @@
                                                             vertical-align: top;
                                                         ">
                                                     <table class="paragraph_block block-1" width="100%" border="0"
-                                                        cellpadding="0" cellspacing="0" role="presentation" style="
-                                                                mso-table-lspace: 0;
-                                                                mso-table-rspace: 0;
-                                                                word-break: break-word;
-                                                            ">
+                                                        cellpadding="0" cellspacing="0" role="presentation"
+                                                        style="mso-table-lspace:0;mso-table-rspace:0;word-break:break-word;">
                                                         <tr>
-                                                            <td class="pad" align="center" style="
-                                                                        padding-bottom: 15px;
-                                                                        padding-left: 10px;
-                                                                        padding-right: 10px;
-                                                                        padding-top: 10px;
-                                                                    ">
-                                                                <p style="
-                                                                            color: #000;
-                                                                            direction: ltr;
-                                                                            font-family: Arial, Sans-serif;
-                                                                            font-size: 22px;
-                                                                            font-weight: 700;
-                                                                            letter-spacing: 0;
-                                                                            line-height: 1.2;
-                                                                            text-align: center;
-                                                                            mso-line-height-alt: 26px;
-                                                                            width: 100%;
-                                                                        ">
-                                                                    Le recrutement continue...
-                                                                </p>
-
+                                                            <td class="pad" align="center"
+                                                                style="padding:10px 10px 15px 10px;text-align:center;">
+                                                                <div
+                                                                    style="color:#000;direction:ltr;font-family:Arial, sans-serif;font-size:22px;font-weight:700;letter-spacing:0;line-height:1.2;mso-line-height-alt:26px;text-align:center;">
+                                                                    <p style="margin:0;text-align:center;">
+                                                                        Le recrutement continue...
+                                                                    </p>
+                                                                </div>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -1795,7 +1943,7 @@
                                                                     ">
                                                                 <div class="alignment" align="center">
                                                                     <div class="fullWidth" style="max-width: 600px">
-                                                                        <a href="https://www.mcdonalds.fr/mon-compte/programme-fidelite?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=cta_cest_pour_moi&lid=cnkodj5tfhce"
+                                                                        <a href="https://www.mcdonalds.fr/mon-compte/programme-fidelite?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=cta_cest_pour_moi&lid=3m8ba60bt6f3"
                                                                             target="_blank"><img
                                                                                 src="https://cdn.braze.eu/appboy/communication/assets/image_assets/images/69452807a9ea47008f4eb143/original.png?1766139911"
                                                                                 style="
@@ -1830,7 +1978,7 @@
                                                                     ">
                                                                 <div class="alignment" align="center">
                                                                     <div class="fullWidth" style="max-width: 600px">
-                                                                        <a href="https://www.mcdonalds.fr/mon-compte/programme-fidelite?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=cta_cest_pour_moi&lid=a6rq8uueu86e"
+                                                                        <a href="https://www.mcdonalds.fr/mon-compte/programme-fidelite?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=cta_cest_pour_moi&lid=9e0gtze8tc40"
                                                                             target="_blank"><img
                                                                                 src="https://cdn.braze.eu/appboy/communication/assets/image_assets/images/694527902c0f77008e147c3c/original.png?1766139791"
                                                                                 style="
@@ -1928,17 +2076,18 @@
                                                                         padding-right: 0;
                                                                         padding-left: 0;
                                                                     ">
-                                                                <div class="alignment" align="center">
-                                                                    <div style="max-width: 300px">
-                                                                        <a href="https://www.mcdonalds.fr/mon-compte/programme-fidelite?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=cta_cest_pour_moi&lid=zjaw2lu0liy0"
+                                                                <div class="alignment cpM-3" align="center"
+                                                                    width="100%">
+                                                                    <div style="max-width: 600px; width:100%">
+                                                                        <a href="https://www.mcdonalds.fr/mon-compte/programme-fidelite?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=cta_cest_pour_moi&lid=1zy1odf5vsi8"
                                                                             target="_blank"><img
-                                                                                src="https://cdn.braze.eu/appboy/communication/assets/image_assets/images/694522598804db05b3839dbd/original.png?1766138457"
+                                                                                src='https://cdn.braze.eu/image_uploads/files/69675a4430f11e00702538b9/original.png?1768380996'
                                                                                 style="
                                                                                         display: block;
                                                                                         height: auto;
                                                                                         border: 0;
-                                                                                        width: 100%;
-                                                                                    " width="300" alt="C'est pour moi"
+                                                                                       max-width: 600px;
+                                                                                    " width="100%" alt="C'est pour moi"
                                                                                 title="C'est pour moi"
                                                                                 height="auto" /></a>
                                                                     </div>
@@ -2108,7 +2257,7 @@
                                                                     ">
                                                                 <div class="alignment" align="center">
                                                                     <div class="fullWidth" style="max-width: 480px">
-                                                                        <a href="https://mcdo.captainwallet.com/fr/fidelite?lid=rr1varhh21i8&user[identifier]={{custom_attribute.${encrypted_ref}}}&channel=email&tag=LancementMercato_Toutebase"
+                                                                        <a href="https://mcdo.captainwallet.com/fr/fidelite?lid=6c7eu9ymsfs6&user[identifier]={{custom_attribute.${encrypted_ref}}}&channel=email&tag=LancementMercato_Toutebase"
                                                                             target="_blank"><img
                                                                                 src="https://cdn.braze.eu/appboy/communication/assets/image_assets/images/6878d0a8ee29d10085e3652f/original.png?1752748200"
                                                                                 style="
@@ -2185,7 +2334,7 @@
                                                                     ">
                                                                 <div class="alignment" align="center">
                                                                     <div style="max-width: 330px">
-                                                                        <a href="https://mcdo.captainwallet.com/fr/fidelite?lid=483wd0n33cwi&user[identifier]={{custom_attribute.${encrypted_ref}}}&channel=email&tag=LancementMercato_Toutebase"
+                                                                        <a href="https://mcdo.captainwallet.com/fr/fidelite?lid=kfqojptpo9m3&user[identifier]={{custom_attribute.${encrypted_ref}}}&channel=email&tag=LancementMercato_Toutebase"
                                                                             target="_blank"><img
                                                                                 src="https://cdn.braze.eu/appboy/communication/assets/image_assets/images/6878bcd5c732930075bb52d0/original.png?1752743125"
                                                                                 style="
@@ -2326,7 +2475,7 @@
                                                                     ">
                                                                 <div class="alignment" align="center">
                                                                     <div class="fullWidth" style="max-width: 360px">
-                                                                        <a href="https://www.mcdonalds.fr/nos-services/application-mobile-mcdo-plus?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=tous_les_services_mcdo&lid=g5y0326giqb5"
+                                                                        <a href="https://www.mcdonalds.fr/nos-services/application-mobile-mcdo-plus?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=tous_les_services_mcdo&lid=aw81ldhnk068"
                                                                             target="_blank"><img
                                                                                 src="https://cdn.braze.eu/appboy/communication/assets/image_assets/images/67bcb2845c8e29006395c15e/original.png?1740419715"
                                                                                 style="
@@ -2401,7 +2550,7 @@
                                                                     ">
                                                                 <div class="alignment" align="center">
                                                                     <div style="max-width: 65px">
-                                                                        <a href="https://www.mcdonalds.fr/mon-compte/programme-fidelite?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=picto_programme_fid&lid=5j9mb3i7u751"
+                                                                        <a href="https://www.mcdonalds.fr/mon-compte/programme-fidelite?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=picto_programme_fid&lid=ukstnzxguv0e"
                                                                             target="_blank"><img
                                                                                 src="https://cdn.braze.eu/appboy/communication/assets/image_assets/images/6802257fad53eb006443c89e/original.png?1744971135"
                                                                                 style="
@@ -2466,7 +2615,7 @@
                                                                     ">
                                                                 <div class="alignment" align="center">
                                                                     <div style="max-width: 65px">
-                                                                        <a href="https://www.mcdonalds.fr/nos-services/la-livraison-domicile?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=picto_lad&lid=76amdhh58bbu#LAD"
+                                                                        <a href="https://www.mcdonalds.fr/nos-services/la-livraison-domicile?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=picto_lad&lid=u4c3sd58mv67#LAD"
                                                                             target="_blank"><img
                                                                                 src="https://cdn.braze.eu/appboy/communication/assets/image_assets/images/68022584fe969e006523f7b2/original.png?1744971140"
                                                                                 style="
@@ -2527,7 +2676,7 @@
                                                                     ">
                                                                 <div class="alignment" align="center">
                                                                     <div style="max-width: 65px">
-                                                                        <a href="https://www.mcdonalds.fr/nos-services/click-collect?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=picto_cc&lid=rbfh2irzsx2q"
+                                                                        <a href="https://www.mcdonalds.fr/nos-services/click-collect?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=picto_cc&lid=e5hog9j56udj"
                                                                             target="_blank"><img
                                                                                 src="https://cdn.braze.eu/appboy/communication/assets/image_assets/images/68022589f65d2f00650ce7aa/original.png?1744971145"
                                                                                 style="
@@ -2590,7 +2739,7 @@
                                                                     ">
                                                                 <div class="alignment" align="center">
                                                                     <div style="max-width: 65px">
-                                                                        <a href="https://www.mcdonalds.fr/nos-services/application-mobile-mcdo-plus?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=picto_offres_persos&lid=pp1in8a5atyr"
+                                                                        <a href="https://www.mcdonalds.fr/nos-services/application-mobile-mcdo-plus?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=picto_offres_persos&lid=w1bc2qh1zph0"
                                                                             target="_blank"><img
                                                                                 src="https://cdn.braze.eu/appboy/communication/assets/image_assets/images/6802258e9172e30066f769ec/original.png?1744971150"
                                                                                 style="
@@ -2710,7 +2859,7 @@
                                                                     ">
                                                                 <div class="alignment" align="center">
                                                                     <div style="max-width: 68px">
-                                                                        <a href="https://www.mcdonalds.fr/mon-compte/programme-fidelite?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=picto_programme_fid&lid=fmcjl9cvcay3"
+                                                                        <a href="https://www.mcdonalds.fr/mon-compte/programme-fidelite?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=picto_programme_fid&lid=5aiimhvy1tmw"
                                                                             target="_blank"><img
                                                                                 src="https://cdn.braze.eu/appboy/communication/assets/image_assets/images/6802257fad53eb006443c89e/original.png?1744971135"
                                                                                 style="
@@ -2789,7 +2938,7 @@
                                                                     ">
                                                                 <div class="alignment" align="center">
                                                                     <div style="max-width: 68px">
-                                                                        <a href="https://www.mcdonalds.fr/nos-services/la-livraison-domicile?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=picto_lad&lid=xj65wccnq0vb#LAD"
+                                                                        <a href="https://www.mcdonalds.fr/nos-services/la-livraison-domicile?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=picto_lad&lid=0iph5cgewdvn#LAD"
                                                                             target="_blank"><img
                                                                                 src="https://cdn.braze.eu/appboy/communication/assets/image_assets/images/68022584fe969e006523f7b2/original.png?1744971140"
                                                                                 style="
@@ -2864,7 +3013,7 @@
                                                                     ">
                                                                 <div class="alignment" align="center">
                                                                     <div style="max-width: 68px">
-                                                                        <a href="https://www.mcdonalds.fr/nos-services/click-collect?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=picto_cc&lid=4mluppil65kf"
+                                                                        <a href="https://www.mcdonalds.fr/nos-services/click-collect?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=picto_cc&lid=1keptcs7qq9a"
                                                                             target="_blank"><img
                                                                                 src="https://cdn.braze.eu/appboy/communication/assets/image_assets/images/68022589f65d2f00650ce7aa/original.png?1744971145"
                                                                                 style="
@@ -2941,7 +3090,7 @@
                                                                     ">
                                                                 <div class="alignment" align="center">
                                                                     <div style="max-width: 68px">
-                                                                        <a href="https://www.mcdonalds.fr/nos-services/application-mobile-mcdo-plus?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=picto_offres_persos&lid=bt6qzzej459z"
+                                                                        <a href="https://www.mcdonalds.fr/nos-services/application-mobile-mcdo-plus?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=picto_offres_persos&lid=oeipo5xc69vz"
                                                                             target="_blank"><img
                                                                                 src="https://cdn.braze.eu/appboy/communication/assets/image_assets/images/6802258e9172e30066f769ec/original.png?1744971150"
                                                                                 style="
@@ -3038,7 +3187,7 @@
                                                                     ">
                                                                 <div class="alignment" align="right">
                                                                     <div style="max-width: 150px">
-                                                                        <a href="https://app.adjust.com/1nti1em?lid=4csqxaa27ttk"
+                                                                        <a href="https://app.adjust.com/1nti1em?lid=nyhneiccy2cw"
                                                                             target="_blank"><img
                                                                                 src="https://cdn.braze.eu/appboy/communication/assets/image_assets/images/686fb77ee9cb15058b8555c3/original.png?1752151934"
                                                                                 style="
@@ -3074,7 +3223,7 @@
                                                                     ">
                                                                 <div class="alignment" align="left">
                                                                     <div style="max-width: 150px">
-                                                                        <a href="https://app.adjust.com/kqk6ujd?redirect_windows=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fgl%3DUS%26hl%3Den%26id%3Dcom.md.mcdonalds.gomcdo&redirect_macos=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fgl%3DUS%26hl%3Den%26id%3Dcom.md.mcdonalds.gomcdo&lid=s6woquim5kyd"
+                                                                        <a href="https://app.adjust.com/kqk6ujd?redirect_windows=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fgl%3DUS%26hl%3Den%26id%3Dcom.md.mcdonalds.gomcdo&redirect_macos=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fgl%3DUS%26hl%3Den%26id%3Dcom.md.mcdonalds.gomcdo&lid=ezs820cda8xb"
                                                                             target="_blank"><img
                                                                                 src="https://cdn.braze.eu/appboy/communication/assets/image_assets/images/686fb78f6882ab057a599fe7/original.png?1752151951"
                                                                                 style="
@@ -3213,7 +3362,7 @@
                                                                         numérique.<br /><br />
                                                                         *Durée limitée. Voir disponibilités des
                                                                         produits sur
-                                                                        <a href="https://www.mcdonalds.fr?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=ml_mercato&lid=gr32bxb76tsl"
+                                                                        <a href="https://www.mcdonalds.fr?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=ml_mercato&lid=zck65p54v8jh"
                                                                             target="_blank" style="
                                                                                     text-decoration: underline;
                                                                                     color: #000000;
@@ -3231,7 +3380,7 @@
                                                                         disponibilité dans les restaurants
                                                                         participants au programme de fidélité. Plus
                                                                         d’infos sur votre programme de fidélité sur
-                                                                        <a href="https://www.mcdonalds.fr?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=ml_fid&lid=kstgdx6c0xnv"
+                                                                        <a href="https://www.mcdonalds.fr?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=ml_fid&lid=e15y0bwzh68f"
                                                                             target="_blank" style="
                                                                                     text-decoration: underline;
                                                                                     color: #000000;
@@ -3258,7 +3407,7 @@
                                                                         exhaustive, Menu McCiné, Menu OM…).
                                                                         Rendez-vous sur votre compte McDo via
                                                                         l'application McDo+ ou sur
-                                                                        <a href="https://www.mcdonalds.fr?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=ml_mcdonalds_1&lid=87erwpoygret"
+                                                                        <a href="https://www.mcdonalds.fr?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=ml_mcdonalds_1&lid=poyk3x8hfrsb"
                                                                             target="_blank" style="
                                                                                     text-decoration: underline;
                                                                                     color: #000000;
@@ -3277,7 +3426,7 @@
                                                                                     word-break: break-word;
                                                                                     color: #000000;
                                                                                 "><a
-                                                                                href="https://www.mcdonalds.fr?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=ml_mcdonalds_2&lid=6u8g0w0kbepe"
+                                                                                href="https://www.mcdonalds.fr?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=ml_mcdonalds_2&lid=da9rr49lrqsv"
                                                                                 target="_blank" style="
                                                                                         text-decoration: underline;
                                                                                         color: #000000;
@@ -3292,7 +3441,7 @@
                                                                                     word-break: break-word;
                                                                                     color: #000000;
                                                                                 "><a
-                                                                                href="https://www.mcdonalds.fr/nos-services/la-livraison-domicile?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=ml_mcdonalds_3&lid=60d6waq6zn9l#LAD"
+                                                                                href="https://www.mcdonalds.fr/nos-services/la-livraison-domicile?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=ml_mcdonalds_3&lid=t7ilzy2tvso1#LAD"
                                                                                 target="_blank" style="
                                                                                         text-decoration: underline;
                                                                                         color: #000000;
@@ -3312,7 +3461,7 @@
                                                                                     word-break: break-word;
                                                                                     color: #000000;
                                                                                 "><a
-                                                                                href="https://www.mcdonalds.fr?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=ml_mcdonalds_4&lid=zipq8fs4w4ym"
+                                                                                href="https://www.mcdonalds.fr?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=ml_mcdonalds_4&lid=gtvw29imw7ww"
                                                                                 target="_blank" style="
                                                                                         text-decoration: underline;
                                                                                         color: #000000;
@@ -3333,7 +3482,7 @@
                                                                                     word-break: break-word;
                                                                                     color: #000000;
                                                                                 "><a
-                                                                                href="https://www.mcdonalds.fr/desabonnement?lid=n6jllrf7r24z&customerRef={{${user_id}}}&nationalCampaign=natio&campaignRef={{campaign.${api_id}}}&utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=lien_desabo"
+                                                                                href="https://www.mcdonalds.fr/desabonnement?lid=llvmfeuknl15&customerRef={{${user_id}}}&nationalCampaign=natio&campaignRef={{campaign.${api_id}}}&utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=lien_desabo"
                                                                                 target="_blank" style="
                                                                                         text-decoration: underline;
                                                                                         color: #000000;
@@ -3345,7 +3494,7 @@
                                                                                     word-break: break-word;
                                                                                     color: #000000;
                                                                                 "><a
-                                                                                href="https://www.mcdonalds.fr/aide-en-ligne/mon_compte_mcdo_?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=lien_donnees_personnelles&lid=8oa4g6f3rc1s"
+                                                                                href="https://www.mcdonalds.fr/aide-en-ligne/mon_compte_mcdo_?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=lien_donnees_personnelles&lid=3tcopshnlei6"
                                                                                 target="_blank" style="
                                                                                         text-decoration: underline;
                                                                                         color: #000000;
@@ -3363,7 +3512,7 @@
                                                                                     word-break: break-word;
                                                                                     color: #000000;
                                                                                 "><a
-                                                                                href="https://www.mcdonalds.fr/aide-en-ligne/mon_compte_mcdo_?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=droits_acces&lid=d19oxvioxek0"
+                                                                                href="https://www.mcdonalds.fr/aide-en-ligne/mon_compte_mcdo_?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=droits_acces&lid=jminpqbu6kne"
                                                                                 target="_blank" style="
                                                                                         text-decoration: underline;
                                                                                         color: #000000;
@@ -3414,7 +3563,7 @@
                                                             <td class="pad manger-bouger" style="width: 100%">
                                                                 <div class="alignment" align="center">
                                                                     <div style="max-width: 600px">
-                                                                        <a href="https://www.mangerbouger.fr/?lid=5po6j22gqgm1"
+                                                                        <a href="https://www.mangerbouger.fr/?lid=t7v53sdc0kkp"
                                                                             target="_blank"><img
                                                                                 src="https://cdn.braze.eu/appboy/communication/assets/image_assets/images/67ade17b63015900850b0cfd/original.gif?1739448699"
                                                                                 style="
@@ -3487,7 +3636,7 @@
                                                             <td class="pad manger-bouger" style="width: 100%">
                                                                 <div class="alignment" align="center">
                                                                     <div style="max-width: 600px">
-                                                                        <a href="https://www.mangerbouger.fr/?lid=5oue36rwd9ok"
+                                                                        <a href="https://www.mangerbouger.fr/?lid=wr0lkgeq4voc"
                                                                             target="_blank"><img
                                                                                 src="https://cdn.braze.eu/appboy/communication/assets/image_assets/images/67b4a2e3d16d19164c27e65c/original.gif?1739891427"
                                                                                 style="

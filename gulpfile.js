@@ -11,6 +11,52 @@ const paths = {
   output: 'dist',
 };
 
+const TEST_REPLACEMENT = 'demo';
+
+const fixLineHeights = (html) =>
+  html
+    .replace(/line-height:\s*NaN;?/gi, 'line-height: 1.2;')
+    .replace(/mso-line-height-alt:\s*NaNpx;?/gi, 'mso-line-height-alt: 13px;');
+
+const htmlMinifyOptions = {
+  collapseWhitespace: true,
+  removeComments: false, // preserve MSO conditional comments for email clients
+  minifyCSS: true,
+  minifyJS: true,
+  keepClosingSlash: true,
+  ignoreCustomFragments: [/{%[\s\S]*?%}/, /{{[\s\S]*?}}/],
+};
+
+function minifyTestOnly() {
+  return through2.obj(function (file, _, cb) {
+    const isTestFile = file.path.toLowerCase().endsWith('index-brevo.min.html');
+    if (!isTestFile) {
+      cb(null, file);
+      return;
+    }
+
+    const minifier = htmlmin(htmlMinifyOptions);
+    minifier.once('data', (minified) => cb(null, minified));
+    minifier.once('error', cb);
+    minifier.end(file);
+  });
+}
+
+function minifyBrevoOnly() {
+  return through2.obj(function (file, _, cb) {
+    const isBrevoFile = file.path.toLowerCase().endsWith('index.min.html');
+    if (!isBrevoFile) {
+      cb(null, file);
+      return;
+    }
+
+    const minifier = htmlmin(htmlMinifyOptions);
+    minifier.once('data', (minified) => cb(null, minified));
+    minifier.once('error', cb);
+    minifier.end(file);
+  });
+}
+
 function html() {
   return src(paths.html)
     .pipe(
@@ -29,27 +75,35 @@ function html() {
         mainFile.contents = Buffer.from(content);
 
         const testFile = file.clone();
-        testFile.contents = Buffer.from(
+        const sanitized = fixLineHeights(
           content
-            .replace(/{%[\s\S]*?%}/g, '') // remove template tags
-            .replace(/{{[\s\S]*?}}/g, 'TEST') // neutralize double-brace placeholders
+            // remove Liquid/templating blocks
+            .replace(/{%[\s\S]*?%}/g, '')
+            // neutralize double-brace placeholders (raw)
+            .replace(/{{[^}]*}}/g, TEST_REPLACEMENT)
+            // neutralize URL-encoded placeholders (including nested)
+            .replace(/%7B%7B.*?%7D%7D/gi, TEST_REPLACEMENT)
+            // drop stray encoded braces
+            .replace(/%7B|%7D/gi, '')
+            // strip leftover curly braces after replacement
+            .replace(new RegExp(`${TEST_REPLACEMENT}\\}`, 'g'), TEST_REPLACEMENT)
         );
-        testFile.path = testFile.path.replace(/index\.html$/i, 'index-test.html');
+
+        testFile.contents = Buffer.from(sanitized);
+        testFile.path = testFile.path.replace(/index\.html$/i, 'index-brevo.min.html');
+
+        const brevoFile = file.clone();
+        brevoFile.contents = Buffer.from(fixLineHeights(content));
+        brevoFile.path = brevoFile.path.replace(/index\.html$/i, 'index.min.html');
 
         this.push(mainFile);
         this.push(testFile);
+        this.push(brevoFile);
         cb();
       })
     )
-    // .pipe(
-    //   htmlmin({
-    //     collapseWhitespace: true,
-    //     removeComments: true,
-    //     minifyCSS: true,
-    //     minifyJS: true,
-    //     ignoreCustomFragments: [/{%[\s\S]*?%}/, /{{[\s\S]*?}}/],
-    //   })
-    // )
+    .pipe(minifyTestOnly())
+    .pipe(minifyBrevoOnly())
     .pipe(dest(paths.output));
 }
 
@@ -69,3 +123,4 @@ exports.html = html;
 exports.images = images;
 exports.watch = series(parallel(html, images), watcher);
 exports.default = parallel(html, images);
+

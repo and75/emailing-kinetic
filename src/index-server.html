@@ -617,6 +617,15 @@
             -webkit-text-size-adjust: none;
             text-size-adjust: none;
         ">
+    <div id="preview-toggle"
+        style="display:flex; flex-direction:row; align-items:center; gap:10px; width: 100%; padding:12px 16px; border:1px solid #ddd; border-radius:8px; font-family:Arial,Helvetica,sans-serif; background:#f9fafb; z-index:9999;">
+        <strong style="margin:0;">Preview:</strong>
+        <button id="preview-fallback-btn" type="button"
+            style="padding:8px 12px;border:1px solid #ccc;border-radius:6px;background:#fff;cursor:pointer;">Fallback</button>
+        <button id="preview-kinetic-btn" type="button"
+            style="padding:8px 12px;border:1px solid #0c5de7;border-radius:6px;background:#0c5de7;color:#fff;cursor:pointer;">Kinetic</button>
+        <span style="font-size:12px;color:#555;">Alterna <code>supports-kinetic</code></span>
+    </div>
     <table class="nl-container" width="100%" border="0" cellpadding="0" cellspacing="0" role="presentation"
         style="mso-table-lspace: 0; mso-table-rspace: 0; background-color: transparent">
         <tbody>
@@ -862,7 +871,7 @@
                                                                     <!-- Fallback end -->
                                                                     <!--[if !mso]><!-->
                                                                     <div class="carousel"
-                                                                        style="max-width:600px; max-height:1220px; margin:0px auto; overflow:hidden; background:url('images/background_d.jpg') top/100% no-repeat; ; display:none; flex-direction:column; justify-content:flex-end; position:relative;">
+                                                                        style="max-width:600px; max-height:1220px; margin:0px auto; overflow:hidden; background:url('https://test-mail-kinetic.bsys3.fr/images/background_d.jpg') top/100% no-repeat; ; display:none; flex-direction:column; justify-content:flex-end; position:relative;">
                                                                         <input type="radio" name="hero-desktop"
                                                                             id="slide1" checked style="display:none;">
                                                                         <input type="radio" name="hero-desktop"
@@ -884,7 +893,7 @@
                                                                                 <a href="https://www.mcdonalds.fr/restaurants/%7B%7Bcustom_attribute.$%7BFavRestaurant1%7D%7D%7D/commander"
                                                                                     target="_blank"
                                                                                     style="display:block; text-decoration:none; line-height:0;">
-                                                                                    <img src="images/3-big-mac_d.png"
+                                                                                    <img src="https://test-mail-kinetic.bsys3.fr/images/3-big-mac_d.png"
                                                                                         alt="Slide 3"
                                                                                         style="width:100%; height:100%; object-fit:cover;  display:block;">
                                                                                 </a>
@@ -894,7 +903,7 @@
                                                                                 <a href="https://www.mcdonalds.fr/restaurants/%7B%7Bcustom_attribute.$%7BFavRestaurant1%7D%7D%7D/commander"
                                                                                     target="_blank"
                                                                                     style="display:block; text-decoration:none; line-height:0;">
-                                                                                    <img src="images/2-triple-cheeseburger_d.png"
+                                                                                    <img src="https://test-mail-kinetic.bsys3.fr/images/2-triple-cheeseburger_d.png"
                                                                                         alt="Slide 2"
                                                                                         style="width:100%; height:100%; object-fit:cover;  display:block;">
                                                                                 </a>
@@ -904,7 +913,7 @@
                                                                                 <a href="https://www.mcdonalds.fr/restaurants/%7B%7Bcustom_attribute.$%7BFavRestaurant1%7D%7D%7D/commander"
                                                                                     target="_blank"
                                                                                     style="display:block; text-decoration:none; line-height:0;">
-                                                                                    <img src="images/6-fries_d.png"
+                                                                                    <img src="https://test-mail-kinetic.bsys3.fr/images/6-fries_d.png"
                                                                                         alt="Slide 6"
                                                                                         style="width:100%; height:100%; object-fit:cover;  display:block;">
                                                                                 </a>
@@ -914,7 +923,7 @@
                                                                                 <a href="https://www.mcdonalds.fr/restaurants/%7B%7Bcustom_attribute.$%7BFavRestaurant1%7D%7D%7D/commander"
                                                                                     target="_blank"
                                                                                     style="display:block; text-decoration:none; line-height:0;">
-                                                                                    <img src="images/5-souce_d.png"
+                                                                                    <img src="https://test-mail-kinetic.bsys3.fr/images/5-souce_d.png"
                                                                                         alt="Slide 5"
                                                                                         style="width:100%; height:100%; object-fit:cover;  display:block;">
                                                                                 </a>
@@ -924,7 +933,7 @@
                                                                                 <a href="https://www.mcdonalds.fr/restaurants/%7B%7Bcustom_attribute.$%7BFavRestaurant1%7D%7D%7D/commander"
                                                                                     target="_blank"
                                                                                     style="display:block; text-decoration:none; line-height:0;">
-                                                                                    <img src="images/4-apple-sprite_d.png"
+                                                                                    <img src="https://test-mail-kinetic.bsys3.fr/images/4-apple-sprite_d.png"
                                                                                         alt="Slide 4"
                                                                                         style="width:100%; height:100%; object-fit:cover;  display:block;">
                                                                                 </a>
@@ -934,7 +943,7 @@
                                                                                 <a href="https://www.mcdonalds.fr/restaurants/%7B%7Bcustom_attribute.$%7BFavRestaurant1%7D%7D%7D/commander"
                                                                                     target="_blank"
                                                                                     style="display:block; text-decoration:none; line-height:0;">
-                                                                                    <img src="images/1-oreo_d.png"
+                                                                                    <img src="https://test-mail-kinetic.bsys3.fr/images/1-oreo_d.png"
                                                                                         alt="Slide 1"
                                                                                         style="width:100%; height:100%; object-fit:cover;  display:block;">
                                                                                 </a>
@@ -957,50 +966,51 @@
                                                                         </div>
                                                                         <div class="carousel-legend"
                                                                             style="width:100%; height:50px;background:#050303;">
-                                                                            <img src="images/legend_d.png" alt="Legend"
+                                                                            <img src="https://test-mail-kinetic.bsys3.fr/images/legend_d.png"
+                                                                                alt="Legend"
                                                                                 style="max-width:390px; height:auto; display:block;">
                                                                         </div>
                                                                         <div class="carousel-nav">
                                                                             <label class="prev prev1" for="slide6"><img
-                                                                                    src="images/arrow-left_d.png"
+                                                                                    src="https://test-mail-kinetic.bsys3.fr/images/arrow-left_d.png"
                                                                                     alt="Precedente"></label>
                                                                             <label class="next next1" for="slide2"><img
-                                                                                    src="images/arrow-right_d.png"
+                                                                                    src="https://test-mail-kinetic.bsys3.fr/images/arrow-right_d.png"
                                                                                     alt="Successiva"></label>
 
                                                                             <label class="prev prev2" for="slide1"><img
-                                                                                    src="images/arrow-left_d.png"
+                                                                                    src="https://test-mail-kinetic.bsys3.fr/images/arrow-left_d.png"
                                                                                     alt="Precedente"></label>
                                                                             <label class="next next2" for="slide3"><img
-                                                                                    src="images/arrow-right_d.png"
+                                                                                    src="https://test-mail-kinetic.bsys3.fr/images/arrow-right_d.png"
                                                                                     alt="Successiva"></label>
 
                                                                             <label class="prev prev3" for="slide2"><img
-                                                                                    src="images/arrow-left_d.png"
+                                                                                    src="https://test-mail-kinetic.bsys3.fr/images/arrow-left_d.png"
                                                                                     alt="Precedente"></label>
                                                                             <label class="next next3" for="slide4"><img
-                                                                                    src="images/arrow-right_d.png"
+                                                                                    src="https://test-mail-kinetic.bsys3.fr/images/arrow-right_d.png"
                                                                                     alt="Successiva"></label>
 
                                                                             <label class="prev prev4" for="slide3"><img
-                                                                                    src="images/arrow-left_d.png"
+                                                                                    src="https://test-mail-kinetic.bsys3.fr/images/arrow-left_d.png"
                                                                                     alt="Precedente"></label>
                                                                             <label class="next next4" for="slide5"><img
-                                                                                    src="images/arrow-right_d.png"
+                                                                                    src="https://test-mail-kinetic.bsys3.fr/images/arrow-right_d.png"
                                                                                     alt="Successiva"></label>
 
                                                                             <label class="prev prev5" for="slide4"><img
-                                                                                    src="images/arrow-left_d.png"
+                                                                                    src="https://test-mail-kinetic.bsys3.fr/images/arrow-left_d.png"
                                                                                     alt="Precedente"></label>
                                                                             <label class="next next5" for="slide6"><img
-                                                                                    src="images/arrow-right_d.png"
+                                                                                    src="https://test-mail-kinetic.bsys3.fr/images/arrow-right_d.png"
                                                                                     alt="Successiva"></label>
 
                                                                             <label class="prev prev6" for="slide5"><img
-                                                                                    src="images/arrow-left_d.png"
+                                                                                    src="https://test-mail-kinetic.bsys3.fr/images/arrow-left_d.png"
                                                                                     alt="Precedente"></label>
                                                                             <label class="next next6" for="slide1"><img
-                                                                                    src="images/arrow-right_d.png"
+                                                                                    src="https://test-mail-kinetic.bsys3.fr/images/arrow-right_d.png"
                                                                                     alt="Successiva"></label>
                                                                         </div>
                                                                     </div>
@@ -1010,7 +1020,8 @@
                                                                             width="100%">
                                                                             <a href="https://www.mcdonalds.fr/restaurants/{{custom_attribute.${FavRestaurant1}}}/commander?lid=gmy97ol4mnyj&cat=MERCATO_LEGENDES&utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=cta_je_compose_ma_team"
                                                                                 target="_blank"><img
-                                                                                    src="images/cta_d.png" style="
+                                                                                    src="https://test-mail-kinetic.bsys3.fr/images/cta_d.png"
+                                                                                    style="
                                                                                         display: block;
                                                                                         height: auto;
                                                                                         border: 0;
@@ -1102,7 +1113,8 @@
                                                                     <!--[if !mso]><!-->
                                                                     <div class="carousel-mobile"
                                                                         style="max-width:600px; margin:0px auto; overflow:hidden; display:none; flex-direction:column; justify-content:flex-end; position:relative;">
-                                                                        <img src="images/background_m.jpg" alt=""
+                                                                        <img src="https://test-mail-kinetic.bsys3.fr/images/background_m.jpg"
+                                                                            alt=""
                                                                             style="position:absolute; left:0; top:0; width:100%; z-index:0; pointer-events:none;">
                                                                         <input type="radio" name="hero-mobile"
                                                                             id="mslide1" checked style="display:none;">
@@ -1125,7 +1137,7 @@
                                                                                 <a href="https://www.mcdonalds.fr/restaurants/%7B%7Bcustom_attribute.$%7BFavRestaurant1%7D%7D%7D/commander"
                                                                                     target="_blank"
                                                                                     style="display:block; text-decoration:none; line-height:0;">
-                                                                                    <img src="images/2-triple-cheeseburger_m.png"
+                                                                                    <img src="https://test-mail-kinetic.bsys3.fr/images/2-triple-cheeseburger_m.png"
                                                                                         alt="Slide 2"
                                                                                         style="width:100%; height:100%; object-fit:cover;  display:block;">
                                                                                 </a>
@@ -1135,7 +1147,7 @@
                                                                                 <a href="https://www.mcdonalds.fr/restaurants/%7B%7Bcustom_attribute.$%7BFavRestaurant1%7D%7D%7D/commander"
                                                                                     target="_blank"
                                                                                     style="display:block; text-decoration:none; line-height:0;">
-                                                                                    <img src="images/3-big-mac_m.png"
+                                                                                    <img src="https://test-mail-kinetic.bsys3.fr/images/3-big-mac_m.png"
                                                                                         alt="Slide 3"
                                                                                         style="width:100%; height:100%; object-fit:cover;  display:block;">
                                                                                 </a>
@@ -1145,7 +1157,7 @@
                                                                                 <a href="https://www.mcdonalds.fr/restaurants/%7B%7Bcustom_attribute.$%7BFavRestaurant1%7D%7D%7D/commander"
                                                                                     target="_blank"
                                                                                     style="display:block; text-decoration:none; line-height:0;">
-                                                                                    <img src="images/6-fries_m.png"
+                                                                                    <img src="https://test-mail-kinetic.bsys3.fr/images/6-fries_m.png"
                                                                                         alt="Slide 6"
                                                                                         style="width:100%; height:100%; object-fit:cover;  display:block;">
                                                                                 </a>
@@ -1155,7 +1167,7 @@
                                                                                 <a href="https://www.mcdonalds.fr/restaurants/%7B%7Bcustom_attribute.$%7BFavRestaurant1%7D%7D%7D/commander"
                                                                                     target="_blank"
                                                                                     style="display:block; text-decoration:none; line-height:0;">
-                                                                                    <img src="images/5-souce_m.png"
+                                                                                    <img src="https://test-mail-kinetic.bsys3.fr/images/5-souce_m.png"
                                                                                         alt="Slide 5"
                                                                                         style="width:100%; height:100%; object-fit:cover;  display:block;">
                                                                                 </a>
@@ -1165,7 +1177,7 @@
                                                                                 <a href="https://www.mcdonalds.fr/restaurants/%7B%7Bcustom_attribute.$%7BFavRestaurant1%7D%7D%7D/commander"
                                                                                     target="_blank"
                                                                                     style="display:block; text-decoration:none; line-height:0;">
-                                                                                    <img src="images/4-apple-sprite_m.png"
+                                                                                    <img src="https://test-mail-kinetic.bsys3.fr/images/4-apple-sprite_m.png"
                                                                                         alt="Slide 4"
                                                                                         style="width:100%; height:100%; object-fit:cover;  display:block;">
                                                                                 </a>
@@ -1175,7 +1187,7 @@
                                                                                 <a href="https://www.mcdonalds.fr/restaurants/%7B%7Bcustom_attribute.$%7BFavRestaurant1%7D%7D%7D/commander"
                                                                                     target="_blank"
                                                                                     style="display:block; text-decoration:none; line-height:0;">
-                                                                                    <img src="images/1-oreo_m.png"
+                                                                                    <img src="https://test-mail-kinetic.bsys3.fr/images/1-oreo_m.png"
                                                                                         alt="Slide 1"
                                                                                         style="width:100%; height:100%; object-fit:cover;  display:block;">
                                                                                 </a>
@@ -1198,51 +1210,52 @@
                                                                         </div>
                                                                         <div class="carousel-legend"
                                                                             style="width:100%; height:50px; background:#050303; margin-top:-1px;">
-                                                                            <img src="images/legend_m.png" alt="Legend"
+                                                                            <img src="https://test-mail-kinetic.bsys3.fr/images/legend_m.png"
+                                                                                alt="Legend"
                                                                                 style="max-width:290px; height:auto; display:block;">
                                                                         </div>
                                                                         <div class="carousel-nav"
                                                                             style="margin-top: -1px;">
                                                                             <label class="prev prev1" for="mslide6"><img
-                                                                                    src="images/arrow-left_m.png"
+                                                                                    src="https://test-mail-kinetic.bsys3.fr/images/arrow-left_m.png"
                                                                                     alt="Precedente"></label>
                                                                             <label class="next next1" for="mslide2"><img
-                                                                                    src="images/arrow-right_m.png"
+                                                                                    src="https://test-mail-kinetic.bsys3.fr/images/arrow-right_m.png"
                                                                                     alt="Successiva"></label>
 
                                                                             <label class="prev prev2" for="mslide1"><img
-                                                                                    src="images/arrow-left_m.png"
+                                                                                    src="https://test-mail-kinetic.bsys3.fr/images/arrow-left_m.png"
                                                                                     alt="Precedente"></label>
                                                                             <label class="next next2" for="mslide3"><img
-                                                                                    src="images/arrow-right_m.png"
+                                                                                    src="https://test-mail-kinetic.bsys3.fr/images/arrow-right_m.png"
                                                                                     alt="Successiva"></label>
 
                                                                             <label class="prev prev3" for="mslide2"><img
-                                                                                    src="images/arrow-left_m.png"
+                                                                                    src="https://test-mail-kinetic.bsys3.fr/images/arrow-left_m.png"
                                                                                     alt="Precedente"></label>
                                                                             <label class="next next3" for="mslide4"><img
-                                                                                    src="images/arrow-right_m.png"
+                                                                                    src="https://test-mail-kinetic.bsys3.fr/images/arrow-right_m.png"
                                                                                     alt="Successiva"></label>
 
                                                                             <label class="prev prev4" for="mslide3"><img
-                                                                                    src="images/arrow-left_m.png"
+                                                                                    src="https://test-mail-kinetic.bsys3.fr/images/arrow-left_m.png"
                                                                                     alt="Precedente"></label>
                                                                             <label class="next next4" for="mslide5"><img
-                                                                                    src="images/arrow-right_m.png"
+                                                                                    src="https://test-mail-kinetic.bsys3.fr/images/arrow-right_m.png"
                                                                                     alt="Successiva"></label>
 
                                                                             <label class="prev prev5" for="mslide4"><img
-                                                                                    src="images/arrow-left_m.png"
+                                                                                    src="https://test-mail-kinetic.bsys3.fr/images/arrow-left_m.png"
                                                                                     alt="Precedente"></label>
                                                                             <label class="next next5" for="mslide6"><img
-                                                                                    src="images/arrow-right_m.png"
+                                                                                    src="https://test-mail-kinetic.bsys3.fr/images/arrow-right_m.png"
                                                                                     alt="Successiva"></label>
 
                                                                             <label class="prev prev6" for="mslide5"><img
-                                                                                    src="images/arrow-left_m.png"
+                                                                                    src="https://test-mail-kinetic.bsys3.fr/images/arrow-left_m.png"
                                                                                     alt="Precedente"></label>
                                                                             <label class="next next6" for="mslide1"><img
-                                                                                    src="images/arrow-right_m.png"
+                                                                                    src="https://test-mail-kinetic.bsys3.fr/images/arrow-right_m.png"
                                                                                     alt="Successiva"></label>
                                                                         </div>
 
@@ -1253,7 +1266,8 @@
                                                                             width="100%">
                                                                             <a href="https://www.mcdonalds.fr/restaurants/{{custom_attribute.${FavRestaurant1}}}/commander?lid=gmy97ol4mnyj&cat=MERCATO_LEGENDES&utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=cta_je_compose_ma_team"
                                                                                 target="_blank"><img
-                                                                                    src="images/cta_m.png" style="
+                                                                                    src="https://test-mail-kinetic.bsys3.fr/images/cta_m.png"
+                                                                                    style="
                                                                                         display: block;
                                                                                         height: auto;
                                                                                         border: 0;
@@ -1394,7 +1408,6 @@
                                                             mso-table-lspace: 0;
                                                             mso-table-rspace: 0;
                                                             font-weight: 400;
-                                                            text-align: left;
                                                             padding-bottom: 5px;
                                                             padding-top: 5px;
                                                             vertical-align: top;
@@ -1561,7 +1574,8 @@
                                                                 <div class="alignment cpm-1" align="center" with="100%">
                                                                     <div style="max-width: 600px; width:100%">
                                                                         <a href="https://www.mcdonalds.fr/mon-compte/programme-fidelite?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=cta_cest_pour_moi&lid=hweelugjves2"
-                                                                            target="_blank"><img src="images/cpm.png"
+                                                                            target="_blank"><img
+                                                                                src="https://test-mail-kinetic.bsys3.fr/images/cpm.png"
                                                                                 style="
                                                                                         display: block;
                                                                                         height: auto;
@@ -1650,7 +1664,6 @@
                                                             mso-table-lspace: 0;
                                                             mso-table-rspace: 0;
                                                             font-weight: 400;
-                                                            text-align: left;
                                                             padding-bottom: 5px;
                                                             padding-top: 5px;
                                                             vertical-align: top;
@@ -1818,7 +1831,8 @@
                                                                     width="100%">
                                                                     <div style="max-width: 600px; width:100%">
                                                                         <a href="https://www.mcdonalds.fr/mon-compte/programme-fidelite?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=cta_cest_pour_moi&lid=3zensedmrb7f"
-                                                                            target="_blank"><img src="images/cpm.png"
+                                                                            target="_blank"><img
+                                                                                src="https://test-mail-kinetic.bsys3.fr/images/cpm.png"
                                                                                 style="
                                                                                         display: block;
                                                                                         height: auto;
@@ -2075,7 +2089,8 @@
                                                                     width="100%">
                                                                     <div style="max-width: 600px; width:100%">
                                                                         <a href="https://www.mcdonalds.fr/mon-compte/programme-fidelite?utm_source=LancementMercato_Toutebase&utm_medium=email&utm_campaign=crm_National_Actumarque_13012026&utm_content=cta_cest_pour_moi&lid=zjaw2lu0liy0"
-                                                                            target="_blank"><img src="images/cpm.png"
+                                                                            target="_blank"><img
+                                                                                src="https://test-mail-kinetic.bsys3.fr/images/cpm.png"
                                                                                 style="
                                                                                         display: block;
                                                                                         height: auto;
@@ -3659,6 +3674,34 @@
         </tbody>
     </table>
     <!-- End -->
+    <script>
+        (function () {
+            var fallbackBtn = document.getElementById('preview-fallback-btn');
+            var kineticBtn = document.getElementById('preview-kinetic-btn');
+
+            function setMode(mode) {
+                if (mode === 'fallback') {
+                    document.body.classList.add('force-fallback');
+                    document.body.classList.remove('supports-kinetic');
+                    fallbackBtn.classList.add('active');
+                    kineticBtn.classList.remove('active');
+                } else {
+                    document.body.classList.add('supports-kinetic');
+                    document.body.classList.remove('force-fallback');
+                    kineticBtn.classList.add('active');
+                    fallbackBtn.classList.remove('active');
+                }
+            }
+
+            fallbackBtn.addEventListener('click', function () { setMode('fallback'); });
+            kineticBtn.addEventListener('click', function () { setMode('kinetic'); });
+
+            // init: default to kinetic (as per original)
+            document.body.classList.add('supports-kinetic');
+            document.body.classList.remove('force-fallback');
+            setMode('kinetic');
+        })();
+    </script>
 </body>
 
 </html>
